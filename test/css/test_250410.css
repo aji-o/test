@@ -12,6 +12,8 @@ letter-spacing: -0.01em; /* 자간 조정 */
 * {
     margin: 0; /* 브라우저가 기본으로 주는 여백 삭제 - 여백은 상속되지 않음 - */
     padding: 0;
+    box-sizing: border-box;
+    /* width/height와 padding을 같이주면 사이즈가 늘어남 - 이 현상을 막는 코드 */
 }
 h1,h2,h3,h4,h5,h6 {
     font-size: inherit;
@@ -46,7 +48,8 @@ a {
     padding: 169px 0 22px 0;
 }
 .esg .sub_tit,
-.int .sub_tit {
+.int .sub_tit,
+.mission .sub_tit {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
@@ -60,7 +63,7 @@ a {
     display: inline-block; /* a 사용시 이 태그를 사용해야함 */
 }
 .int {
-    margin: 205px 0 200px 0;
+    margin: 205px 0 0px 0;
 }
 
 .int h1 {
@@ -81,4 +84,26 @@ a {
 .int ul li strong {
     font-weight: 700;
     color: #1d1d1d;
+}
+.mission {
+    margin: 213px 0 200px 0;
+}
+.mission .inner {
+    background-image: url(../images/mission_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* 백그라운드를 깔 때 이 4개를 활용하는 것이 좋다 */
+    height: 544px;
+    color: #fff;
+    padding: 89px 0 0 82px;
+}
+.mission .cnt {
+    color: rgba(255, 255, 255, 0.8) /* opacity 80% */
+}
+section {
+    border-color: #0000ff;
+    background-color: #0000ff;
+}
+h2 {
+    border: wwwwwww;
 }
