@@ -1,0 +1,161 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555555;
+    word-break: keep-all;
+}
+/* START :: 태그의 기본 스타일 삭제(초기화) */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /* inherit - 브라우저가 주는 값 무시 */
+    font-weight: inherit;
+}
+li {
+    list-style: none;
+}
+* { /* 와일드카드로 모든 태그를 의미 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* heghit . padding 동시 적용 시 박스가 늘어나는 것을 방지 */
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* END :: 태그의 기본 스타일 삭제(초기화)*/
+.wrapper {
+    width: 1260px;
+    margin: auto; /* 가로를 1260px로 고정해서 가로 스크롤이 생김*/
+}
+.color {
+    margin: 120px 0 200px 0;
+}
+.color .tit h1 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    color: #1d1d1d;
+    margin: 0 0 30px 0;
+}
+.color .list {
+    margin: 66px 0 0 0;
+}
+.color .list ul {
+    display: flex;  /* flex - ui 바로 하위 태그 li만 좌우로 배치 */
+    justify-content: space-between
+}
+.color .list ul li {
+    width: 297px;
+}
+.color .list ul li h2{
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    height: 374px;
+    border-radius: 25px; /* 보더박스에 국한되지 않고 라운드가 들어감 */
+    padding: 32px 0 0 29px;
+}
+/* (공백x) li태그들 중에서 item1이라는 클래스명을 갖은 요소 */
+.color .list ul li.item1 h2 {
+    background-color: #00ad1d;
+}
+.color .list ul li.item2 h2 {
+    background-color: #008233;
+}
+.color .list ul li.item3 h2 {
+    background-color: #003087;
+}
+.color .list ul li.item4 h2 {
+    background-color: #002554;
+} /* 디테일하게 입력할수록 우선순위가 높다. 따라서 와일드카드는 우선순위에서 밀림 */
+
+.color .list ul li p {
+    margin: 23px 0 0 10px;
+}
+
+.int {
+    margin: 162px 0 0 0;
+}
+.int .wrapper {
+    display: flex;
+    /* wrapper 넓이 안에 h1과 inner를 좌우로 배치 */
+    justify-content: space-between;
+}
+.int .inner {
+    width: 725px;
+}
+.int h1,
+.int .tit .sub_tit {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    color: #1d1d1d;
+    margin: 0 0 30px 0;
+}
+.int .tit .sub_tit {
+    margin: 0 0 30px 0;
+}
+.int .list {
+    margin: 83px 0 0 0;
+}
+.int .list ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 19px 0 19px 0;
+    display: flex;
+    /* 두개 이상의 태그가 좌우로 나란히 들어가면
+    무조건 display:flex;를 줘서 좌우로 배치시켜야 한다. */
+}
+/* li 위에 선 하나 추가 */
+.int .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.int .list ul li strong {
+    width: 173px;
+    display: block;
+    font-weight: 800;
+    color: #1d1d1d;
+}
+
+.btn {
+    margin: 185px 0 0 0;
+}
+.btn h1 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    color: #1d1d1d;
+}
+.btn .btn_wrap {
+    margin: 40px 0 0 0;
+    display: flex;
+    gap: 10px;
+}
+.btn .btn_wrap a {
+    color: #fff;
+    display: block; /* a에 항상 추가 */
+    padding: 10px 23px 10px 23px;
+
+}
+.btn .btn_wrap a.all {
+    background-color: #1d1d1d;
+}
+.btn .btn_wrap a.ok {
+    background-color: #1ba284;
+}
+.btn .btn_wrap a.cancel {
+    background-color: #c40c0c;
+}
+
+
+
+
+
+body {
+    margin: 0 0 300px 0;
+}
