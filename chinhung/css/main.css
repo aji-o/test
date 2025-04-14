@@ -1,0 +1,144 @@
+/* html파일에서는 main.css만 호출, 다른 필요한 css는 main.css가 부름 */
+@import url(font.css);
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555555;
+    word-break: keep-all;
+}
+/* START :: 태그의 기본 스타일 삭제(초기화) */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit; /* inherit - 브라우저가 주는 값 무시 */
+    font-weight: inherit;
+}
+li {
+    list-style: none;
+}
+* { /* 와일드카드로 모든 태그를 의미 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* heghit . padding 동시 적용 시 박스가 늘어나는 것을 방지 */
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* END :: 태그의 기본 스타일 삭제(초기화)*/
+.wrapper {
+    width: 1260px;
+    margin: auto; /* 가로를 1260px로 고정해서 가로 스크롤이 생김*/
+}
+header {
+    height: 100px;
+    /* header는 대부분 디자인한 높이를 잡아주고 코딩함
+       header에는 존재하는 것이 많기 떄문! */
+}
+header .wrapper {
+    display: flex;
+    /* logo와 gnb를 좌우로 배치 */
+    justify-content: space-between;
+}
+header .logo {
+    margin: 32px 0 0 0;
+}
+header .logo a img {
+    width: 136px;
+    /* 이미지는 넓이나 높이 둘중 하나만 줘도 비율에 맞게 조정됨 
+    ㅡ 둘 다 주면 찌그러지니까 주의!! (but 이미지만 해당된다.)*/
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul a {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1d1d1d;
+    padding: 30px 30px 32px 30px;
+}
+
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    /* 아래의 요소를 한 번에 정의                  반복   좌우   위아래    크기
+    background-image: url(../images/visual_bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+    height: 800px;
+    color: #fff;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    padding: 317px 0 24px 0;
+}
+.biz {
+    margin: 145px 0 0 0;
+    text-align: center center;
+}
+.biz .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+.biz .tit p {
+    color: #244d8e;
+}
+.biz .list {
+    margin: 55px 0 0 0;
+}
+.biz .list ul {
+    display: flex; /* li들을 좌우로 배치 */
+    justify-content: space-between;
+}
+.biz .list ul li {
+    width: 297px;
+}
+.biz .list ul li a {
+    display: block; /* a의 필수값 */
+    text-align: center;
+}
+.biz .list ul li a h3 {
+    font-size: 35px;
+    color: #1d1d1d;
+    margin: 18px 0 15px 0;
+}
+.biz .list ul li a .more {
+    border: 1px solid #6d6d6d;
+    display: block;
+    padding: 16px 0 16px 0;
+    margin: 17px 0 0 0;
+}
+.brand {
+    background: url(../images/brand_bg.png) no-repeat center center / cover;
+    margin: 189px 0 0 0;
+    height: 800px;
+    color: #fff
+}
+.brand .cont {
+    border-top: 1px solid rgba(255,255,255, 0.2);
+    color: rgba(255, 255, 255, 0.6); /* 흰색(#fff) RPG값 255 - opacity 60 */
+    padding: 30px 0 0 0;
+}
+.brand h2 {
+    padding: 190px 0 15px 0;
+}
+.brand .sub_tit {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 62px 0;
+}
+
+
+
+footer {
+    margin: 400px 0 0 0;
+}
