@@ -25,7 +25,18 @@ a {
     color: inherit;
     text-decoration: none;
 }
+em, address {
+    font-style: normal; /* 글자의 기울임 스타일 제거 */
+
+}
 /* END :: 태그의 기본 스타일 삭제(초기화)*/
+
+#wrap { /* id는 #으로 불러야 한다 */
+    min-width: 1300px;
+    /* 홈페이지 넓이 1260px에 왼+오른에 여백을 20px 정도 줄 때 사용
+        1260 + 20(왼) + 20(오른) = 1300px 으로 적용해야함
+        - (브라우저가 줄어들어 가로스크롤바가 생겼을 때 왼쪽/오른쪽 여백 */
+}
 .wrapper {
     width: 1260px;
     margin: auto; /* 가로를 1260px로 고정해서 가로 스크롤이 생김*/
@@ -137,8 +148,20 @@ header .gnb ul a {
     margin: 0 0 62px 0;
 }
 
-
-
 footer {
-    margin: 400px 0 0 0;
+    padding: 47px 0 70px 0;
+    background-color: #1d1d1d;
+    color: #fff;
+}
+footer .footer_nav ul {
+    display: flex;
+    gap: 40px;
+}
+footer .footer_info {
+    margin: 45px 0 15px 0;
+    display: flex;
+    gap: 35px;
+}
+footer .footer_info strong {
+    font-weight: 700;
 }
