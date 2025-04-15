@@ -33,9 +33,10 @@ em, address {
 
 #wrap { /* id는 #으로 불러야 한다 */
     min-width: 1300px;
-    /* 홈페이지 넓이 1260px에 왼+오른에 여백을 20px 정도 줄 때 사용
+    /* 홈페이지 넓이 1260px에 왼+오른에 여백을 20px 줄 때 사용
         1260 + 20(왼) + 20(오른) = 1300px 으로 적용해야함
-        - (브라우저가 줄어들어 가로스크롤바가 생겼을 때 왼쪽/오른쪽 여백 */
+        - (브라우저가 줄어들어 가로스크롤바가 생겼을 때 왼쪽/오른쪽 여백 
+        - min-widtn : 늘어나는건 ㄱㅊ but 줄어들 때 지정된 사이즈보다 줄어들면 안됨 */
 }
 .wrapper {
     width: 1260px;
@@ -91,7 +92,7 @@ header .gnb ul a {
 }
 .biz {
     margin: 145px 0 0 0;
-    text-align: center center;
+    text-align: center;
 }
 .biz .tit h2 {
     font-size: 50px;
