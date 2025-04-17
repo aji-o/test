@@ -1,0 +1,127 @@
+@import url(difault.css); /* 디폴트를 불러올 땐 일반적으로 맨 위에 둔다.*/
+@import url(font.css);
+@import url(common.css);
+
+header {
+    display: flex;
+    justify-content: space-between; /* logo와 inner를 header 넓이 안에서 좌우 끝으로 배치 */
+    height: 100px;
+    padding: 0 30px 0 30px; /* margin 으로 해도 됨 */
+}
+header .logo {
+    margin: 31px 0 0 0;
+} 
+header .inner {
+    display: flex; /* gnb 와 shop 을 좌우 끝으로 배치 */
+    align-items: center; /* 쇼핑몰(div="shop")이 위아래로 넓직해지는 걸 막아줌 */
+}
+header .inner .gnb ul {
+    display: flex;
+}
+header .inner .gnb ul li a { /* 후에 하위메뉴가 생길 예정이라 a에게 정확히 주는 것이 좋다.*/
+    display: block; /* a의 필수값!!!! */
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 100px; /* <- 행간 때문에 딱 맞기 어려웠던 것...
+    header의 높이랑 1차메뉴의 a의 높이는 같아야 한다. ***a의 행간을 header의 높이로 줌***
+    그러면 a에 높이가 생기고 글자는 위아래 가운데 정렬이 된다.*/
+    color: #1d1d1d;
+    padding: 0px 32px 0px 32px;
+}
+header .inner .shop {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1EB159;
+    border: 1px solid #1EB159;
+    border-radius: 29px;
+    padding: 8px 39px;
+    margin: 0 0 0 50px; /* nav와 멀어지기 위해 준 마진 */
+}
+
+.visual { /* container는 안부른다 */
+    background: url(../images/visual_bg2.jpg) no-repeat center center / cover;
+    border-radius: 15px;
+    margin: 0 30px 0 30px;
+    height: 800px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 { /* 글씨가 2줄이 아니라면 행간은 줄 필요 없음 */
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* -20 */
+    padding: 235px 0 9px 0;
+}
+.product {
+    margin: 153px 0 0 0;
+}
+.product .tit h2 {
+    color: #1EB159;
+}
+.product .tit p {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* -20 */
+    margin: 5px 0 40px 0;
+}
+.product .list {
+    margin: 30px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    gap: 24px;
+}
+.product .list ul li {
+    width: 404px;
+}
+/* ┌ a의 필수값!! 잊지말것 중요해서 두번 적음*/
+.product .list ul li a {
+    display: block;
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0;
+}
+/* └ 이미지 하단의 여백을 삭제하기 위해
+    img 태그에 직접 주면 적용X
+    img태그만 감싸는 요소에 줘야함! */
+.product .list ul li a h3 {
+    font-size: 20px;
+    color: #1d1d1d;
+    margin: 10px 0 0 0;
+ /* ┌ 1줄 제한 */
+        white-space: nowrap;
+        overflow: hidden; /* h3 영역이 넘어가는 글을 숨겨주는 태그 */
+        text-overflow: ellipsis; /* 영역이 넘어가는 끝에 ...를 붙여준다. */
+}
+.network {
+    background: url(../images/network_bg.jpg) no-repeat center center / cover;
+    margin: 123px 0 0 0;
+    height: 610px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.network h2 {
+    padding: 166px 0 0 0;
+    color: #fff;
+}
+.network .sub_tit {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* -20 */
+    margin: 5px 0 6px 0;
+    color: #fff;
+}
+.network a {
+    display: inline-block; /* 바짝 붙게 하려고 씀 */
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 22px;
+    margin: 53px 0 0 0;
+    padding: 10px 27px;
+}
+
+
+
+    footer {
+    margin: 400px 0 0 0;
+}
