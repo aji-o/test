@@ -119,9 +119,125 @@ header .inner .shop {
     margin: 53px 0 0 0;
     padding: 10px 27px;
 }
+.community {
+    margin: 189px 0 0 0;
+}
+.community .tit h2 {
+    color: #1EB159;
+}
+.community .tit p {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* -20 */
+    margin: 5px 0 60px 0;
+}
+.community .list {
+    margin: 30px 0 0 0;
+    display: flex; /* group을 좌우로 배치 */
+    justify-content: space-between;
+}
+.community .list .group {
+    width: calc(50% - 6px);
+    /*
+        1. 몇개로 분할하느냐? : 2개 = 100/2 = 50%
+        2. 사이 여백의 총합 / 분할하는 갯수 - 12/2 = 6px
+    */
+}
+.community .list .group ul {
+    display: flex;
+    flex-wrap: wrap; /* li의 줄바꿈 허용 / 줄을 바꾸게 해주는 코드 -리뷰박스가 아래로 내려간다- */
+    gap: 12px;
+}
+/* 1. li의 사이즈와 a의 사이즈가 동일해야할 때
+   2. height(높이)를 꼭 줘야 하는 디자인일 때 (위에 product는 높이가 필요없는 디자인)
+   -- li에는 넓이를 주고 a에는 높이를 줌 */
 
+/* .community .list .group ul li { 
+  border: 1px solid #ccc;
+}
+    아래의 코드를 줄 때 크기를 파악하는 용의 임시 border 코드 */
 
+.community .list .group ul li.color,
+.community .list .group ul li.gray { /* li중에서 color를 가진 li와 gray를 가진 li를 불러옴 */
+    width: calc(50% - 6px); /* 그룹의 넓이의 절반으로 디자인해서 얘도 50%로 적어도 된다. */
+}
+.community .list .group ul li.color a,
+.community .list .group ul li.gray a {
+    height: 230px;
+}
+.community .list .group ul li.color.bg1 a {
+    background-color: #1EB159;
+    color: #fff;
+}
+.community .list .group ul li.color.bg2 a {
+    background-color: #0057B8;
+    color: #fff;
+}
+.community .list .group ul li.gray a {
+    background-color: #F7F7F7;
+}
 
-    footer {
-    margin: 400px 0 0 0;
+.community .list .group ul li.review {
+    width: 100%; /* %는 나를 감싸는 요소(ui의 넓이) 기준으로 잡힘...*/
+
+}
+.community .list .group ul li a {
+    display: block; /* 얘는 a태그 필수지만, 아래의 display : flex 가 있어서 삭제해도 되고, 냅둬도 아래의 display로 적용된다!*/
+    padding: 0 20px 19px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.community .list .group ul li.review a {
+    height: 389px;
+    color: #fff;
+}
+.community .list .group ul li.review.bg1 a {
+    background: url(../images/community_bg1.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li.review.bg2 a {
+    background: url(../images/community_bg2.jpg) no-repeat center center / cover;
+}
+.community .list .group ul li a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    /* 1줄 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 4px 0 34px 0;
+}
+.community .list .group ul li a .date {
+    display: flex;
+    gap: 22px;
+}
+.community .list .group ul li.color a .date,
+.community .list .group ul li.review a .date {
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .list .group ul li.gray a .date {
+    color: #666;
+}
+footer {
+    margin: 195px 0 0 0;
+    padding: 80px 0 114px 0;
+    background-color: #E9E9E9;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 45px;
+}
+footer .f_nav {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 20px 0;
+}
+footer .f_info {
+    margin: 20px 0 40px 0;
+    line-height: 1.76;
+}
+footer .f_info .group {
+    display: flex;
+    gap: 30px;
 }
