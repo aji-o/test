@@ -1,4 +1,4 @@
-@import url(difault.css); /* 디폴트를 불러올 땐 일반적으로 맨 위에 둔다.*/
+@import url(default.css); /* 디폴트를 불러올 땐 일반적으로 맨 위에 둔다.*/
 @import url(font.css);
 @import url(common.css);
 

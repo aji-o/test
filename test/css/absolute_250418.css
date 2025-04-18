@@ -1,0 +1,95 @@
+@import url(font.css);
+@import url(default.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* body를 기준 -> common:21에서 추가햇기 떄문에 wrap 기준으로 정렬됨 */
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%; /* wrap의 넓이의 100% */
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .gnb ul {
+    display: flex;
+    justify-content: center;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 100px;
+    font-size: 23px;
+    font-weight: 700;
+    padding: 0 17px 0 17px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    height: 750px;
+    color: #fff;
+    text-align: center;
+
+}
+.visual h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 205px 0 16px 0;
+}
+
+.product {
+    margin: 128px 0 0 0;
+}
+.product .wrapper {
+    position: relative; /* more 정렬의 기준점으로 삼기 위해 쓴 태그 */
+}
+.product h2{
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+}
+.product .list {
+    margin: 35px 0 0 0;
+}
+.product .list ul {
+    display: flex;
+    justify-content:space-between;
+}
+.product .list ul li {
+    width: calc(33.33% - 16px);
+    /* 한줄에 한번 나오는 갯수 : 3 = 100/3 = 33.33% ㅑ(소숫점 2자리까지)
+        여백의 총합 24+24 = 48 / 3 = 16 */
+}
+.product .list ul li a {
+    display: block;
+    position: relative; /* h3의 정렬 기준점 */
+}
+.product .list ul li a .photo {
+    font-size: 0;
+    line-height: 0; /* 사진 여백 빼라... 할 때 쓰인다. (보통 사진에 붙어있는 행간 때문에 발생함) */
+}
+.product .list ul li a h3 {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 35px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    width: calc(100% - 70px); 
+    /*  ㄴ 100은 a기준. // 좌 여백35 우 여백35 합친 값을 입력한다.  */
+}
+.product .more {
+    position: absolute; /* .wrapper를 기준으로 정렬 */
+    right: 0;
+    top: 4px;
+    border: 1px solid #555;
+    border-radius: 30px;
+    padding: 8px 40px;
+}
+
+
+
+body {
+    margin: 0 0 400px 0;
+}
