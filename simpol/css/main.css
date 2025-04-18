@@ -178,7 +178,7 @@ header .inner .shop {
 }
 
 .community .list .group ul li.review {
-    width: 100%; /* %는 나를 감싸는 요소(ui의 넓이) 기준으로 잡힘...*/
+    width: 100%; /* %는 나를 감싸는 요소(ul의 넓이) 기준으로 잡힘...*/
 
 }
 .community .list .group ul li a {
