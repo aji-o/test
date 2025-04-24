@@ -1,0 +1,20 @@
+/* 웹폰트를 선언하는 css */
+@font-face {
+	font-family: "NanumSquareNeo";
+	font-weight: 400;
+	font-display: swap;
+	src: url(../fonts/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+         url(../fonts/NanumSquareNeoTTF-bRg.woff2) format("woff2"),
+         url(../fonts/NanumSquareNeoTTF-bRg.woff) format("woff");
+}
+@font-face {
+	font-family: "NanumSquareNeo";
+	font-weight: 800;
+	font-display: swap;
+	src: url(../fonts/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), /* eot 는 뒤에 ?#infix 를 붙여줘야 한다. 근데 잘 안쓰는 파일임 */
+         url(../fonts/NanumSquareNeoTTF-dEb.woff2) format("woff2"),
+         url(../fonts/NanumSquareNeoTTF-dEb.woff) format("woff");
+}
+
+/* css/html - " " 큰따옴표
+   jquery / javascript / 개발 - ' ' 작은 따옴표를 쓰는 것이 좋다. 암묵적인 약속 */
