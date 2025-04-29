@@ -225,6 +225,132 @@
                         }
 }/* @media*/
 
+.esg {
+    margin: 110px 0 0 0;
+}
+.esg .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 15px 0;
+}
+.esg .list {
+    margin: 50px 0 0 0;
+}
+.esg .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.esg .list ul li {
+    width: calc(25% - 18px);
+    /*
+        100% / 1줄에 나오는 갯수 - 4개 = 100% / 4 = 25%
+        1줄 여백의 총합 / 1줄에 나오는 갯수 + 24 + 24 + 24 / 4 = 18...
+    */
+}
+.esg .list ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 443px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    padding: 0 0 70px 0; /* 글자와 하단 여백 */
+}
+.esg .list ul li.list01 a {
+    background-image: url(../images/esg_bg_01.jpg);
+}
+.esg .list ul li.list02 a {
+    background-image: url(../images/esg_bg_02.jpg);
+}
+.esg .list ul li.list03 a {
+    background-image: url(../images/esg_bg_03.jpg);
+}
+.esg .list ul li.list04 a {
+    background-image: url(../images/esg_bg_04.jpg);
+}
+
+@media screen and (max-width:640px) {
+                        .esg {
+                            margin: 70px 0 0 0;
+                        }
+                        .esg .tit h2 {
+                            font-size: 25px;
+                            margin: 0 0 10px 0;
+                        }
+                        .esg .list {
+                            margin: 25px 0 0 0;
+                        }
+                        .esg .list ul {
+                            flex-wrap: wrap; /* 2줄 허용 */
+                            gap: 16px;
+                        }
+                        .esg .list ul li {
+                            width: calc(50% - 8px);
+                            /*
+                                100% / 1줄에 나오는 갯수 = 100% / 2 = 50%
+                                1줄 여백의 총합 / 1줄에 나오는 갯수 + 24 + 24 + 24 / 4 = 18...
+                                ㄴ 모바일 수정값... 16 / 2 = 8
+                            */
+                        }
+                        .esg .list ul li a {
+                            align-items: center;
+                            height: 170px;
+                            border-radius: 15px;
+                            font-size: 20px;
+                            padding: 0; /* 0으로 해야 여백이 삭제된다.*/
+                        }
+} /* // @media*/
+
+.esg_fix {
+    margin: 288px 0 0 0;
+}
+.esg_fix .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.esg_fix .tit {
+    width: 23%;
+    /* 
+        297px / 1260 *100
+    */
+    position: sticky;
+    top: 20px;
+}
+.esg_fix .list {
+    width: 49.04%;
+    /* 618 / 1260 * 100 */
+}
+.esg_fix .list ul li a {
+    display: block;
+    height: 443px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.esg_fix .list ul li.list01 a {
+    background-image: url(../images/esg_bg_01.jpg);
+}
+.esg_fix .list ul li.list02 a {
+    background-image: url(../images/esg_bg_02.jpg);
+}
+.esg_fix .list ul li.list03 a {
+    background-image: url(../images/esg_bg_03.jpg);
+}
+.esg_fix .list ul li.list04 a {
+    background-image: url(../images/esg_bg_04.jpg);
+}
+
+
+
 
 
 
