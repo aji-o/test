@@ -152,6 +152,82 @@
                             }
 }
 
+.global {
+    margin: 110px 0 0 0;
+}
+.global .wrapper {
+    display: flex; /* txt와 photo를 좌우로 배치 */
+    justify-content: space-between;
+}
+.global .txt {
+    width: calc(50% - 12px);
+    /* 2개로 나뉘어서 50%... 따라서 여백도 절반(더치페아라 생각하면 편함) */
+    padding: 21px 0;
+    /* ↑ 왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어나게 될 것. */
+}
+.global .txt h2 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 49px 0;
+    position: relative; /* h2::after 정렬의 기준 */
+}
+.global .txt h2::after {
+    content: "";
+    position: absolute; /* h2 기준으로 정렬*/
+    left: 0;
+    bottom: -24px;
+    width: 91px;
+    height: 1px;
+    background-color: #ccc;  
+}
+.global .photo {
+    width: calc(50% - 12px);
+    overflow: hidden;
+    border-radius: 25px;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px) {
+                        .global {
+                            margin: 70px 0 0 0;
+                        }
+                        .global .txt {
+                            width: calc(50% - 8px);
+                            /* 2개로 나뉘어서 50%... 따라서 여백도 절반(더치페아라 생각하면 편함) */
+                            padding: 20px 0;
+                            /* ↑ 왼쪽 글자의 높이에서 padding 만큼 오른쪽 이미지가 늘어나게 될 것. */
+                        }
+                        .global .txt h2 {
+                            font-size: 25px;
+                            margin: 0 0 23px 0;
+                        }
+                        .global .txt h2::after {
+                            bottom: -11px;
+                            width: 40px;
+                        }
+                        /* ↓↓ br 태그로 인한 ↓↓ */
+                        .global .txt h2 br {
+                            display: none; 
+                        }
+                        .global .txt p br {
+                            display: none;
+                        }
+                        /* ↑↑ 줄바꿈 삭제 ↑↑ */
+                        .global .photo {
+                            width: calc(50% - 8px);
+                            overflow: hidden;
+                            border-radius: 15px;
+                        }
+}/* @media*/
+
+
+
+
 
 
 
