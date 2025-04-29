@@ -108,6 +108,7 @@ header .tnb a.icon03::before {
     font-size: 20px;
     font-weight: 800;
     padding: 96px 57px 46px 57px;
+    transition: 0.2s;
 }
 .visual .picture::before {
     content: ""; /*before 필수값*/
@@ -371,6 +372,8 @@ background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox=
     backdrop-filter: blur(5px);
     padding: 40px 40px 0 40px; /* 높이로 제한하고 있기 때문에 하단에 여백은 주지 않는다. */
     position: relative; /* more 정렬의 기준 */
+    transition: 0.2s;
+
 }
 .community .inner .notice:hover {
     background-color: #008578;
@@ -452,6 +455,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox=
     font-weight: 800;
     line-height: 1.2;
     position: relative; /* after의 정렬 기준 */
+    transition: 0.2s;
 }
 .community .inner .link ul li a:hover {
     background-color: #17239E;
