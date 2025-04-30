@@ -158,7 +158,7 @@ header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
 }
 
 .news .list ul li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .news .list ul li a {
