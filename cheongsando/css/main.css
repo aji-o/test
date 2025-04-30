@@ -187,9 +187,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox=
     /* 선생님설명 : 오버효과를 주기 전에 동일 선택자에 transition을 주면 변화되는 값이 부드럽게 적용된다.*/
     /* ㄴ부드럽게 확대해주는 태그. 변경되기 이전에 선언해야함 */
 }
-.culture .list ul li a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1);
-}
+
 .culture .list ul li h3 {
     font-size: 20px;
     font-weight: 800;
@@ -205,7 +203,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox=
     border: 1px solid #17239E;
     border-radius: 25px;
     padding: 3px 44px 5px 25px;
-    transition: 0.2s;
+
 }
 .culture .more::after {
     content: "";
