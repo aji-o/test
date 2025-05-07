@@ -275,6 +275,7 @@ header .tnb .lang {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
 /***************** 오버했을 때 ***********************/
 
 .project .list ul li a:hover .photo::before {
@@ -289,7 +290,9 @@ header .tnb .lang {
     display: inline-block; /* none으로 숨긴걸 다시 꺼낼 때 흔히 block으로 보이게 함. */
 }
 
+@media screen and (max-width:640px) {
 
+}
 
 
 
@@ -302,4 +305,4 @@ header .tnb .lang {
 
 footer {
     margin: 1000px 0 0 0;
-}
+} /* //@media */
