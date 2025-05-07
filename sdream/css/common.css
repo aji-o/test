@@ -1,0 +1,46 @@
+/* 모든 페이지에 공통으로 들어가는 기본 스타일 */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /* 단위는 배수로 한다. */
+    color: #555;
+    word-break: keep-all;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+#wrap {
+    min-width: 1308px;
+    /*
+        1260 + 왼쪽여백(24) + 오른쪽여백(24) = 1308
+    */
+    position: relative; /* header 정렬의 기준 */
+}
+
+@media screen and (max-width:640px) {
+                    body {
+                        font-size: 16px;
+                    }                
+                    .wrapper {
+                        width: auto; /* 25.05.07 넓이는 알아서 좌우여백 20px*/
+                        margin: 0 20px;
+                    }
+                    #wrap {
+                        min-width: 0; /* 25.05.07 최소넓이가 없음 */
+                    }
+}
+    /* 25.05.07 - 브라우저 넓이가 640px 이하에서만 작동 */
+
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
