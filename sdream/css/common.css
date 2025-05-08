@@ -5,7 +5,8 @@ body {
     font-weight: 400;
     line-height: 1.5; /* 단위는 배수로 한다. */
     color: #555;
-    word-break: keep-all;
+    word-break: keep-all; /* 단어별 줄바꿈(스페이스 기준)*/
+    word-wrap: break-word; /* 단어가 너무 긴 경우 강제로 줄바꿈 */
 }
 .wrapper {
     width: 1260px;
