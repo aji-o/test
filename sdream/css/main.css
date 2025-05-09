@@ -310,6 +310,10 @@ header .tnb .lang {
                     .project .tit h2 {
                         margin: 0 0 11px 0;
                     }
+
+                    .project .tit p br {
+                        display: none;
+                    }
                     
                     .project .list {
                         width: auto; /* block 요소이기 때문에 100% 들어감 ~ */
@@ -470,21 +474,21 @@ header .tnb .lang {
 @media screen and (min-width:641px) {
     /* 641px 이상일때만 (641 포함) */
 
-                        .news .list ul li a:hover {
+                        .news .list ul li:hover a {
                             background-color: #014289;
                             box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.25);
                         }
 
-                        .news .list ul li a:hover .subject strong {
+                        .news .list ul li:hover a .subject strong {
                             background-color: #fff;
                             color: #014289;
                         }
                         
-                        .news .list ul li a:hover .subject h3 {
+                        .news .list ul li:hover a .subject h3 {
                             color: #fff;
                         }
                         
-                        .news .list ul li a:hover .date {
+                        .news .list ul li:hover a .date {
                             color: #fff;
                         }
                         
@@ -518,6 +522,10 @@ header .tnb .lang {
 
                         .news .tit h2 {
                             margin: 0 0 11px 0;
+                        }
+
+                        .news .tit p br {
+                            display: none;
                         }
                         
                         .news .list {
@@ -591,12 +599,13 @@ header .tnb .lang {
 .wepzine {
     background-color: #014289;
     color: #fff;
-    padding: 148px 0 126px 0;
+    padding: 148px 0 116px 0;
+    position: relative; /* more 정렬의 기준 */
 }
 
 .wepzine .tit h2 {
     color: #009FE3;
-    margin: 0 0 13px 0;
+    margin: 0 0 17px 0;
 }
 
 .wepzine .tit p {
@@ -604,72 +613,407 @@ header .tnb .lang {
 }
 
 .wepzine .list {
-    margin: 39px 0 0 0;
     width: calc(50% + 630px);
     position: relative;
     left: calc(50% - 630px);
+    overflow: hidden; /* 가로스크롤바 삭제 */
+    padding: 34px 0 10px 0;/* a의 그림자(쉐도우) or hover하고 움직일 시, 삭제되는 것을 방지 */
 }
 
 .wepzine .list ul {
     display: flex;
     gap: 24px;
+    width: 1605px;
+    /*
+        li의 넓이 * li의 갯수 + li의 여백 * li의 갯수
+        (297 * 5) + (24 * 5) = 1485 + 120 = 1605 
+    */
 }
 
 .wepzine .list ul li {
     width: 297px; /* ㅡㅡㅡㅡㅡㅡ 9일에 이 사이즈가 고정이 되는걸 진행할예정 ...다 제한할거래요 ㅡㅡㅡㅡㅡㅡㅡ  */
 }
 
-.wepzine .list a {
+.wepzine .list ul li a {
     display: block;
     background-color: #fff;
     border-radius: 25px;
     color: #555;
-    overflow: hidden;
+    overflow: hidden; /* photo가 삐져나오는 것을 방지 */
+    transition: 0.5s;
 }
-.wepzine .list a .photo {
+.wepzine .list ul li a .photo {
     overflow: hidden;
     height: 198px;
 }
 
-.wepzine .list a .photo img {
+.wepzine .list ul li a .photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s; /* 오버이후 부드럽게 효과 */
 }
 
-@media screen and (max-width:640px) {
+.wepzine .list ul li a .txt {
+    padding: 27px 20px 39px 20px;
+}
+
+.wepzine .list ul li a .txt strong {
+    color: #014289;
+    font-size: 15px;
+    display: block;
+    /* 1줄 제한 - 조건 : 넓이가 제한 되어야함(block 요소여야함)*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wepzine .list ul li a .txt h3 {
+    font-family: 'Gmarket Sans';
+    font-size: 20px;
+    font-weight: 700;
+    /* line-height: 1.2; */
+    letter-spacing: -0.05em;
+    color: #1d1d1d;
+    margin: 15px 0 14px 0;
+
+    /* 처음배워!!! ★ 2줄 제한 - 조건 ...
+    1. block 요소여야함.
+    2. padding 절대 안됨
+    3. 행간 지정... (행간을 알면 안 줘도 됨)
+         높이 : 행간 * 줄수 = 1.2 * 2 = 2.4 (단위는 em) 
+         
+    2줄이상 제한 끝에 ...이 자동으로 생성되지 않음...*/
+
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.wepzine .list ul li a .txt p {
+    margin: 0 0 12px 0;
+
+    /*  ★ 2줄 제한 */
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3줄... */
+    -webkit-box-orient: vertical;
+}
+
+.wepzine .list ul li a .txt .date {
+    display: block;
+    font-size: 15px;
+    text-align: right;
+}
+
+.wepzine .more {
+    position: absolute; /* webzine을 기준으로 정렬 */
+    right: calc(50% - 630px);
+    /*
+        브라우저 사이즈가 바뀌어도 가운데는 변하지 않음
+        그 가운데로부터 wrapper 사이즈1260의 절반을 더 오른쪽으로 이동
+    */
+    top: 250px;
+    color: #fff;
+    padding: 5px 39px 5px 22px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+}
+
+.wepzine .more::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    width: 21px;
+    height: 21px;
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_736' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect width='21' height='21' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_736)'%3E%3Cpath d='M14.5486 11.1559H4.59375C4.40752 11.1559 4.25162 11.093 4.12606 10.9673C4.00035 10.8418 3.9375 10.6859 3.9375 10.4996C3.9375 10.3134 4.00035 10.1575 4.12606 10.032C4.25162 9.90624 4.40752 9.84339 4.59375 9.84339H14.5486L10.0255 5.3203C9.89545 5.19021 9.83121 5.03796 9.83281 4.86355C9.83456 4.68913 9.90325 4.53404 10.0389 4.39827C10.1746 4.27154 10.3284 4.20591 10.5 4.20139C10.6716 4.19687 10.8254 4.26249 10.9611 4.39827L16.5088 9.94598C16.5908 10.0279 16.6486 10.1143 16.6821 10.2052C16.7158 10.2961 16.7326 10.3942 16.7326 10.4996C16.7326 10.6051 16.7158 10.7032 16.6821 10.7941C16.6486 10.8849 16.5908 10.9713 16.5088 11.0533L10.9611 16.601C10.8399 16.7222 10.6899 16.7842 10.5109 16.787C10.332 16.7897 10.1746 16.7277 10.0389 16.601C9.90325 16.4652 9.83544 16.3093 9.83544 16.1333C9.83544 15.9572 9.90325 15.8012 10.0389 15.6654L14.5486 11.1559Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+@media screen and (min-width:641px) { /* pc형 */
+
+                    .wepzine .list ul li a:hover .photo img {
+                        transform: scale3d(1.2, 1.2, 1);
+                    }
+
+                    .wepzine .list ul li a:hover {
+                        transform: translate(0, -10px);
+                        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.45);
+                    }
+
+                    .wepzine .more:hover {
+                        background-color: #fff;
+                        color: #014289;
+                    }
+                    
+                    .wepzine .more:hover::after {
+                        background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_928' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect width='21' height='21' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_928)'%3E%3Cpath d='M14.5486 11.1559H4.59375C4.40752 11.1559 4.25162 11.093 4.12606 10.9673C4.00035 10.8418 3.9375 10.6859 3.9375 10.4996C3.9375 10.3134 4.00035 10.1575 4.12606 10.032C4.25162 9.90624 4.40752 9.84339 4.59375 9.84339H14.5486L10.0255 5.3203C9.89545 5.19021 9.83121 5.03796 9.83281 4.86355C9.83456 4.68913 9.90325 4.53404 10.0389 4.39827C10.1746 4.27154 10.3284 4.20591 10.5 4.20139C10.6716 4.19687 10.8254 4.26249 10.9611 4.39827L16.5088 9.94598C16.5908 10.0279 16.6486 10.1143 16.6821 10.2052C16.7158 10.2961 16.7326 10.3942 16.7326 10.4996C16.7326 10.6051 16.7158 10.7032 16.6821 10.7941C16.6486 10.8849 16.5908 10.9713 16.5088 11.0533L10.9611 16.601C10.8399 16.7222 10.6899 16.7842 10.5109 16.787C10.332 16.7897 10.1746 16.7277 10.0389 16.601C9.90325 16.4652 9.83544 16.3093 9.83544 16.1333C9.83544 15.9572 9.90325 15.8012 10.0389 15.6654L14.5486 11.1559Z' fill='%23014289'/%3E%3C/g%3E%3C/svg%3E%0A");
+                    }
+
+} /* //@media */
+
+@media screen and (max-width:640px) { /* 모바일 */
+    /*****************  오버효과  **********************/
                     .wepzine {
                         padding: 79px 0 72px 0;
                     }
                     
+                    .wepzine .tit {
+                        margin-right: 67px;
+                    }
+
                     .wepzine .tit h2 {
-                        margin: 0 0 11px 0;
+                        margin: 0 0 15px 0;
                     }
                     
                     .wepzine .tit p {
                         color: #fff;
                     }
-                    
+
+                    .wepzine .tit p br {
+                        display: none;
+                    }
+
                     .wepzine .list {
-                        width: calc(100% - 20px);
-                        left: 20px;
+                        width: 100%; /* position 속성이 있는 요소에는 넓이 auto 주면 100% 안됨... */
+                        left: 0;
+                        overflow-x: auto; /* overflow-x 좌우 auto
+                                             list 안에 있는 요소가 list보다 넓이가 더 크면
+                                             그때만 가로스크롤바가 생김 */
+                        padding: 32px 0 10px 20px;
+                        /* 모바일에선 그림자가 없어서 아래의 패딩을 삭제해도 됨 */
                     }
                     
+                    .wepzine .list ul {
+                        gap: 16px;
+                        width: 1330px;
+                        /*
+                            li의 넓이 * li의 갯수 + li의 여백 * li의 갯수
+                            (250 * 5) + (16 * 5) = 1250 + 80 = 1330 
+                        */
+                    }
+                    
+                    .wepzine .list ul li {
+                        width: 250px; /* ㅡㅡㅡㅡㅡㅡ 9일에 이 사이즈가 고정이 되는걸 진행할예정 ...다 제한할거래요 ㅡㅡㅡㅡㅡㅡㅡ  */
+                    }
+                    
+                    .wepzine .list ul li a {
+                        border-radius: 15px;
+                    }
+                    .wepzine .list ul li a .photo {
+                        height: 198px; /* 안바뀌엇는디... ... ... 바뀌어야한다네 큰일 ㅋㅋ*/
+                    }
+
+                    .wepzine .list ul li a .txt {
+                        padding: 27px 16px 43px 16px;
+                    }
+                    
+                    .wepzine .list ul li a .txt strong {
+                        font-size: 14px;
+                    }
+                    
+                    .wepzine .list ul li a .txt h3 {
+                        font-size: 18px;
+                        margin: 10px 0 12px 0;
+                    }
+                    
+                    .wepzine .list ul li a .txt p {
+                        margin: 0 0 23px 0;
+                    }
+                    
+                    .wepzine .list ul li a .txt .date {
+                        display: block;
+                        font-size: 15px;
+                    }
+
+                    .wepzine .more {
+                        right: 20px;
+                        top: 106px;
+                        padding: 0;
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 50%; /* 동그라미 */
+                    }
+
+                    .wepzine .more::after {
+                        right: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: 16px /* 아이콘 크기가 바뀌었다면 복잡하게 하지 말고
+                                                 background-size 로 조정해주자 !!  */
+                    }
+
+                    .wepzine .more span {
+                        display: none;
+                    }
 } /* //@media */
 
+.service {
+    margin: 170px 0 150px 0;
+}
 
+.service .tit h2 {
+    color: #014289;
+    margin: 0 0 17px 0;
+}
 
+.service .list {
+    margin: 61px 0 0 0;
+}
 
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
 
+.service .list ul li {
+    width: calc( 33.33% - 16px);
+    /*
+    
+     100% / 한 줄에 나올 li의 갯수                      100% / 3 = 33.33%
+     한 줄에 나올 li의 총합 / 한 줄에 나올 li의 갯수     (24+24) / 3 = 16
+    */
+}
 
+.service .list ul li a {
+    display: block;
+    background-color: #E1E4F5;
+    padding: 40px 0 34px 31px; /* block 상태라 오른쪽은 padding을 줄 필요가 없다!  */
+    font-family: 'Gmarket Sans';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #1d1d1d;
+    position: relative; /* after 정렬의 기준*/
+    transition: box-shadow 0.5s, transform 0.5s; /* 천천히 움직이게 해줌 */
+}
+.service .list ul li a::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #014289;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_671' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect x='0.5' y='0.5' width='20' height='20' fill='%23D9D9D9' stroke='%23014289'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_671)'%3E%3Cpath d='M10.5127 4.70117C10.5215 4.70094 10.5328 4.7007 10.5479 4.70703L10.6074 4.75195L16.1553 10.2998C16.1755 10.32 16.1894 10.3364 16.1982 10.3496L16.2129 10.3779V10.3789C16.2242 10.4094 16.2324 10.4487 16.2324 10.5C16.2324 10.5253 16.2309 10.5477 16.2275 10.5674L16.2129 10.6201V10.6211C16.2108 10.6267 16.207 10.6363 16.1982 10.6494L16.1553 10.7002L10.6074 16.2471C10.5825 16.272 10.5583 16.2863 10.5029 16.2871L10.4424 16.2773C10.4241 16.2702 10.4064 16.2578 10.3857 16.2393C10.3416 16.1926 10.335 16.163 10.335 16.1338C10.335 16.1183 10.337 16.1022 10.3447 16.084L10.3926 16.0186L14.9023 11.5098L15.7559 10.6562H4.59375C4.56367 10.6562 4.54189 10.6525 4.52441 10.6455L4.47949 10.6143V10.6133L4.44824 10.5693C4.44115 10.5519 4.43753 10.5301 4.4375 10.5C4.4375 10.4695 4.44106 10.4473 4.44824 10.4297L4.47949 10.3857C4.50636 10.3588 4.53312 10.3438 4.59375 10.3438H15.7559L10.3789 4.9668C10.3585 4.94635 10.3473 4.92953 10.3408 4.91406L10.333 4.86816C10.3333 4.83917 10.3388 4.80637 10.3877 4.75586C10.4114 4.73486 10.4328 4.72211 10.4521 4.71387L10.5127 4.70117Z' fill='white' stroke='%23014289'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 21px;
+}
 
+@media screen and (min-width:641px) { /* pc형 */
+                        .service .list ul li:hover a {
+                            background-color: #014289;
+                            color: #fff;
+                            transform: translate(0, -10px);
+                            box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
+                        }
+                        .service .list ul li:hover a::after { /* transition의 영향으로 발발발 떠는 것을 방지하기 위해 li에 hover를 줬다  */
+                            border: 1px solid #fff;
+                            background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_736' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect width='21' height='21' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_736)'%3E%3Cpath d='M14.5486 11.1559H4.59375C4.40752 11.1559 4.25162 11.093 4.12606 10.9673C4.00035 10.8418 3.9375 10.6859 3.9375 10.4996C3.9375 10.3134 4.00035 10.1575 4.12606 10.032C4.25162 9.90624 4.40752 9.84339 4.59375 9.84339H14.5486L10.0255 5.3203C9.89545 5.19021 9.83121 5.03796 9.83281 4.86355C9.83456 4.68913 9.90325 4.53404 10.0389 4.39827C10.1746 4.27154 10.3284 4.20591 10.5 4.20139C10.6716 4.19687 10.8254 4.26249 10.9611 4.39827L16.5088 9.94598C16.5908 10.0279 16.6486 10.1143 16.6821 10.2052C16.7158 10.2961 16.7326 10.3942 16.7326 10.4996C16.7326 10.6051 16.7158 10.7032 16.6821 10.7941C16.6486 10.8849 16.5908 10.9713 16.5088 11.0533L10.9611 16.601C10.8399 16.7222 10.6899 16.7842 10.5109 16.787C10.332 16.7897 10.1746 16.7277 10.0389 16.601C9.90325 16.4652 9.83544 16.3093 9.83544 16.1333C9.83544 15.9572 9.90325 15.8012 10.0389 15.6654L14.5486 11.1559Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");    background-position: center center;
 
+                        }
+}
 
+@media screen and (max-width:640px) { /* 모바일 */
+                        .service {
+                            margin: 79px 0 72px 0;
+                        }
+                        
+                        .service .tit h2 {
+                            margin: 0 0 14px 0;
+                        }
 
-
-
-
+                        .service .tit p br {
+                            display: none;
+                        }
+                        
+                        .service .list {
+                            margin: 30px 0 0 0;
+                        }
+                        
+                        .service .list ul li {
+                            width: calc( 33.33% - 10.66px);
+                            /*
+                            
+                            100% / 한 줄에 나올 li의 갯수 = 100% / 3 = 33.33%
+                            한 줄에 나올 li의 총합 / 한 줄에 나올 li의 갯수 = (16+16) / 3 = 32 / 3 = 10.66
+                            */
+                        }
+                        
+                        .service .list ul li a {
+                            padding: 24px 10px 81px 10px; /* block 상태라 오른쪽은 padding을 줄 필요가 없다!  */
+                            font-family: 'Gmarket Sans';
+                            font-size: 18px;
+                            text-align: center;
+                            height: 100%;
+                        }
+                        .service .list ul li a::after {
+                            right: 50%;
+                            transform: translateX(50%); /* 나 자신의 크기에서 절반... */
+                            top: auto;
+                            bottom: 25px;
+                            width: 38px;
+                            height: 38px;
+                            background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_29_671' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='21' height='21'%3E%3Crect x='0.5' y='0.5' width='20' height='20' fill='%23D9D9D9' stroke='%23014289'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_29_671)'%3E%3Cpath d='M10.5127 4.70117C10.5215 4.70094 10.5328 4.7007 10.5479 4.70703L10.6074 4.75195L16.1553 10.2998C16.1755 10.32 16.1894 10.3364 16.1982 10.3496L16.2129 10.3779V10.3789C16.2242 10.4094 16.2324 10.4487 16.2324 10.5C16.2324 10.5253 16.2309 10.5477 16.2275 10.5674L16.2129 10.6201V10.6211C16.2108 10.6267 16.207 10.6363 16.1982 10.6494L16.1553 10.7002L10.6074 16.2471C10.5825 16.272 10.5583 16.2863 10.5029 16.2871L10.4424 16.2773C10.4241 16.2702 10.4064 16.2578 10.3857 16.2393C10.3416 16.1926 10.335 16.163 10.335 16.1338C10.335 16.1183 10.337 16.1022 10.3447 16.084L10.3926 16.0186L14.9023 11.5098L15.7559 10.6562H4.59375C4.56367 10.6562 4.54189 10.6525 4.52441 10.6455L4.47949 10.6143V10.6133L4.44824 10.5693C4.44115 10.5519 4.43753 10.5301 4.4375 10.5C4.4375 10.4695 4.44106 10.4473 4.44824 10.4297L4.47949 10.3857C4.50636 10.3588 4.53312 10.3438 4.59375 10.3438H15.7559L10.3789 4.9668C10.3585 4.94635 10.3473 4.92953 10.3408 4.91406L10.333 4.86816C10.3333 4.83917 10.3388 4.80637 10.3877 4.75586C10.4114 4.73486 10.4328 4.72211 10.4521 4.71387L10.5127 4.70117Z' fill='white' stroke='%23014289'/%3E%3C/g%3E%3C/svg%3E%0A");
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            background-size: 21px;
+                        }                            
+} /* //@media */
 
 footer {
-    margin: 1000px 0 0 0;
-} /* //@media */
+    padding: 64px 0 91px 0;
+    color: #A7AFBE;
+    background-color: #333A46;
+}
+
+footer .f_nav ul{
+    display: flex;
+    flex-wrap: wrap; /* ★ 줄바꿈 허용 */
+    gap: 6px 36px; /* 모바일 버전을 생각해서 모바일 기준으로 gap을 준다 */
+}
+
+footer .f_nav ul li {
+    position: relative; /* before/after 정렬의 기준 */
+}
+
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /*  li 기준으로 정렬 */
+    right: -19px;
+    top: 11px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #A7AFBE;
+}
+
+footer .f_nav ul li:last-child::after {
+    display: none; /* 마지막 li의 after를 안보이게 처리 */
+}
+
+footer .f_info {
+    margin: 31px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 36px; /* 모바일 버전을 생각해서 모바일 기준으로 gap을 준다 */
+}
+
+@media screen and (max-width:640px) { /* 모바일 */
+                    footer {
+                        padding: 28px 0 46px 0;
+                    }
+}
