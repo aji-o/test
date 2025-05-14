@@ -141,7 +141,7 @@ header .tnb .search {
 
 
 .book {
-    margin: 151px 0 0 0;
+    margin: 151px 0 175px 0;
 }
 
 .book .book_wrap {
@@ -350,15 +350,12 @@ header .tnb .search {
                     }
                     
                     .book .book_wrap .more::after {
-                        content: "";
                         position: absolute;
                         right: 0px;
                         top: 0px;
                         width: 100%;
                         height: 100%;
                         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_27_26' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_27_26)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='%23573D31'/%3E%3C/g%3E%3C/svg%3E%0A");
-                        background-position: center center;
-                        background-repeat: no-repeat;
                         background-size: 18px;
                     }
 
@@ -367,6 +364,192 @@ header .tnb .search {
                     }
 
 }/* @media 모바일 */
+
+
+.interview {
+    padding: 190px 0 145px 0;
+    background-color: #EDE6DE;
+}
+
+.interview .tit {
+    text-align: center;
+}
+
+.interview .tit h2 {
+    color: #1d1d1d;
+    font-size: 45px;
+    margin: 0 0 10px 0;
+}
+
+.interview .list {
+    margin: 72px 0 0 0;
+}
+
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.interview .list ul li {
+    width: calc(33.33% - 52px);
+    /*
+    100 ÷ 한 줄에 나오는 li의 갯수 = 33.33 %
+    한 줄의 여백의 합 ÷ li의 갯수 = (78+78) ÷ 3 = 52
+    */
+}
+
+.interview .list ul li:nth-child(2) { /* 디자인의 2번째 디자인이 달라진다. */
+    margin: 40px 0 0 0;
+}
+
+.interview .list ul li a {
+    display: block;
+    position: relative; /* txt, txt_over 정렬의 기준 */
+}
+
+.interview .list ul li a .photo {
+    position: relative; /* before 정렬의 기준 */
+    overflow: hidden;
+    height: 477px;
+    border-radius: 50px 0 50px 0;
+}
+
+.interview .list ul li:nth-child(2) a .photo { /* 디자인의 2번째 디자인이 달라진다. */
+    border-radius: 0 50px 0 50px;
+}
+
+.interview .list ul li a .photo::before {
+    z-index: 10;
+    /* 이미지보다 순서를 위로 
+        z-index 가 없는 것보다 있는 쪽이 우선되어 위로 올라감
+        z-index 가 서로있으면 높은 숫자가 위로 올라감
+    ★  z-index 값은 position 값이 필요! */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+.interview .list ul li a .photo img {
+    filter: grayscale(1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.interview .list ul li a .txt {
+    z-index: 11;
+    /* z-index 는 숫자가 높은게 위. */
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 35px;
+    bottom: 35px;
+    width: calc(100% - 70px);
+    transition: 0.2s;
+}
+
+.interview .list ul li a .txt::after {
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 0;
+    top: -8px;
+    width: 80px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_27_119' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_27_119)'%3E%3Cpath d='M38.8333 41.1667H21V38.8333H38.8333V21H41.1667V38.8333H59V41.1667H41.1667V59H38.8333V41.1667Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.interview .list ul li a .txt strong {
+    color: #fff;
+    font-size: 25px;
+}
+
+.interview .list ul li a .txt_over {
+    z-index: 12;
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: -80px;
+    width: calc(100% - 28px);
+    padding: 40px 35px 29px 35px;
+    background-color:#573D31;
+    color: #fff;
+    border-radius: 50px 0 50px 0;
+
+    opacity: 0; /* 부드럽게 나타났다 사라지는건 display:none으로 구현되지 않음.
+                    opacity 0 -> 1로 변경
+                    opacity 는 사라지는게 아니라서 공간을 차지하니 주의!!  */
+    transition: 0.5s;
+}
+
+.interview .list ul li:nth-child(2) a .txt_over {
+    border-radius: 0 50px 0 50px;
+}
+
+.interview .list ul li a .txt_over h3 {
+    font-size: 25px;
+}
+
+.interview .list ul li a .txt_over p {
+    margin: 20px 0 17px 0;
+    /* 3줄 제한 -- 주의사항 : padding 절대안됨 */
+    line-height: 1.2;
+    height: 3.6em;
+    overflow: hidden;
+    /* 끝에 ... 붙이기 - but 웹접근성이 살짝 떨어짐 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* 2줄이면 2, 3줄이면 3...  */
+    word-break: normal;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.interview .list ul li a .txt_over span {
+    display: inline-block;
+    padding: 0 27px 0 0;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative; /* after 정렬의 기준*/
+}
+
+.interview .list ul li a .txt_over span::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: -2px;
+    width: 25px;
+    height: 25px;
+    background-image: url("data:image/svg+xml, %3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_3_1453' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='25' height='25'%3E%3Crect width='25' height='25' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_3_1453)'%3E%3Cpath d='M12.1354 12.8646H6.5625V12.1354H12.1354V6.5625H12.8646V12.1354H18.4375V12.8646H12.8646V18.4375H12.1354V12.8646Z' fill='white' fill-opacity='0.8'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+@media screen and (min-width:641px) { /* pc 반응형 -오버효과-  */
+
+                .interview .list ul li a:hover .photo img {
+                    filter: grayscale(0);
+                }
+                .interview .list ul li a:hover .txt {
+                    opacity: 0;
+                }
+                .interview .list ul li a:hover .txt_over {
+                    opacity: 1;
+                    bottom: -57px;
+                }
+
+}/* @media pc */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
