@@ -800,15 +800,211 @@ header .tnb .search {
 
 }/* @media pc */
 
-
 @media screen and (max-width:640px) { /* 모바일 */
+                    .story {
+                        margin: 70px 0 50px 0;
+                    }
 
+                    .story .tit h2 {
+                        font-size: 20px;
+                    }
+                    
+                    .story .list {
+                        margin: 17px 0 0 0;
+                    }
+                    
+                    .story .list ul {
+                        display: block; /* flex -> block 변경*/
+                    }
+                    
+                    .story .list ul li {
+                        width: auto;
+                        /*
+                        100% ÷ 한 줄에 보이는 li 갯수 = 100% ÷ 4 = 25
+                        한 줄의 여백의 총합 ÷ 한 줄에 보이는 li의 갯수 = (24x3) ÷ 4 = 18
+                        */
+                        border: 0; /* 4곳에 들어가는 border 삭제 */
+                        border-bottom: 1px solid #D4D4D4;
+                        border-radius: 0;
+                        padding: 17px 0; /* li의 선을 바깥으로 조정하려면 padding으로 줘야함... */
+                    }
 
-}/* @media 모바일 */
+                    .story .list ul li:first-child {
+                        border-top: 1px solid #D4D4D4;
+                    }
+                    
+                    .story .list ul li a {
+                        display: flex; /* photo, txt 좌우배치 */
+                        flex-direction: row-reverse; /* 위치 좌우반전 */
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    
+                    .story .list ul li a .photo { /*짧은거*/
+                        width: 47.5%;
+                        /* width: calc(100% - 168px); /*  포토 길이 고정.. 취향은x **************  */
+                        /*
+                            (텍스트너비 ÷ 모바일너비) x 100
+                            (152 ÷ 320) x 100 = 47.5
+                        */
+                        height: 89px;
+                        border-radius: 0;
+                    }
+                    
+                    .story .list ul li.long a .photo { /*긴거*/
+                        height: 89px;
+                    }
 
+                    .story .list ul li a .txt {
+                        width: 47.5%; /* 추가 */
+                        /* width: calc(100% - 168px);  포토 길이 고정 **************  */
+                        padding: 0;
+                    }
+                    
+                    .story .list ul li .txt strong {
+                        /* 1줄제한 -> 여러줄 허용으로 변경 */
+                        white-space: normal; /* nowrap -> normal */
+                        overflow: visible; /* hidden -> visible */
+                    }
+                    
+                    .story .list ul li .txt h3 {
+                        padding: 10px 0 0 0;
+                        font-size: 16px;
+                        
+                        /* 1줄제한 -> 여러줄 허용으로 변경 */
+                        white-space: normal; /* nowrap -> normal */
+                        overflow: visible; /* hidden -> visible */
+                    }
+                    
+                    .story .list ul li .txt p {
+                        display: none;
+                    }
 
+                    .story .more {
+                        right: 0;
+                        top: 0;
+                        width: 26px;
+                        height: 26px;
+                        border: 1px solid #EBDD96;
+                        background-color: #EBDD96;
+                        border-radius: 50%;
+                        padding: 4px 4px 4px 4px;
+                    }
+                        
+                        .story .more::after {
+                        position: absolute;
+                        right: 0px;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_27_26' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_27_26)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='%23573D31'/%3E%3C/g%3E%3C/svg%3E%0A");
+                        background-size: 18px;
+                    }
+
+                    .story .more span {
+                        display: none;
+                    }
+    } /* @media 모바일 */
 
 
 footer {
-    margin: 600px 0 0 0;
+    padding: 100px 0 166px 0;
+    background-color: #302323;
+    color: #EBDD96;
 }
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* copyright 정렬의 기준 */
+}
+footer .slogan {
+    font-size: 25px;
+}
+
+footer .f_info {
+    width: 511px;
+}
+
+footer .f_info h3 {
+    font-size: 25px;
+    margin: 0 0 10px 0;
+}
+
+footer .f_info address,
+footer .f_info ul.tell {
+    margin: 0 0 65px 0;
+}
+
+footer .f_info ul.tell li strong {
+    font-weight: 700;
+}
+
+footer .f_info ul.sns {
+    gap: 22px;
+}
+
+footer .copyright {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+  }
+
+  footer .copyright .f_logo {
+    margin: 0 0 16px 0;
+  }
+
+  footer .copyright .f_logo img {
+    width: 190px;
+  }
+
+  @media screen and (max-width:640px) { /* 모바일 */
+
+                    footer {
+                        padding: 70px 0 45px 0;
+                    }
+                    
+                    footer .wrapper {
+                        display: block; /* flex -> block 번경 */
+                    }
+                    footer .slogan {
+                        font-size: 18px;
+                    }
+                    
+                    footer .f_info {
+                        width: auto; /* auto로 해제 */
+                        margin: 70px 0 0 0;
+                    }
+                    
+                    footer .f_info h3 {
+                        font-size: 18px;
+                        margin: 0 0 13px 0;
+                    }
+                    
+                    footer .f_info address,
+                    footer .f_info ul.tell {
+                        margin: 0 0 35px 0;
+                    }
+                    
+                    footer .f_info ul.tell li strong {
+                        font-weight: 700;
+                    }
+           
+                    footer .copyright {
+                        position: relative;
+                        /* [absolute 해제] absolute -> relative */
+                        
+                        /* auto로 해제 */
+                        left: auto;
+                        bottom: auto;
+                    }
+                    
+                    footer .copyright .f_logo {
+                        margin: 70px 0 13px 0;
+                    }
+                    
+                    footer .copyright .f_logo img {
+                        width: 152px;
+                    }
+
+} /* @media 모바일 */
