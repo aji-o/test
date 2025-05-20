@@ -350,6 +350,15 @@ header.fixed .util .search .search_open {
     height: 100vh;
     background: url(../images/visual_bg2.jpg) center center / cover;
     color: #fff;
+    position: relative;
+}
+
+.visual span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 
