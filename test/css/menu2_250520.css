@@ -347,7 +347,7 @@ header.fixed .util .search .search_open {
 
 
 .visual {
-    height: 100vh;
+    height: 100dvh;
     background: url(../images/visual_bg2.jpg) center center / cover;
     color: #fff;
     position: relative;
