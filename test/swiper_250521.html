@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- swiper 라이브러리 -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/swiper_250521.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper_250521.js"></script>
+    <title>swiper 플러그인 팝업</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind"></h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide popup1"> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <div class="wrapper">
+                                <h3>Where does it come from?</h3>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup2"> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <div class="wrapper">
+                                <h3>Why do we use it?</h3>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide popup3"> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <div class="wrapper">
+                                <h3>What is Lorem Ipsum?</h3>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn_prev"><span class="blind">이전 팝업보기</span></button>
+                    <button class="btn_next"><span class="blind">다음 팝업보기</span></button>
+                </div>
+            </section>
+            <section class="biz">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>Where does it come from?</h2>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_01.jpg" alt="Lorem"></div>
+                                        <h3>Lorem Ipsum</h3>
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_02.jpg" alt="Sed"></div>
+                                        <h3>Sed sit amet dictum</h3>
+                                        <p>Aenean ut elit vitae dui feugiat aliquam sit amet eu quam</p>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_03.jpg" alt="consectetur"></div>
+                                        <h3>consectetur adipiscing</h3>
+                                        <p>pharetra semper eros feugiat Quisque viverra ipsum et lobortis egestas</p>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_04.jpg" alt="Ut"></div>
+                                        <h3>Ut non ligula tristique</h3>
+                                        <p>Vivamus nec imperdiet est, id egestas felis Nunc vel porta mauris</p>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_05.jpg" alt="In"></div>
+                                        <h3>In pulvinar ligula</h3>
+                                        <p>sapien et luctus finibus, ligula diam maximus libero, at venenatis magna</p>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="photo"><img src="images/biz_06.jpg" alt="Nunc"></div>
+                                        <h3>Nunc porta sollicitudin</h3>
+                                        <p>Vestibulum non augue non diam pulvinar faucibus vitae nec quam</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="notice">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>Where does it come from?</h2>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="">
+                                    <div class="photo"><img src="images/notice_01.jpg" alt="notice1"></div>
+                                    <div class="txt">
+                                        <h3>Lorem Ipsum</h3>
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet  Nullam augue tortor, aliquet in risus sed, tempus consectetur eros. Vivamus dolor odio, aliquam ut nisi vel,</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="">
+                                    <div class="photo"><img src="images/notice_02.jpg" alt="notice2"></div>
+                                    <div class="txt">
+                                        <h3>Sed eu commodo arcu</h3>
+                                        <p>Pellentesque rhoncus cursus varius. Ut hendrerit dolor vitae dui lacinia mollis. Maecenas libero nisl, convallis ac molestie tincidunt, euismod vel dui Nulla facilisi. Morbi a dolor erat. Vivamus suscipit </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="">
+                                    <div class="photo"><img src="images/notice_03.jpg" alt="notice3"></div>
+                                    <div class="txt">
+                                        <h3>Nullam augue tortor</h3>
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet Nullam augue tortor, aliquet in risus sed, tempus consectetur eros. Vivamus dolor odio, aliquam ut nisi vel,</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="">
+                                    <div class="photo"><img src="images/notice_04.jpg" alt="notice4"></div>
+                                    <div class="txt">
+                                        <h3>Aenean pharetra</h3>
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet Nullam augue tortor, aliquet in risus sed, tempus consectetur eros. Vivamus dolor odio, aliquam ut nisi vel,</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="">
+                                    <div class="photo"><img src="images/notice_05.jpg" alt="notice5"></div>
+                                    <div class="txt">
+                                        <h3>Aenean ut elit vitae</h3>
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet Nullam augue tortor, aliquet in risus sed, tempus consectetur eros. Vivamus dolor odio, aliquam ut nisi vel,</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

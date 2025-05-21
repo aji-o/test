@@ -1,0 +1,308 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+
+.visual .swiper-slide {
+    height: 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.visual .swiper-slide.popup1 {
+    background-image: url(../images/popup_01.jpg);
+}
+
+.visual .swiper-slide.popup2 {
+    background-image: url(../images/popup_02.jpg);
+}
+
+.visual .swiper-slide.popup3 {
+    background-image: url(../images/popup_03.jpg);
+}
+
+.visual h3 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 393px 0 15px 0;
+}
+
+.visual .paging {
+    z-index: 10;
+    position: absolute; /* swiper 기준으로 정렬 */
+    left: 0;
+    bottom: 46px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* span 좌우배치 + 가운데정렬 */
+    gap: 10px;
+}
+
+.visual .paging .swiper-pagination-bullet { /* 동그라미 기본스타일 */
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0;
+    background: none;
+    opacity: 1;
+}
+
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+.visual .btn_prev {
+    z-index: 10;
+    position: absolute; /* swiper 기준으로 정렬 */
+    left: 12px;
+    top: 449px;
+    width: 66px;
+    height: 66px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_86_18' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_86_18)'%3E%3Cpath d='M20.8332 45.1119L0.721191 24.9999L20.8332 4.88794L23.7899 7.84471L6.63421 24.9999L23.7899 42.1551L20.8332 45.1119Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.visual .btn_next {
+    z-index: 10;
+    position: absolute; /* swiper 기준으로 정렬 */
+    right: 12px;
+    top: 449px;
+    width: 66px;
+    height: 66px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_86_18' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_86_18)'%3E%3Cpath d='M20.8332 45.1119L0.721191 24.9999L20.8332 4.88794L23.7899 7.84471L6.63421 24.9999L23.7899 42.1551L20.8332 45.1119Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1440px){
+    .visual .btn_prev {
+        display: none;
+    }
+
+    .visual .btn_next {
+        display: none;
+    } /* @media - 1440 */
+}
+
+@media screen and (max-width: 768px){ /* 모바일 */
+            
+        .visual .swiper-slide {
+            height: 650px;
+        }
+
+        .visual h3 {
+            font-size: 25px;
+            padding: 275px 0 24px 0;
+        }
+
+        .visual .paging {
+            bottom: 40px;
+        }
+
+} /* @media - 768 모바일 */
+
+
+.biz {
+    margin: 175px 0 0 0;
+}
+
+.biz h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+
+.biz .list {
+    margin: 40px 0 0 0;
+}
+
+.biz .list ul li a {
+    display: block;
+}
+
+.biz .list ul li a .photo {
+    overflow: hidden;
+    height: 260px;
+}
+
+.biz .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biz .list ul li a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 16px 0 5px 0;
+    color: #1d1d1d;
+}
+
+@media screen and (max-width: 768px){ /* 모바일 */
+ 
+    .biz {
+        margin: 50px 0 0 0;
+    }
+    
+    .biz h2 {
+        font-size: 20px;
+    }
+    
+    .biz .list {
+        margin: 19px 0 0 0;
+    }
+    
+    .biz .list ul li a {
+        display: block;
+    }
+/*
+    .biz .list ul li a .photo {
+        overflow: hidden;
+        height: 260px;
+    }
+    
+    .biz .list ul li a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    */
+    .biz .list ul li a h3 {
+        font-size: 18px;
+        margin: 12px 0 4px 0;
+
+    }
+
+}
+
+.notice {
+    background-color: #1A1D60;
+    color: #fff;
+    padding: 175px 0 179px 0;
+    margin: 175px 0 0 0;
+}
+
+.notice .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.notice .list {
+    margin: 47px 0 0 0;
+    width: calc(50% + 630px);
+    /* wrapper 사이즈 1260px 의 절반 630px 더함 */
+    position: relative;
+    left: calc(50% - 630px);
+}
+
+.notice .list ul li {
+    width: 404px;
+}
+
+.notice .list ul li a {
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #555;
+}
+
+.notice .list ul li a .photo {
+    overflow: hidden;
+    height: 340px;
+    border-radius: 20px 20px 0 0;
+}
+
+.notice .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notice .list ul li a .txt {
+    padding: 30px 30px;
+}
+
+.notice .list ul li a .txt h3 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 15px 0;
+}
+
+
+@media screen and (max-width: 1300px){
+        .notice .list {
+            width: calc(100% + 20px);
+            left: 20px
+        }
+}
+
+
+@media screen and (max-width: 768px){
+
+        .notice {
+            padding: 50px 0 55px 0;
+            margin: 50px 0 0 0;
+        }
+        
+        .notice .tit h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+        
+        .notice .list {
+            margin: 14px 0 0 20px;
+            width: auto;
+            /* wrapper 사이즈 1260px 의 절반 630px 더함 */
+            position: relative;
+            left: 0;
+        }
+        
+        .notice .list ul li {
+            width: 224px;
+        }
+        
+        .notice .list ul li a {
+            display: block;
+            background-color: #fff;
+            border-radius: 20px;
+            color: #555;
+        }
+        
+        .notice .list ul li a .photo {
+            overflow: hidden;
+            height: 189px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .notice .list ul li a .txt {
+            padding: 17px 17px;
+        }
+        
+        .notice .list ul li a .txt h3 {
+            font-size: 18px;
+            margin: 0 0 9px 0;
+        }
+        
+
+}
+
+
+
+
+
+footer {
+    margin: 1500px 0 0 0;
+}

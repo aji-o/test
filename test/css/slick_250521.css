@@ -1,0 +1,132 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual .popup .popup_wrap .popup_item {
+    height: 900px;
+    color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.visual .popup .popup_wrap .popup_item.bg1 {
+    background-image: url(../images/popup_01.jpg);
+}
+
+.visual .popup .popup_wrap .popup_item.bg2 {
+    background-image: url(../images/popup_02.jpg);
+}
+
+.visual .popup .popup_wrap .popup_item.bg3 {
+    background-image: url(../images/popup_03.jpg);
+}
+
+.visual .popup .popup_wrap .popup_item h3 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 393px 0 15px 0;
+}
+
+.visual .slick-prev,
+.visual .slick-next {
+    z-index: 10;
+    position: absolute; /* popup_wrap 기준으로 정렬 */
+    left: 20px;
+    top: 449px;
+    width: 60px;
+    height: 60px;
+    color: transparent; /* 글자를 안보이게 투명화시킴    */
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_99_136' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_99_136)'%3E%3Cpath d='M20.8332 45.1119L0.721191 24.9999L20.8332 4.88794L23.7899 7.84471L6.63421 24.9999L23.7899 42.1551L20.8332 45.1119Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.visual .slick-next {
+    left: auto;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.visual ul.slick-dots {
+    position: absolute; /* popup_wrap 기준으로 정렬 */
+    left: 0;
+    bottom: 46px;
+    width: 100%;
+    display: flex; /* li를 좌우로 배치 */
+    justify-content: center;
+    gap: 10px;
+}
+
+.visual ul.slick-dots li button {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: transparent; /* 123 숫자를 투명하게 만듦 */
+}
+
+.visual ul.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+
+.visual .btn_wrap .ctrl_stop {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: red;
+}
+
+.visual .btn_wrap .ctrl_play {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: green;
+}
+
+@media screen and (max-width: 1440px){
+
+.visual .slick-prev,
+.visual .slick-next {
+    display: none !important; 
+    /*    important - css 적용 우선순위 상관없이 무조건 먼저 실행하도록 하는 명령 
+            ㄴ but !!! 하나의 요소에
+            pc버전에서 important,
+            모바일버전에 important 식으로 남발하면 스타일이 꼬임*/
+    }
+}
+
+
+@media screen and (max-width: 768px){ /*#### 모바일 ####*/
+
+        .visual .popup .popup_wrap .popup_item {
+            height: 650px;
+        }
+        
+        .visual .popup .popup_wrap .popup_item h3 {
+            font-size: 25px;
+            padding: 275px 0 18px 0;
+        }
+        
+        .visual ul.slick-dots {
+            bottom: 40px;
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin: 1500px 0 0 0;
+}
