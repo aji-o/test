@@ -2,6 +2,10 @@
 @import url(font.css);
 @import url(common_full.css);
 
+.visual {
+    position: relative; /* btn_wrap 정렬의 기준 */
+}
+
 .visual .popup .popup_wrap .popup_item {
     height: 900px;
     color: #fff;
@@ -51,11 +55,9 @@
 
 .visual ul.slick-dots {
     position: absolute; /* popup_wrap 기준으로 정렬 */
-    left: 0;
+    right: 50%;
     bottom: 46px;
-    width: 100%;
     display: flex; /* li를 좌우로 배치 */
-    justify-content: center;
     gap: 10px;
 }
 
@@ -72,18 +74,36 @@
     background-color: #fff;
 }
 
+.visual .btn_wrap {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: calc(50% + 10px);
+    bottom: 36px;
+    display: flex; /* js에서 요소에 display:inline-block을 줘서 코딩이 틀어짐
+                    그래서 여기에 flex를 줘서 하단의 공간?을 없애준다. */
+
+}
+
 .visual .btn_wrap .ctrl_stop {
     display: block;
     width: 32px;
     height: 32px;
-    background-color: red;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_118_343' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_118_343)'%3E%3Cpath d='M12.9163 15.4168C12.5755 15.4168 12.282 15.2937 12.0357 15.0475C11.7895 14.8012 11.6663 14.5077 11.6663 14.1668V5.8335C11.6663 5.49266 11.7895 5.19912 12.0357 4.95287C12.282 4.70662 12.5755 4.5835 12.9163 4.5835H13.5413C13.8822 4.5835 14.1757 4.70662 14.422 4.95287C14.6682 5.19912 14.7913 5.49266 14.7913 5.8335V14.1668C14.7913 14.5077 14.6682 14.8012 14.422 15.0475C14.1757 15.2937 13.8822 15.4168 13.5413 15.4168H12.9163ZM6.45801 15.4168C6.11717 15.4168 5.82363 15.2937 5.57738 15.0475C5.33113 14.8012 5.20801 14.5077 5.20801 14.1668V5.8335C5.20801 5.49266 5.33113 5.19912 5.57738 4.95287C5.82363 4.70662 6.11717 4.5835 6.45801 4.5835H7.08301C7.42384 4.5835 7.71738 4.70662 7.96363 4.95287C8.20988 5.19912 8.33301 5.49266 8.33301 5.8335V14.1668C8.33301 14.5077 8.20988 14.8012 7.96363 15.0475C7.71738 15.2937 7.42384 15.4168 7.08301 15.4168H6.45801Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 .visual .btn_wrap .ctrl_play {
     display: block;
     width: 32px;
     height: 32px;
-    background-color: green;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_118_346' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_118_346)'%3E%3Cpath d='M7.0835 13.7034V6.29634C7.0835 6.07634 7.15898 5.89578 7.30995 5.75467C7.46093 5.6137 7.63711 5.54321 7.8385 5.54321C7.90141 5.54321 7.96738 5.55231 8.03641 5.5705C8.10544 5.58856 8.17134 5.61578 8.23412 5.65217L14.0641 9.36363C14.1786 9.44168 14.2643 9.53516 14.3214 9.64405C14.3786 9.75307 14.4072 9.87169 14.4072 9.99988C14.4072 10.1281 14.3786 10.2467 14.3214 10.3557C14.2643 10.4646 14.1786 10.5581 14.0641 10.6361L8.23412 14.3476C8.1712 14.384 8.10509 14.4112 8.03579 14.4293C7.96662 14.4474 7.90058 14.4565 7.83766 14.4565C7.63614 14.4565 7.46009 14.3861 7.30954 14.2451C7.15884 14.104 7.0835 13.9234 7.0835 13.7034Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    display: none; /* 처음에는 숨김처리 */
 }
 
 @media screen and (max-width: 1440px){
@@ -114,8 +134,142 @@
             bottom: 40px;
         }
 
+} /* @media */
+
+.biz {
+    margin: 175px 0 175px 0;
 }
 
+.biz .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+}
+
+.biz .list {
+    margin: 40px 0 0 0;
+    width: calc(100% + 24px);
+}
+
+.biz .list .list_wrap .list_item {
+    margin-right: 24px;
+}
+
+.biz .list .list_wrap .list_item a {
+    display: block;
+}
+
+.biz .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 260px;
+}
+
+.biz .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biz .list .list_wrap .list_item a h3 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 16px 0 5px 0;
+}
+
+@media screen and (max-width: 768px){ /*#### 모바일 ####*/
+
+        .biz {
+            margin: 50px 0 50px 0;
+        }
+        
+        .biz .tit h2 {
+            font-size: 20px;
+        }
+        
+        .biz .list {
+            margin: 19px 0 0 0;
+            width: calc(100% + 16px);
+        }
+        
+        .biz .list .list_wrap .list_item {
+            margin-right: 16px;
+        }
+        
+        .biz .list .list_wrap .list_item a h3 {
+            font-size: 18px;
+            margin: 12px 0 4px 0;
+        }
+
+} /* @media */
+
+
+.notice {
+    padding: 175px 0 179px 0;
+    color: #fff;
+    background-color: #1A1D60;
+}
+
+.notice .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.notice .list {
+    margin: 47px 0 0 0;
+    width: calc(50% + 630px);
+
+    position: relative;
+    left: calc(50% - 630px); /* 630px은 warpper 사이즈(1260px)의 절반 */
+}
+
+.notice .list .list_wrap {
+    display: flex;
+}
+
+.notice .list .list_wrap .list_item {
+    width: 404px;
+    margin-right: 24px;
+}
+
+.notice .list .list_wrap .list_item a {
+    display: block;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #555;
+}
+
+.notice .list .list_wrap .list_item a .photo {
+    overflow: hidden;
+    height: 340px;
+    border-radius: 20px 20px 0 0;
+}
+
+.notice .list .list_wrap .list_item a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.notice .list .list_wrap .list_item a .txt {
+    padding: 30px 30px;
+}
+
+@media screen and (max-width: 1300px){
+    .notice .list {
+        width: calc(100% - 20px); /* list widht */
+        left: 20px /* 왼쪽 여백 */
+    }
+} /* @media */
+
+@media screen and (max-width: 768px){
+
+
+    
+}
 
 
 
