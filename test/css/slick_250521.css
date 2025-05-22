@@ -258,6 +258,12 @@
     padding: 30px 30px;
 }
 
+.notice .list .list_wrap .list_item a .txt h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
 @media screen and (max-width: 1300px){
     .notice .list {
         width: calc(100% - 20px); /* list widht */
@@ -267,6 +273,53 @@
 
 @media screen and (max-width: 768px){
 
+    .notice {
+        padding: 50px 0 55px 0;
+    }
+
+    .notice .tit h2 {
+        font-size: 20px;
+    }
+
+    .notice .list {
+        margin: 47px 0 0 0;
+        width: calc(50% + 630px);
+
+        position: relative;
+        left: calc(50% - 630px); /* 630px은 warpper 사이즈(1260px)의 절반 */
+    }
+
+    .notice .list .list_wrap {
+        display: flex;
+    }
+
+    .notice .list .list_wrap .list_item {
+        width: 404px;
+        margin-right: 24px;
+    }
+
+    .notice .list .list_wrap .list_item a {
+        display: block;
+        background-color: #fff;
+        border-radius: 20px;
+        color: #555;
+    }
+
+    .notice .list .list_wrap .list_item a .photo {
+        overflow: hidden;
+        height: 340px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .notice .list .list_wrap .list_item a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .notice .list .list_wrap .list_item a .txt {
+        padding: 30px 30px;
+    }
 
     
 }
