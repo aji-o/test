@@ -1,0 +1,132 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.tour {
+    margin: 150px 0;
+}
+
+.tour .tit h2 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 23px 0;
+}
+
+.tour .list {
+    margin: 57px 0 0 0;
+}
+
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.tour.acc01 .list ul li {
+    /* width: 25%; */
+    transition: 0.5s;
+    flex: 1 1 0%;
+}
+
+.tour.acc01 .list ul li.on {
+    /* width: 70%; */
+    flex: 3 1 0%;
+}
+
+.tour.acc02 .list ul li {
+    /* width: calc(25% - 9px); */
+    /* (12+12+12) ÷ 4 = 9 */
+    flex: 1 1 0%;
+    transition: 0.5s;
+}
+
+.tour.acc02 .list ul li.on {
+    flex: 3 1 0%;
+}
+
+.tour .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 0 30px 30px 30px;
+}
+
+.tour .list ul li.list01 a {
+    background-image: url(../images/tour_list01.jpg);
+}
+
+.tour .list ul li.list02 a {
+    background-image: url(../images/tour_list02.jpg);
+}
+
+.tour .list ul li.list03 a {
+    background-image: url(../images/tour_list03.jpg);
+}
+
+.tour .list ul li.list04 a {
+    background-image: url(../images/tour_list04.jpg);
+}
+
+.tour .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.tour .list ul li a p {
+    margin: 14px 0 0 0;
+    display: none; /* 오버했을 때만 나오게 */
+}
+
+@media screen and (max-width: 1024px){
+
+            .tour {
+                margin: 75px 0;
+            }
+            
+            .tour .tit h2 {
+                font-size: 18px;
+                margin: 0 0 12px 0;
+            }
+            
+            .tour .list {
+                margin: 23px 0 0 0;
+            }
+            
+            .tour .list ul {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .tour.acc01 .list ul li {
+                width: 100%;
+            }
+            
+            .tour.acc02 .list ul li {
+                width: 100%;
+            }
+            
+            .tour.acc01 .list ul li.on {
+                width: 100%;
+            }
+            
+            .tour .list ul li a {
+                height: 200px;
+                padding: 0 20px 20px 20px;
+            }
+
+            .tour .list ul li a h3 {
+                font-size: 18px;
+            }
+            
+            .tour .list ul li a p {
+                margin: 7px 0 0 0;
+                display: block; /* 오버했을 때만 나오게 */
+            }
+
+}
