@@ -1,0 +1,48 @@
+/* 모든 페이지에 공통으로 들어가는 기본 스타일 */
+body {
+    font-family: "SEBANG_Gothic", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.2; /* 단위는 배수로 한다. */
+    color: #555;
+    word-break: keep-all; /* 단어별 줄바꿈(스페이스 기준)*/
+    word-wrap: break-word; /* 단어가 너무 긴 경우 강제로 줄바꿈 */
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 */
+}
+
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 25-05-26 - 가로스크롤바 삭제*/
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {     /* 25.05.07 - 브라우저 넓이가 768px 이하에서만 작동 */
+                    body {
+                        font-size: 16px;
+                    }
+}
+
+@media screen and (max-width:1300px) { /* 20+20 = 40 + 1260 = 1300 */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    }
+
+
+/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    color: transparent;
+}
+

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'SEBANG_Gothic';
+    src: url('../font/SEBANG_Gothic_Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SEBANG_Gothic';
+    src: url('../font/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
