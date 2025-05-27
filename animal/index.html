@@ -10,12 +10,23 @@
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     
+    <!-- 다음으로 main -->
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>실습 :: 동물보호센터</title>
 </head>
 <body>
+    <div class="skip_nav">
+        <a href="#skip_content">본문 바로가기</a>
+        <!-- id="skip_content" 인 요소로 바로가기(내부링크) -->
+    </div>
     <div id="wrap">
+        <!-- header에 마우스를 오버하거나 스크롤을 내리면 -fixed 클래스 추가
+        메뉴에 마우스를 오버하면 오버한 li에만 over 클래스 추가
+
+        모바일에서 메뉴열기 버튼을 클릭하면 header에 menu_open 클래스 추가
+        모바일에서 1차 메뉴를 클릭하면 클릭한 li에 open 클래스 추가 
+         -->
         <header>
             <h1 class="logo"><a href=""><span class="blind">동물보호센터</span></a></h1>
             <nav class="gnb">
@@ -35,8 +46,8 @@
                         <li>
                             <a href="https://www.naver.com/"><span>네트워크</span></a>
                             <ul class="depth2">
-                                <li><a href="#" target="_blank" title="새창열림"><span>동물찾기 네트워크</span></a></li>
-                                <li><a href="#"><span>국가동물보호정보시스템</span></a></li>
+                                <li><a href="#"><span>동물찾기 네트워크</span></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><span>국가동물보호정보시스템</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -73,13 +84,13 @@
                         </li>
                         <li class="swiper-slide bg2">
                             <div class="wrapper">
-                                <h3>작은 관심이 실종동물에게 <br>큰 희망이 됩니다.</h3>
-                                <p>하루하루 기다림 속에서 당신이라는 기적을 꿈꿉니다.</p>
+                                <h3>작은 관심이 실종동물에게 <br>큰 희망이 됩니다</h3>
+                                <p>하루하루 기다림 속에서 당신이라는 기적을 꿈꿉니다</p>
                             </div>
                         </li>
                         <li class="swiper-slide bg3">
                             <div class="wrapper">
-                                <h3>사지 말고 입양하세요. <br>사랑은 혈통보다 깊습니다.</h3>
+                                <h3>사지 말고 입양하세요 <br>사랑은 혈통보다 깊습니다</h3>
                                 <p>작은 생명이 당신의 품을 집이라 부를 수 있도록 입양을 생각해 주세요</p>
                             </div>
                         </li>
@@ -93,7 +104,256 @@
                 </div> <!-- swiper END -->
             </section> <!-- visual -->
 
-            <section class="find"></section> <!-- find -->
+            <section class="find" id="skip_content">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>찾습니다</h2>
+                    </div>
+                    <div class="list">
+                        <div class="tap_list">
+                            <ul role="tablist">
+                                <!-- 선택된 li에는 active 클래스 추가, butten에 선택됨이라고 써줌
+                                     aria-selected가 true가 선택된 것 false 선택이 안된 것 
+                                     data-content li를 눌렀을때 나타날 탭콘텐츠 id값
+                                     li를 클릭했을 떄 data-content값을 호출해서 id가 같은 요소만 보이게함
+                                     data-content는 내맘대로 속성을 추가... (값을 저장할 공간이 필요해서 - 표준위배)
+                                     data-link 라든가... data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성 -->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tap_item1"><button>가족을<span class="">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tap_item2"><button>주인을</button></li>
+                            </ul>
+                        </div>
+                        <div class="tap_content">
+                            <!-- 가족을, 주인을 탭콘텐츠를 구분 item1/item2로 클래스명 구분
+                                 현재 선택된 tap 클래스는 active 클래스 추가 -->
+                            <div class="tap_item item1 active" id="tap_item1">
+                                <h3 class="blind">가족을 찾습니다</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_01.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>코리아 쇼트 헤어 5살 헤어헤어</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>부산광역시 해운대구</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-01-12</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>등은검정색 배부분은흰색</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_02.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>믹스견 9살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 용인시 처인구</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-09</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>코에 연한 핑크색 반점</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_03.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>진돗개 12살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>경기도 화성시 마도면</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-03-23</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>꼬리가 1자로 뻗어있음</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_04.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_lost">실종</strong>
+                                                <h4>코리아 쇼트 헤어 2살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종장소</strong>
+                                                    <span>광주광역시 동구 지산동</span>
+                                                </li>
+                                                <li>
+                                                    <strong>실종날짜</strong>
+                                                    <span>2025-05-07</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>고등어 냥이 얼굴에 점</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tap_item item2" id="tap_item2">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_05.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">목격</strong>
+                                                <h4>기타묘종</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>모름</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격장소</strong>
+                                                    <span>서울특별시 관악구 대학</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격날짜</strong>
+                                                    <span>2025-05-17</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>계속 울면서 따라옴</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_06.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_end">종료</strong>
+                                                <h4>말티즈 6살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격장소</strong>
+                                                    <span>경기도 안성시 송동경로</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격날짜</strong>
+                                                    <span>2025-05-03</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>새끼강아지 시골강아지</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_07.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_care">구조</strong>
+                                                <h4>믹스견(말티즈 믹스)</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>수컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격장소</strong>
+                                                    <span>대구광역시 달서구 감삼</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격날짜</strong>
+                                                    <span>2025-03-23</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>하얀색,기본 위생관리</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo"><img src="images/find_08.jpg" alt="실종1"></div>
+                                            <div class="subject">
+                                                <strong class="cate_see">구조</strong>
+                                                <h4>앵무새 3살</h4>
+                                            </div>
+                                            <ul class="detail">
+                                                <li>
+                                                    <strong>성별</strong>
+                                                    <span>암컷</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격장소</strong>
+                                                    <span>서울특별시 서초구 양재</span>
+                                                </li>
+                                                <li>
+                                                    <strong>목격날짜</strong>
+                                                    <span>2025-04-24</span>
+                                                </li>
+                                                <li>
+                                                    <strong>특이사항</strong>
+                                                    <span>푸른소라색 사랑앵무</span>
+                                                </li>
+                                            </ul>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> <!-- //tap_content -->
+                    </div> <!-- // list-->
+                </div>
+            </section> <!-- find -->
             <section class="slogan"></section> <!-- slogan -->
             <section class="adopt"></section> <!-- adopt -->
             <section class="review"></section> <!-- review -->
