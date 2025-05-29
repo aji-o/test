@@ -475,10 +475,13 @@ header.fixed .logo a {
             }
             
             .visual .btn_wrap {
-                left: 20px; /* 좌우고정값...이라서*/
+                /*
+                justify-content: flex-start 로 할 경우
+                left: 20px;  좌우고정값...이라서
                 bottom: 25px;
-                width: calc(100% - 20px);
-                justify-content: center; /*flex-start; ..??? */
+                width: calc(100% - 20px); */
+                
+                justify-content: center;
                 gap: 5px;
             }
             
