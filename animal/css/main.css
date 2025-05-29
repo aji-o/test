@@ -609,17 +609,6 @@ header.fixed .logo a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* 마우스 오버 효과 */
 
 .find .list .tap_content .tap_item > ul > li a:hover .photo img {
@@ -705,6 +694,11 @@ header.fixed .logo a {
 
 @media screen and (max-width: 1024px){
     
+    .find .emblem {
+        left: 20px;
+        top: -70px;
+    }
+
     .find .tit h2 {
         font-size: 35px;
     }
@@ -724,6 +718,8 @@ header.fixed .logo a {
         height: 215px;
         border-radius: 15px;
     }
+
+    
 
 }
 
@@ -1499,7 +1495,7 @@ footer .top {
 footer .top2 {
     position: absolute;
     right: 0;
-    top: -133px;
+    top: -110px;
     width: 54px;
     height: 58px;
     background-color: #275DFF;
