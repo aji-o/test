@@ -1,0 +1,204 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+
+
+html, body {
+    font-family: "Pretendard";
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5; /* 단위는 배수로 한다. */
+    color: #555;
+    word-break: keep-all;
+}
+
+
+
+
+/*
+html {
+    font-size: 17px;
+}
+
+
+body {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px){
+    html {
+        font-size: 14px;
+    }
+        
+    body {
+        font-size: 1.21rem;
+    }
+
+
+}
+*/
+
+
+@media screen and (max-width: 768px){
+
+    /*
+    html {
+        font-size: 10px;
+    }
+        
+    body {
+        font-size: 1.6rem;
+    }
+    */
+
+    html, body {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+.biz, .news, .banner {
+    margin: 50px 0;
+}
+
+.biz .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+
+
+.biz strong {
+    font-size: 2em;
+}
+
+.biz em {
+    font-size: 2rem;
+}
+
+.biz .btn_wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7em;
+}
+
+.biz .btn_wrap .view {
+    /* 글자크기가 25px , 여백 10px 26px , 라운드 30px */
+    font-size: 1.47rem; /* 25 ÷ 17 */ 
+    border: 1px solid #ccc;
+    border-radius: 0.96rem; /* 25 ÷ 22 = 0.96 */
+    padding: 1.52rem; /* 10 ÷ 17 = 0.12 / 26 ÷ 17 */
+}
+
+.biz .btn_wrap .more {
+    font-size: 1.47rem; /* 25 ÷ 17 */ 
+    border: 1px solid #ccc;
+    border-radius: 1.2rem; /* 30 ÷ 25 */
+    padding: 1.04em; /* 10 ÷ 25 =  , 26 ÷ 25 = */
+}
+
+
+
+@media screen and (max-width: 1024px){
+
+    .biz .btn_wrap .view {
+        font-size: 1.2rem;
+    }
+
+    .biz .btn_wrap .more {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+
+@media screen and (max-width: 768px){
+
+    .biz .btn_wrap .view {
+        font-size: 0.8rem;
+    }
+
+    .biz .btn_wrap .more {
+        font-size: 0.8rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+
+
+
+
+
+
+
+
+
+.banner .tit h2 {
+    font-size: var(--tit-font-size);
+    font-weight: var(--tit-font-weight);
+    color: var(--tit-color);
+}
+
+
+
+
+
+
+
+
+
+
+:root {
+    --tit-font-size: 2.35rem;
+    --tit-font-weight: 700;
+    --tit-color: #1b1b1b;
+}
+
+
+/*
+
+@media screen and (max-width: 1024px){
+    :root {
+        --tit-font-size: 35px;
+    }
+    
+
+
+}
+
+@media screen and (max-width: 768px){
+    :root {
+        --tit-font-size: 25px;
+    }
+    
+}
+
+*/
