@@ -59,10 +59,10 @@ $(document).ready(function(){ //문서가 로딩되고 단 1번 실행
 
     /****************************모바일 메뉴 열고 닫기 ******************************* */
 
-    $('header .gnb .menu_open').on('click', function(){
+    $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_open')
     })
-    $('header .gnb .menu_close').on('click', function(){
+    $('header .gnb .gnb_close').on('click', function(){
         $('header').removeClass('menu_open')
     })
 
