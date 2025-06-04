@@ -88,7 +88,7 @@
     z-index: 10;
     position: absolute; /* visual 을 기준으로 정렬 */
     left: calc(50% - 630px);
-    bottom: 37.4%; /************************************************************/
+    bottom: 34.4%; /****** ( 344 ÷ 1000 ) x 100  *******/
     display: flex;
 }
 
@@ -188,7 +188,6 @@
 
 }
 
-
 @media screen and (max-width:768px) {
 
                 .visual .swiper-slide .photo {
@@ -278,4 +277,338 @@
                     display: none;
                 }
 
+}
+
+
+
+/* title의 공통스타일 */
+
+section .tit {
+    margin: 11.17em 0 0 0; /* em 변경시 -> 190 ÷ 17 = 11.17 */
+}
+
+section .tit strong {
+    color: var(--point-color);
+    font-weight: var(--bold-weight);
+    display: inline-block;
+    padding: 0 1.18em 0 0; /* em변경 시 -> 20 ÷ 17 = 1.176... */
+    position: relative; /*  after 정렬의 기준 */
+    margin-bottom: 0.88em; /* 15 ÷ 17 = 0.882 */
+}
+
+section .tit strong::after {
+    content: "";
+    position: absolute;
+    right: 0.18em; /* em변경 시 -> 3 ÷ 17 = 0.176 */
+    top: -0.59em; /* em변경 시 -> 10 ÷ 17 = 0.588 */
+    width: 1em;  /* 17 ÷ 17 = 1 */
+    height: 0.94em;    /* 16 ÷ 17 = 0.941 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: var(--tit-ico);
+}
+
+section .tit h2 {
+    color: var(--tit-color);
+    font-weight: var(--bold-weight);
+    font-size: var(--tit-font-size);
+    line-height: var(--tit-line-height);
+    margin-bottom: 1.33em; /* em변경 시 -> 60 ÷ 45 = 1.333 */
+}
+
+
+@media screen and (max-width:768px) {
+
+        .section .tit {
+            margin: 5em 0 0 0; /* em 변경시 -> 80 ÷ 16 = 5 */
+        }
+        
+        section .tit strong {
+            margin-bottom: 0.63em; /* 10 ÷ 16 = 0.625 --- 반올림 ok */
+        }
+
+        section .tit h2 {
+            margin-bottom: 1.2em; /* em변경 시 -> 30 ÷ 25 = 1.2 */
+        }
+
+} /* @media */
+
+
+.biz .list ul {
+    display: flex;
+    gap: 1px;
+}
+
+.biz .list ul li {
+    width: 25%;
+    position: relative; /* txt 정렬의 기준 */
+    transition: 0.5s;
+}
+
+.biz .list ul li .more {
+    display: none; /* 모바일에서만 나옴 */
+}
+
+.biz .list ul li .photo {
+    overflow: hidden;
+    height: 41.17em; /* 700 / 17 = 41.176*/
+    position: relative;
+}
+
+.biz .list ul li .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0));
+
+    transition: 0.3s;
+}
+
+.biz .list ul li .photo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+.biz .list ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biz .list ul li .txt {
+    position: absolute;
+
+        /* 여백이 고정값일 경우
+        left: 40px;
+        bottom: 82px;
+*/
+
+        /* 여백이 %값일 경우 */
+
+        left: 8.33%;  /* 40(여백) ÷ 480 x 100 = 8.333 ... */
+        bottom: 72px;
+
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.5s;
+}
+
+.biz .list ul li .txt h3 {
+    font-size: 2.06rem; /* rem 변경 시 -> 35 ÷ 17 = 2.058*/
+    line-height: var(--tit-line-height);
+    font-weight: var(--bold-weight);
+    margin: 0.29em 0 0.63em 0; /* em변환시 -> 10 ÷ 35 */
+}
+
+.biz .list ul li .txt a {
+    font-size: 15px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 0.33em 2.53em 0.47em 1.06em; /* em변경시 -> ÷ 15
+                5     38   7     16
+    
+    ÷ 35 */
+    position: relative; /* after 정렬의 기준 */
+    opacity: 0;
+    
+    transition: 0.5s;
+}
+
+.biz .list ul li .txt a::after { /************* 쉬는시간에 15로 지정하고 em 수정 (완)**********************/
+    content: "";
+    position: absolute;
+    right: 0.6em; /* 9 / 15 */
+    top: 0.2em; /* 3 / 15 */
+    width: 1.6em; /* 24 */
+    height: 1.6em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_107_130' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_107_130)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+@media screen and (min-width:1025px){    /* pc만 - 마우스를 오버했을 때 */
+
+.biz .list ul li:hover {
+    width: 70%;
+}
+
+.biz .list ul li:hover  .txt {
+    bottom: 6.88em; /* em변경시 -> 117 / 17 = 6.882... */
+}
+
+.biz .list ul li:hover  .txt a {
+    opacity: 1;
+}
+
+.biz .list ul:hover li:not(:hover) .photo::before {
+    opacity: 0;
+
+}
+
+.biz .list ul:hover li:not(:hover) .photo::after {
+    opacity: 1;
+}
+
+} /* @media */
+
+
+
+
+@media screen and (min-width:768px) and (max-width:1025px) {  /* 1300 ~ 1024 사이의 값*/
+
+    .biz .list ul li .txt strong {
+        font-size: 0.94rem; /* rem 변경 시 -> 15 ÷ 16 = 0.9375*/
+    }
+
+    .biz .list ul li .txt h3 {
+
+        font-size: 1.87rem; /* rem 변경 시 -> 30 ÷ 16 = 1.25*/
+        line-height: var(--tit-line-height);
+        font-weight: var(--bold-weight);
+        margin: 0.13em 0 0 0; /* em 변환시 -> 4 ÷ 30 = 0.133... */
+    }
+} /* 흠........ 1024 ~ 768 까지의 크기가 이랬으면 좋겠는데 안되네... 그리고 모바일쪽 h3 font 크기 안맞으니까 집가서 수정하기 */
+
+
+@media screen and (max-width:1024px){ /* 모바일 */ 
+
+                .biz .list ul {
+                    display: block;
+                    margin: 0 1.25em; /* em변경시 -> 20 ÷ 16 = 1.25*/
+                }
+                
+                .biz .list ul li {
+                    width: auto;
+                }
+
+                .biz .list ul li + li { /* 2번째 li부터~ 라는 뜻 */
+                    margin: 0.5em 0 0 0; /* em변경 -> 8 / 16 */
+                }
+                
+                .biz .list ul li .more {
+                    z-index: 1;
+                    display: block;
+                    position: absolute; /* li를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .biz .list ul li .photo {
+                    height: 10.63em; /*  170 * 16 = 10.625 */
+                }
+                
+                .biz .list ul li .photo::before {
+                    height: 100%;
+                    background: rgba(0,0,0,0.3);
+                }
+                
+                .biz .list ul li .photo::after {
+                    display: none;
+                }
+                
+                .biz .list ul li .txt {
+                    position: absolute;
+                
+                        /* 여백이 고정값일 경우
+                        left: 40px;
+                        bottom: 82px;
+                */
+                
+                    /* 여백이 %값일 경우 */
+                
+                    left: 5.62%;  /* em변경 -> 18(여백) ÷ 320 x 100 = 5.62 ... */
+                    bottom: 1.25em; /* em변경 -> 20 ÷ 16 */
+                }
+                
+                .biz .list ul li .txt strong {
+                    font-size: 0.75rem; /* rem 변경 시 -> 12 ÷ 16 = 0.75*/
+                }
+
+                .biz .list ul li .txt h3 {
+
+                    font-size: 1.25rem; /* rem 변경 시 -> 2 ÷ 16 = 1.25*/
+                    line-height: var(--tit-line-height);
+                    font-weight: var(--bold-weight);
+                    margin: 0.2em 0 0 0; /* em 변환시 -> 4 ÷ 20 */
+                }
+                
+                .biz .list ul li .txt a {
+                    display: none;
+                }          
+
+}/* @media */
+
+.news .list {
+    position: relative; /**/
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);;
+}
+
+.news .list .swiper-slide {
+    width: 23.76em; /* em 변환 -> 404 ÷ 17 = 23.7647 */
+}
+
+.news .list .swiper-slide a {
+    display: block;
+}
+
+.news .list .swiper-slide a .date {
+    display: block;
+    border-top: 1px solid var(--base-color);
+    font-size: 2.35em; /* em 변환 -> 40 ÷ 17 = 2.352 */
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    padding: 0.63em 0; /* em 변환 -> 25 ÷ 40(date 폰트사이즈크기) = 0.625 */
+}
+
+.news .list .swiper-slide a h3 {
+    font-size: 1.47em; /* em 변환 -> 25 ÷ 17 = 1.470 */
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+
+    /* 2줄제한 :: 주의!!! 두줄제한을 시도할 땐 padding을 줘선 안된다 */
+    height: 2.4em; /* 행간 x 줄수 = 단위는 em으로. */
+    overflow: hidden;
+}
+
+.news .list .swiper-slide a p {
+    /* 3줄 제한 */
+    height: 4.5em; /* 행간 x 줄수... */
+    overflow: hidden;
+
+    /* 길어서 끝에 ...  */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* 줄수 */
+
+    word-break: normal;
+
+    margin: 1.76em 0; /* 30 ÷ 17 = 1.764 */
+}
+
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 10.41em; /* 177 ÷ 17 = 10.41...  */
+}
+
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
