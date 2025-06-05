@@ -553,10 +553,27 @@ section .tit h2 {
 
 }/* @media */
 
+
 .news .list {
-    position: relative; /**/
+    position: relative;
     left: calc(50% - 630px);
-    width: calc(50% + 630px);;
+    width: calc(50% + 630px - 24px);
+}
+
+
+@media screen and (max-width:1300px){ /* wrapper의 제한이 사라지는 사이즈 */
+
+        .news .list {
+            left: 20px;
+            width: calc(100% - 40px); /* 양옆의 20px을 뺀다 */
+        }
+        
+
+} /* @media */
+
+
+.news .list .swiper {
+    overflow: visible; /* #wrap에 있는 hidden 해제 */
 }
 
 .news .list .swiper-slide {
@@ -574,7 +591,26 @@ section .tit h2 {
     line-height: var(--tit-line-height);
     color: var(--tit-color);
     padding: 0.63em 0; /* em 변환 -> 25 ÷ 40(date 폰트사이즈크기) = 0.625 */
+    position: relative; /* before 정렬의 기준*/
 }
+
+.news .list .swiper-slide a .date::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--point-color);
+    transition: 1s;
+}
+
+.news .list .swiper-slide a:hover .date::before {
+    width: 100%;
+}
+
+
 
 .news .list .swiper-slide a h3 {
     font-size: 1.47em; /* em 변환 -> 25 ÷ 17 = 1.470 */
@@ -611,4 +647,312 @@ section .tit h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+} 
+
+.news .ctrl_wrap {
+    margin: 4.24em 0 0 0; /* em변환 -> 72 ÷ 17 = 4.235 */
+}
+
+.news .ctrl_wrap .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news .ctrl_wrap .group1 {
+    position: relative; /* swiper-scrollbar 정렬의 기준 */
+    width: calc(100% - 25.18em); /* em변환 -> 428 ÷ 17 = 25.176... 반올림ok */
+
+}
+
+.news .ctrl_wrap .group1 .swiper-scrollbar { /* 복사해온거임~ */
+    left: 0;
+    bottom: 50%;
+    transform: translateY(50%); /* 위아래가운데 */
+    width: 100%;
+    background: #E6E6E6;
+}
+
+.news .ctrl_wrap .group1 .swiper-scrollbar .swiper-scrollbar-drag {
+    background: var(--tit-color);
+}
+
+.news .ctrl_wrap .group1 .swiper-scrollbar .swiper-scrollbar-drag:hover {
+    background: var(--point-color);
+}
+
+.news .ctrl_wrap .group2 {
+    display: flex;
+    align-items: center;
+    gap: 0.76em; /* 13 ÷ 17 */
+}
+
+.news .ctrl_wrap .group2 .count {
+    color: #ccc;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    margin: 0 1.18em 0 0; /* em변환 -> 20 ÷ 17 */
+}
+
+.news .ctrl_wrap .group2 .count .swiper-pagination-current {
+    color: #555;
+    font-weight: var(--bold-weight);
+}
+
+.news .ctrl_wrap .group2 .count .swiper-pagination-total {
+    color: #555;
+}
+
+.news .ctrl_wrap .group2 .btn_prev,
+.news .ctrl_wrap .group2 .btn_next {
+    display: block;
+    width: 1.76em; /* em변환 -> 30 ÷ 17 = 1.764 */
+    height: 1.76em;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_132_25' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='12' height='12'%3E%3Crect x='12' width='12' height='12' transform='rotate(90 12 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_132_25)'%3E%3Cpath d='M2.323 5.99976C2.323 5.87926 2.34225 5.76709 2.38075 5.66326C2.41925 5.55942 2.48525 5.46067 2.57875 5.36701L7.073 0.872758C7.2115 0.734425 7.38559 0.663591 7.59525 0.660258C7.80475 0.657091 7.982 0.727925 8.127 0.872758C8.27184 1.01776 8.34425 1.19342 8.34425 1.39976C8.34425 1.60609 8.27184 1.78176 8.127 1.92676L4.05375 5.99976L8.127 10.0728C8.26534 10.2113 8.33617 10.3853 8.3395 10.595C8.34267 10.8045 8.27184 10.9818 8.127 11.1268C7.982 11.2716 7.80634 11.344 7.6 11.344C7.39367 11.344 7.218 11.2716 7.073 11.1268L2.57875 6.63251C2.48525 6.53884 2.41925 6.44009 2.38075 6.33626C2.34225 6.23242 2.323 6.12026 2.323 5.99976Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.news .ctrl_wrap .group2 .btn_next {
+    transform: rotate(180deg);
+}
+
+.news .ctrl_wrap .group2 .more { /* 폰트 15 변경 후 em 수정해보기 ***************************** */
+    display: block;
+    height: 1.76em; /* btn_prev ~ next와 동일한 높이 */
+    line-height: 1.76em;
+    padding: 0 2.24em 0 0.94em; /* em변환 -> ÷ 17 */
+    /*       5px 38px 7px 16px */
+    font-weight: var(--bold-weight);
+    border: 1px solid #555;
+    border-radius: 50px;
+    position: relative;
+    margin: 0 0 0 0.64em; /* em변환 -> 11 ÷ 17 */
+}
+
+.news .ctrl_wrap .group2 .more::after {
+    content: "";
+    position: absolute;
+    right: 0.53em; /* em변환 -> 9 ÷ 17 = 0.529 */
+    top: 0.18em; /* em변환 -> 3 ÷ 17 = 0.176 */
+    width: 1.41em; /* em변환 -> 24 ÷ 17 */
+    height: 1.41em; /* em변환 -> 24 ÷ 17 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_132_18' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_132_18)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+
+
+
+
+@media screen and (max-width:1024px){
+
+    .news .list .swiper-slide {
+        width: 17.64em; /* em 변환 -> 300 ÷ 17 = 17.6470... */
+    }
+
+    .news .list .swiper-slide a .date {
+        font-size: 2.05em; /* 35 ÷ 17 = 2.05 */
+        
+    } 
+
+}
+
+
+@media screen and (max-width:768px){ /* 모바일 */
+
+
+            .news .list .swiper-slide {
+                width: 12.88em; /* em 변환 -> 208 ÷ 16 = 12.875 */
+            }
+            
+            .news .list .swiper-slide a .date {
+                font-size: 1.56em; /* em 변환 -> 25 ÷ 16 = 1.5625 */
+                padding: 1em 0; /* em 변환 -> 25 ÷ 25(date 폰트사이즈크기) = 1 */
+            }
+            
+            .news .list .swiper-slide a h3 {
+                font-size: 1.25em; /* em 변환 -> 20 ÷ 16 = 1.25 */
+            }
+            
+            .news .list .swiper-slide a p {
+                margin: 1.25em 0; /* 20 ÷ 16 = 1.25 */
+            }
+            
+            .news .list .swiper-slide a .photo {
+                height: 5.69em; /* 91 ÷ 16 = 5.6875  */
+            }
+            
+            .news .ctrl_wrap {
+                margin: 2.5em 0 0 0; /* em변환 -> 40 ÷ 16 = 2.5 */
+            }
+
+            .news .ctrl_wrap .group1 {
+                position: relative; /* swiper-scrollbar 정렬의 기준 */
+                width: calc(100% - 8.25em); /* em변환 -> 132 ÷ 16 = 8.25 */
+            
+            }
+            
+            .news .ctrl_wrap .group1 .swiper-scrollbar { /* 복사해온거임~ */
+                left: 0;
+                bottom: 50%;
+                transform: translateY(50%); /* 위아래가운데 */
+                width: 100%;
+                background: #E6E6E6;
+            }
+            
+            .news .ctrl_wrap .group1 .swiper-scrollbar .swiper-scrollbar-drag {
+                background: var(--tit-color);
+            }
+            
+            .news .ctrl_wrap .group1 .swiper-scrollbar .swiper-scrollbar-drag:hover {
+                background: var(--point-color);
+            }
+            
+            .news .ctrl_wrap .group2 {
+                display: flex;
+                align-items: center;
+                gap: 0.76em; /* 13 ÷ 17 */
+            }
+            
+            .news .ctrl_wrap .group2 .count {
+                display: none;
+            }
+            
+            .news .ctrl_wrap .group2 .count .swiper-pagination-current {
+                display: none;
+            }
+            
+            .news .ctrl_wrap .group2 .count .swiper-pagination-total {
+                display: none;
+            }
+            
+            .news .ctrl_wrap .group2 .btn_prev,
+            .news .ctrl_wrap .group2 .btn_next {
+                display: none;
+            }
+            
+            .news .ctrl_wrap .group2 .btn_next {
+                transform: rotate(180deg);
+            }
+            
+            .news .ctrl_wrap .group2 .more { 
+                display: block;
+                height: 1.76em; /* btn_prev ~ next와 동일한 높이 */
+                line-height: 1.76em;
+                padding: 0 2.24em 0 0.94em; /* em변환 -> ÷ 17 */
+                /*       5px 38px 7px 16px */
+                margin: 0 0 0 0.64em; /* em변환 -> 11 ÷ 17 */
+            }
+            
+            .news .ctrl_wrap .group2 .more::after {
+                content: "";
+                position: absolute;
+                right: 0.53em; /* em변환 -> 9 ÷ 17 = 0.529 */
+                top: 0.18em; /* em변환 -> 3 ÷ 17 = 0.176 */
+                width: 1.41em; /* em변환 -> 24 ÷ 17 */
+                height: 1.41em; /* em변환 -> 24 ÷ 17 */
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_132_18' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_132_18)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='%23555555'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }  
+
+}
+
+.survice .list {
+    background: url(../images/main/survice_01.jpg) no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+    height: 29.41em; /* em 변환 -> 500 ÷ 17 = 29.411..*/
+    display: flex; /* ul을 list의 높이에 위아래 가운데 정렬하려고 flex 줌 */
+    align-items: center;
+}
+
+.survice .list[data-bg="bg1"] {
+    background-image: url(../images/main/survice_02.jpg);
+}
+
+.survice .list[data-bg="bg2"] {
+    background-image: url(../images/main/survice_03.jpg);
+}
+
+.survice .list[data-bg="bg3"] {
+    background-image: url(../images/main/survice_04.jpg);
+}
+
+
+.survice .list ul {
+    display: flex;
+    align-items: center; /* 앙옆의 줄이 다를 경우 윗정렬이 되므로... 여기에도 center 준다! */
+    width: 100%; /* list - display:flex의 영향으로 쪼그라들어서 넓이100% 줌 */
+
+}
+
+.survice .list ul li {
+    width: 33.34%;
+    position: relative; /* before 정렬의 기준*/
+}
+
+.survice .list ul li + li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 9.53em; /* em 변환 -> 162px ÷ 17 = 9.529 */
+    background-color: rgba(255,255,255,0.5)
+}
+
+
+.survice .list ul li a {
+    display: block;
+    margin: 0 20.2%; /* 129 ÷ 640 x 100  =  20.15625  백분율 계산 */
+    padding: 3.7em 0; /* em 변환 -> 63 ÷ 17 */
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.survice .list ul li a h3 {
+    font-size: 2.06rem; /* rem 변경 시 -> 35 ÷ 17 = 2.058*/
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 0.68em 0 0.46em 0; /* em 변경 시 ->  ÷ 35 */
+    /*       24       16 */
+}
+
+.survice .list ul li a .more {
+    font-size: 0.88rem; /* 15px ÷ 17 = 0.88 */
+    display: none;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 0.23em 2.53em 0.23em 1.06em; /* em변환 -> ÷ 15 */
+    /*       5px 38px 7px 16px ... 인데 아래가 안맞아서 임의로 바꿈 */
+    position: relative;
+    margin: 1.53em 0 0 0; /* 23 ÷ 15  */
+}
+
+.survice .list ul li a .more::after {
+    content: "";
+    position: absolute;
+    right: 0.73em; /* em변환 -> 11 ÷ 15 = 0.73 */
+    top: 0.2em; /* em변환 -> 6 ÷ 15 = 0.4 ...인데 안맞아서 임의로 바꿈*/
+    width: 1.6em; /* em변환 -> 24 ÷ 15 */
+    height: 1.6em; /* em변환 -> 24 ÷ 15 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_142_37' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_142_37)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.survice .list ul li a:hover .more {
+    display: inline-block;
 }
