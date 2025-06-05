@@ -87,9 +87,6 @@ header.menu_over .util .search .search_open {
 
 
 
-
-
-
 @media screen and (min-width:1025px) { /* pc버전 */
 
         header .gnb .gnb_bg,
@@ -200,10 +197,10 @@ header.menu_over .util .search .search_open {
 @media screen and (min-width:1025px) and (max-width:1300px) {  /* 1300 ~ 1024 사이의 값*/
    
     header .gnb .gnb_wrap ul.depth1 > li {
-        width: 7.05em; /* 120÷ 17 */
+        width: 7.05em; /* 120 ÷ 17 */
     }
 
-} /* @media  */
+} /* @media 해보고 싶었는데 안되네... */
 
 
 
@@ -400,5 +397,197 @@ header.menu_over .util .search .search_open {
 
 
 footer {
-    margin: 500px 0 0 0;
+
+    background-color: #181818;
+    color: rgba(255, 255, 255, 0.8)
+}
+
+footer .wrapper {
+    padding: 6.53em 0; /* 111  ÷ 17 = 6.5294 ... 반올림 ok*/
+    position: relative; /* top버튼 정렬의 기준 */
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    align-items: flex-start; /* height 길이가 너무 길어서 줬음 */
+}
+
+footer .top {
+    font-size: 0.71rem; /* 12 ÷ 17 = 0.705.....*/
+    position: absolute;
+    right: -5.42em; /* -65px ÷ 12 */
+    top: 3.33em; /*  40px ÷ 12 = 3.33 */
+    padding: 1.33em 0.67em 0.75em 0.75em; /*  ÷ 12   */
+    /*        16       8      9       9   */
+    background-color: var(--point-color);
+    border-radius: 50%;
+}
+
+footer .top::after {
+    content: "";
+    position: absolute;
+    left: 0.75em; /* 9 ÷ 12 */
+    top: 0;
+    width: 2em; /* 24 ÷ 12 */
+    height: 2em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_21_781' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_21_781)'%3E%3Cpath d='M7.59625 13.7495L12 9.3457L16.4038 13.7495H7.59625Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+footer .family_site {
+    position: relative; /* ul 정렬의 기준 */
+}
+
+footer .family_site .family_open {
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 0 2.41em 0 1em; /*  ÷ 17 */
+    /*          6    41     6     17  */
+    height: 2.24em; /* 38 ÷ 17 */
+    position: relative;
+}
+
+footer .family_site .family_open::after {
+    content: "";
+    position: absolute;
+    right: 0.88em; /* 15 ÷ 17 */
+    top: 0.82em; /* 14 ÷ 17 */
+    width: 0.71em; /* 12 ÷ 17 */
+    height: 0.71em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_21_715' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='12' height='12'%3E%3Crect x='12' y='12' width='12' height='12' transform='rotate(-180 12 12)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_21_715)'%3E%3Cpath d='M6 2.3225C6.1205 2.3225 6.23267 2.34175 6.3365 2.38025C6.44033 2.41875 6.53908 2.48475 6.63275 2.57825L11.127 7.0725C11.2653 7.211 11.3362 7.38508 11.3395 7.59475C11.3427 7.80425 11.2718 7.9815 11.127 8.1265C10.982 8.27133 10.8063 8.34375 10.6 8.34375C10.3937 8.34375 10.218 8.27133 10.073 8.1265L6 4.05325L1.927 8.1265C1.7885 8.26483 1.61441 8.33567 1.40475 8.339C1.19525 8.34217 1.018 8.27133 0.872997 8.1265C0.728164 7.9815 0.655747 7.80583 0.655747 7.5995C0.655747 7.39317 0.728164 7.2175 0.872997 7.0725L5.36725 2.57825C5.46092 2.48475 5.55967 2.41875 5.6635 2.38025C5.76733 2.34175 5.8795 2.3225 6 2.3225Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+footer .family_site ul {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    bottom: 2.24em;
+    width: 100%;
+    height: 8.18em; /* 139 ÷ 17 = 8.1764.. */
+    background-color: #3A3A3A;
+    padding: 1.35em 0 1.47em 1.47em; /* ÷ 17 */
+    /*       23   0  25  25     */
+}
+
+footer .family_site ul li a {
+    display: block;
+    line-height: 1.8;
+}
+
+footer .f_nav ul {
+    display: flex;
+    gap: 0.2em 2.59em; /* 44 ÷ 17 = 2.5882...     0.2는 뭐 계산하지않고 걍 넣음 */
+
+    flex-wrap: wrap; /* 여러줄 허용 */
+}
+
+footer .f_nav ul li {
+    position: relative;
+}
+
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1.3em;
+    top: 0.4em;
+    width: 1px;
+    height: 0.76em; /* 13 ÷ 17 = 0.7647.. */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+
+footer .f_info {
+    margin: 4.12em 0 4.12em 0; /* 70 ÷ 17 = 4.117 ...*/
+}
+
+footer .f_info span + span {
+    margin-left: 2.59em; /* 44 ÷ 17 = 2.5882... */
+}
+
+footer .copyright {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width:1410px) {
+
+        footer .top {
+            font-size: 0.71rem; /* 12 ÷ 17 = 0.705.....*/
+            right: 0;
+            top: 0;
+            transform: translateY(-50%);
+            padding: 1.33em 0.67em 0.75em 0.75em; /*  ÷ 12   */
+            /*        16       8      9       9   */
+            background-color: var(--point-color);
+            border-radius: 50%;
+        }
+
+        footer .top::after {
+            content: "";
+            left: 0.75em; /* 9 ÷ 12 */
+            top: 0;
+            width: 2em; /* 24 ÷ 12 */
+            height: 2em;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_21_781' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_21_781)'%3E%3Cpath d='M7.59625 13.7495L12 9.3457L16.4038 13.7495H7.59625Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+
+} /* @media */
+
+
+
+@media screen and (max-width:1024px) {
+
+
+            footer .wrapper {
+                padding: 2.81em 0; /* 45  ÷ 16 = 2.8125 ... 반올림 ok*/
+                display: block;
+            }
+
+            footer .family_site {
+                position: relative;
+                margin: 0 0 6.19em; /* 99 ÷ 16 = 6.1875*/
+            }
+            
+            footer .family_site .family_open {
+                padding: 0 2.41em 0 1em;
+                width: 100%;
+                max-width: 18.75em; /*  300 ÷ 16 */
+                /* min-width: 10.63em;   170 ÷ 16 = 10.625 */
+            }
+
+            footer .family_site ul {
+                display: none;
+            
+                position: absolute;
+                left: 0;
+                bottom: 2.24em;
+                width: 100%;
+                height: 8.18em; /* 139 ÷ 17 = 8.1764.. */
+                background-color: #3A3A3A;
+                padding: 1.35em 0 1.47em 1.47em; /* ÷ 17 */
+                /*       23   0  25  25     */
+            }
+            
+            footer .f_info span {
+                display: inline-block;
+            }
+            
+            footer .f_info span + span {
+                margin-left: 0;
+            }
+
+            footer .copyright {
+                color: rgba(255, 255, 255, 0.4);
+            }
+            
+
+
 }

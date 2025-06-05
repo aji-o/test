@@ -751,9 +751,6 @@ section .tit h2 {
 
 
 
-
-
-
 @media screen and (max-width:1024px){
 
     .news .list .swiper-slide {
@@ -868,6 +865,8 @@ section .tit h2 {
 
 }
 
+
+
 .survice .list {
     background: url(../images/main/survice_01.jpg) no-repeat center center / cover;
     color: #fff;
@@ -875,6 +874,8 @@ section .tit h2 {
     height: 29.41em; /* em 변환 -> 500 ÷ 17 = 29.411..*/
     display: flex; /* ul을 list의 높이에 위아래 가운데 정렬하려고 flex 줌 */
     align-items: center;
+
+    transition: 0.5s;
 }
 
 .survice .list[data-bg="bg1"] {
@@ -955,4 +956,85 @@ section .tit h2 {
 
 .survice .list ul li a:hover .more {
     display: inline-block;
+}
+
+@media screen and (max-width:1024px){
+
+
+            .survice .list {
+                height: auto; 
+                display: block
+            }
+            
+            .survice .list ul {
+                display: block;
+                width: auto; /* 100% -> auto 변경 */
+            
+            }
+            
+            .survice .list ul li {
+                width: auto;
+            }
+            
+            .survice .list ul li + li::before {
+                z-index: 1;
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                width: 10.12em; /* em변경 -> 162 ÷ 16 = 10.125 */
+                height: 1px;
+                background-color: rgba(255,255,255,0.5)
+            }
+            
+            
+            .survice .list ul li a {
+                display: inline-block;
+                margin: 0;
+                padding: 2.43em 0; /* em 변환 -> 39 ÷ 16 */
+
+                border-radius: 20px;
+                backdrop-filter: blur(5px);
+                width: 50%;
+                min-width: 290px;
+                margin: 1.94em 0; /* em 변환 -> 31 ÷ 16 = 1.9375 */
+            }
+            
+            .survice .list ul li a h3 {
+                font-size: 1.88rem; /* rem 변경 시 -> 30 ÷ 16 = 1.875 */
+                margin: 0.43em 0 0.6em 0; /* em 변경 시 ->  ÷ 30 */
+                /*       13       18 */
+            }
+
+            .survice .list ul li a p {
+                display: none;
+            }
+            
+            .survice .list ul li a .more {
+                font-size: 0.88rem; /* 15px ÷ 17 = 0.88 */
+                display: inline-block;
+                border: 1px solid #fff;
+                border-radius: 100px;
+                padding: 0.23em 2.53em 0.23em 1.06em; /* em변환 -> ÷ 15 */
+                /*       5px 38px 7px 16px ... 인데 아래가 안맞아서 임의로 바꿈 */
+                position: relative;
+                margin: 0;
+            }
+            
+            .survice .list ul li a .more::after {
+                content: "";
+                position: absolute;
+                right: 0.73em; /* em변환 -> 11 ÷ 15 = 0.73 */
+                top: 0.2em; /* em변환 -> 6 ÷ 15 = 0.4 ...인데 안맞아서 임의로 바꿈*/
+                width: 1.6em; /* em변환 -> 24 ÷ 15 */
+                height: 1.6em; /* em변환 -> 24 ÷ 15 */
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_142_37' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_142_37)'%3E%3Cpath d='M11.25 12.75H5.5V11.25H11.25V5.5H12.75V11.25H18.5V12.75H12.75V18.5H11.25V12.75Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+            }
+            
+            .survice .list ul li a:hover .more {
+                display: inline-block;
+            }
 }
