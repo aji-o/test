@@ -1,0 +1,199 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+@import url(contents.css);
+
+/* 서브 레이아웃 요소(중복요소 = 페이지명까지) */
+
+.sub_visual {
+    height: 25.88em; /* 440 ÷ 17 = 25.88235... */
+    background: url(../images/sub/sub_visual_01.jpg) no-repeat center center / contain;
+    color: #fff;
+    text-align: center;
+    padding: 11.65em 0 0 0; /* 198 ÷ 17 = 11.647..*/
+}
+
+.sub_visual.bg1 {
+    background: url(../images/sub/sub_visual_01.jpg);
+}
+
+.sub_visual.bg2 {
+    background: url(../images/sub/sub_visual_02.jpg);
+}
+
+.sub_visual.bg3 {
+    background: url(../images/sub/sub_visual_03.jpg);
+}
+
+.sub_visual.bg4 {
+    background: url(../images/sub/sub_visual_04.jpg);
+}
+
+.sub_visual.bg5 {
+    background: url(../images/sub/sub_visual_05.jpg);
+}
+
+.sub_visual .breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    gap: 2.41em; /* 41 ÷ 17 = 2.411..*/
+}
+
+.sub_visual .breadcrumb ol li.home {
+    width: 1.41em; /* 24 ÷ 17 = 1.411..*/
+    height: 1.41em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_164_121' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_164_121)'%3E%3Cpath d='M4.5 20.4997V9.24972L12 3.60547L19.5 9.24972V20.4997H13.9038V13.8075H10.0963V20.4997H4.5Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.sub_visual .breadcrumb ol li + li {
+    /* 첫번째 빼고 나머지 전부 */
+    position: relative; /* before 정렬의 기준 */
+}
+
+.sub_visual .breadcrumb ol li + li::before {
+    content: "";
+    position: absolute;
+    left: -2.2em; /* ol에서 준 gap의 반절 */
+    top: -0.12em; /* 2  ÷ 17 = 0.117.. */
+    width: 1.94em; /* 33 ÷ 17 = 1.941.. */
+    height: 1.94em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_164_127' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='33' height='33'%3E%3Crect width='33' height='33' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_164_127)'%3E%3Cpath d='M17.8008 16.5007L12.2001 10.9003C12.0099 10.7099 11.9125 10.4705 11.9079 10.1822C11.9035 9.89416 12.0009 9.65044 12.2001 9.45106C12.3995 9.25192 12.641 9.15234 12.9247 9.15234C13.2084 9.15234 13.45 9.25192 13.6493 9.45106L19.8289 15.6307C19.9575 15.7594 20.0482 15.8952 20.1012 16.038C20.1541 16.1808 20.1806 16.335 20.1806 16.5007C20.1806 16.6664 20.1541 16.8206 20.1012 16.9634C20.0482 17.1061 19.9575 17.2419 19.8289 17.3707L13.6493 23.5503C13.4589 23.7405 13.2195 23.8379 12.9312 23.8425C12.6432 23.8469 12.3995 23.7495 12.2001 23.5503C12.0009 23.3509 11.9014 23.1094 11.9014 22.8257C11.9014 22.542 12.0009 22.3004 12.2001 22.1011L17.8008 16.5007Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.sub_visual .depth1_name {
+    font-size: 4.18rem; /* 70 ÷ 17 = 4.117 */
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 0.16em 0 0 0; /* 11 ÷ 70(현재 depth1_name 폰트크기) = 0.157 */
+}
+
+@media screen and (max-width:1024px) {
+
+            .sub_visual .depth1_name {
+                font-size: 3.24rem; /* 55 ÷ 17 = 3.235.. */
+            }
+
+}
+
+@media screen and (max-width:768px) {
+
+            .sub_visual {
+                height: 21.88em; /* 350 ÷ 16 = 21.875... */
+                padding: 9.75em 0 0 0; /* 156 ÷ 16 = 9.75*/
+            }
+
+            .sub_visual .depth1_name {
+                font-size: 2.19rem; /* 35 ÷ 16 = 2.1875 */
+                margin: 0.37em 0 0 0; /* 13 ÷ 35(현재 depth1_name 폰트크기) = 0.371.. */
+            }
+         
+}
+
+.lnb {
+    background-color: var(--point-color);
+    color: #fff;
+}
+
+.lnb ul {
+    display: flex;
+    justify-content: center;
+
+    overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+    overflow-x: auto; /* 좌우 스크롤바 생성 */
+}
+
+.lnb ul li a {
+    display: block;
+    font-size: 1.17rem; /* 20 ÷ 17 = 1.1764...*/
+
+    height: 3em; /* 60 ÷ 20 = 3em*/
+    line-height: 3em; /* 높이와 동일하게 */
+    padding: 0 1.42em; /* 28.5 ÷ 20 = 1.425 */
+}
+
+.lnb ul li.active a {
+    font-weight: var(--bold-weight);
+    position: relative; /* after 정렬의 기준 */
+}
+
+.lnb ul li.active a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.3em; /* 6 ÷ 20 = 0.3 */
+    background-color: #fff;
+}
+
+
+@media screen and (max-width:768px) {
+
+        .lnb ul {
+            justify-content: start; /* center -> start 왼쪽으로 정렬 */
+            margin-left: 20px;
+
+        }
+        
+        .lnb ul li a {
+            display: block;
+            font-size: 1rem; /* 16 ÷ 16 = 1 */
+        
+            height: 2.88em; /* 46 ÷ 16 = 2.875em */
+            line-height: 2.88em; /* 높이와 동일하게 */
+            padding: 0 1.19em; /* 19 ÷ 16 = 1.1875 */
+        }
+        
+        .lnb ul li.active a {
+            font-weight: var(--bold-weight);
+            position: relative; /* after 정렬의 기준 */
+        }
+        
+        .lnb ul li.active a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.3em; /* 6 ÷ 20 = 0.3 */
+            background-color: #fff;
+        }
+        
+}
+
+.page_tit {
+    font-size: 2.65rem; /* 45 ÷ 17 = 2.647 */
+    margin: 2.22em 0 1.47em 0; /* 100 ÷ 45 = 2.222.., 66 ÷ 45 = 1.466.. */
+    color: var(--tit-color);
+    font-weight: var(--bold-weight);
+    text-align: center;
+}
+
+@media screen and (max-width:1024px) {
+
+    .page_tit {
+        font-size: 2.06rem; /* 35 ÷ 17 = 2.058.. */
+    }
+
+}
+
+
+@media screen and (max-width:768px) {
+
+        .page_tit {
+            font-size: 1.88rem; /* 30 ÷ 16 = 1.875 */
+            margin: 2.5em 0 1.53em 0; /* 75 ÷ 30 = 2.5 , 46 ÷ 30 = 1.533.. */
+        }
+    
+}
+
+.contents {
+    min-height: 17.64em; /* 300(임의로 부여) ÷ 17 = 17.647 */
+}

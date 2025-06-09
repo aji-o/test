@@ -22,7 +22,7 @@ html, body {
 }
 
 @media screen and (max-width:768px) {     /* 25.05.07 - 브라우저 넓이가 768px 이하에서만 작동 */
-                    body {
+                    html, body {
                         font-size: 16px;
                     }
 }
