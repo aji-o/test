@@ -40,8 +40,8 @@
 
 .ctn_ceo .photo { /******************************************************************/
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 10.95%;
+    top: 7.76em; /* 132 ÷ 17 = */
     width: 32.22%; /* 404 ÷ 17 = 23.764 < 이걸로 하지 않음!!! 
     406(사진width크기) ÷ 1260(wrapper크기) x 100 = 32.22% */
     height: 47.06em; /* 800 ÷ 17 = 47.058 */
@@ -62,7 +62,8 @@
 
 .ctn_ceo .ceo_detail .sign {
     display: flex;
-    margin: 0 0 0 0;
+    align-items: center;
+    margin: 4.24em 0 0 0; /* 72 ÷ 17 = 4.2352.. */
     gap: 2.06em; /* 35 ÷ 17 = 2.058 */
 }
 
