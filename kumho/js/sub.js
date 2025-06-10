@@ -20,3 +20,4 @@ $(document).ready(function(){
     } 
     snbScroll();   /* 함수의 실행 */
 })
+

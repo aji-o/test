@@ -14,6 +14,7 @@
     height: 20.59em; /* 350 ÷ 17 = 20.588..*/
     background-color: #F3F4F8;
     border: 20px;
+    border-radius: 20px;
 }
 
 .ctn_ceo .wrapper {
@@ -42,7 +43,7 @@
     position: absolute;
     left: 10.95%;
     top: 7.76em; /* 132 ÷ 17 = */
-    width: 32.22%; /* 404 ÷ 17 = 23.764 < 이걸로 하지 않음!!! 
+    width: 32.22%; /* 404 ÷ 17 = 23.764em < 이걸로 하지 않음!!! 
     406(사진width크기) ÷ 1260(wrapper크기) x 100 = 32.22% */
     height: 47.06em; /* 800 ÷ 17 = 47.058 */
     border-radius: 30px;
@@ -72,6 +73,91 @@
 }
 
 
+
+@media screen and (max-width:1400px) {
+
+            .ctn_ceo .wrapper {
+                margin: 0 20px
+            }
+
+            .ctn_ceo .ceo_tit {
+                padding-left: 47%; /* 50.95% -> 47? 임의부여 */
+                padding-right: 1.77em; /* 옆 줄이 거슬려서... 30 ÷ 17 = 1.764 */
+            }
+
+            .ctn_ceo .ceo_detail {
+                margin-left: 47%; /* 50.95% -> 47? */
+            }
+            
+}
+
+@media screen and (max-width:768px) {
+
+    .ctn_ceo::before {
+        left: 20px; /* wrapper에게 줬던 여백을 부여 */
+        width: calc(100% - 40px); /* left의 양옆값을 뺀다 */
+        height: 20.59em; /* 350 ÷ 17 = 20.588..*/
+        border-radius: 20px;
+    }
+    
+    .ctn_ceo .wrapper {
+        margin: 0 20px 
+    }
+
+    .ctn_ceo .ceo_tit {
+        background-color: #F3F4F8;
+        border-radius: 10px;
+        padding: 4.38em 0.94em 5.31em 0.94em; /* 70px 15px 85px 15px; ÷ 16 */
+    }
+    
+
+    .ctn_ceo .ceo_tit strong {
+        font-size: 1.13rem; /* 18 ÷ 16 = 1.125 */
+    }
+    
+    .ctn_ceo .ceo_tit h2 {
+        font-size: 1.56rem; /* 25 ÷ 16 = 1.56..*/
+        margin: 0.84em 0 1.4em 0; /* 21 ÷ 25 , 35 ÷ 25  */
+    }
+    
+
+    .ctn_ceo .photo {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        max-width: 412px;
+        height: 30.88em; /* 494 ÷ 16 = 30.875 */
+        margin: 0.63em auto 0 auto; /* 10px ÷ 16 = 0.625 */
+        border-radius: 15px;
+        box-shadow: 7px 3px 22px rgba(0, 0, 0, 0.2);
+    }
+    
+    .ctn_ceo .photo img {
+        object-position: center top;
+    }
+    
+    .ctn_ceo .ceo_detail {
+        margin: 1.88em 0 2em 0; /* 30 ÷ 16 */
+    }
+    
+    .ctn_ceo .ceo_detail .sign {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        margin: 4.24em 0 0 0; /* 72 ÷ 17 = 4.2352.. */
+    }
+    
+    .ctn_ceo .ceo_detail .sign strong {
+        font-weight: var(--bold-weight);
+    }
+    
+}
+
+
+
 /********* 회사소개 - 찾아오시는길 css ***********/
 
 .ctn_map .map {
@@ -92,8 +178,7 @@
             left: 20px;
             width: calc(100% - 20px);
 
-        } 
-
+        }
 }
 
 .ctn_map .tit_map {
@@ -216,7 +301,6 @@
     padding-bottom: 100px;
 }
 
-
 @media screen and (max-width:1100px) {
 
             .ctn_map .tit_map {
@@ -247,8 +331,6 @@
                 padding: 12px 0;
             }
 }
-
-
 
 @media screen and (max-width:768px) {
 
@@ -322,10 +404,103 @@
 }
 
 @media screen and (max-width:476px) {
-
-
     .ctn_map .tit_map {
         flex-direction: column;
     }
+}
 
+
+
+
+
+/* ######   회사소개 >   연혁 ####### */
+
+.ctn_history {
+    margin: 0 0 6.59em 0; /* 112 ÷ 17 = 6.588 */
+}
+
+.ctn_history .his_tit {
+    margin: 0 0 3.24em 0;  /* 55 ÷ 17 = 3.235.. */
+}
+
+.ctn_history .his_tit strong {
+    font-size: 1.29em; /* 22 ÷ 17 = 1.294*/
+    display: block;
+    color: var(--point-color);
+}
+
+.ctn_history .his_tit h2 {
+    font-size: 2.06em; /* 35 ÷ 17 = 2.058 */
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+    margin: 0.46em 0 0 0; /* 16 ÷ 35 = 0.4571 */
+}
+.ctn_history .his_photo .photo {
+    overflow: hidden;
+    height: 29.41em; /* 500 ÷ 17 = 29.41 */
+}
+
+.ctn_history .his_photo .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ctn_history .his_year_group {
+    margin: 6.59em 0; /* 112 ÷ 17 = 6.588 */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.ctn_history .his_year_group.reverse {
+    flex-direction: row-reverse; /* 가로반전 */  
+}
+
+
+.ctn_history .his_year_group .yesr_tit {
+    width: 404px;        /* ##테스트 필요!## */
+}
+
+
+.ctn_history .his_year_group .year_cont {
+    width: 697px;       /* ##테스트 필요!## */
+}
+
+.ctn_history .his_year_group .yesr_tit h3 {
+    font-size: var(--tit-font-size); /* 45px */
+    color: var(--tit-color);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    margin: 0 0 0.56em 0; /* 25 ÷ 45 */
+}
+
+.ctn_history .his_year_group .yesr_tit .photo {
+    overflow: hidden;
+    margin: 2.65em 0 0 0;
+    border-radius: 20px;
+}
+
+.ctn_history .his_year_group .yesr_tit .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ctn_history .his_year_group .year_cont h4 {
+    font-size: 1.76rem; /* 30 ÷ 17 = 1.764 */
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var(--tit-line-height);
+
+}
+
+.ctn_history .his_year_group .year_cont ul {
+    margin: 1.47em 0 3.76em 0; /* 25 ÷ 17 = 1.470 //  132 ÷ 17 = 7.764  ..인데 너무커서 3으로 변경 */
+}
+
+.ctn_history .his_nav {
+    display: none; /* 임시로 감춤 ... 다시 보이게할거임 */
 }
