@@ -451,23 +451,36 @@
     margin: 6.59em 0; /* 112 ÷ 17 = 6.588 */
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
-
-
-
-.ctn_history .his_year_group.reverse {
-    flex-direction: row-reverse; /* 가로반전 */  
-}
-
 
 .ctn_history .his_year_group .yesr_tit {
-    width: 404px;        /* ##테스트 필요!## */
+    max-width: 404px;  /* ##테스트 필요!## */
+    width: 35%;
+    min-width: 200px;
 }
 
 
 .ctn_history .his_year_group .year_cont {
-    width: 697px;       /* ##테스트 필요!## */
+    max-width: 697px;   /* ##테스트 필요!## */
+    width: 60%;
+    padding: 1.94em 0 0 2.88em; /* 33 ÷ 17 = 1.941 / 49 ÷ 17 = 2.882... */
+    border-width: 0 0 0 2px;
+    border-style: solid; 
+    border-color: #D9D9D9;
+    position: relative; /*  */
 }
+
+.ctn_history .his_year_group .year_cont::before {
+    content: "";
+    position: absolute;
+    left: -2px; /* 선 두께만큼 옆으로 이동해야함 */
+    top: 0;
+    width: 2px;
+    height: 54px;
+    background-color: #fff;
+}
+
 
 .ctn_history .his_year_group .yesr_tit h3 {
     font-size: var(--tit-font-size); /* 45px */
@@ -494,13 +507,226 @@
     font-weight: var(--bold-weight);
     color: var(--tit-color);
     line-height: var(--tit-line-height);
+    margin: 0 0 0.5em 0;
 
+    /*
+    margin: 1.47em 0 3.76em 0;  
+            25 ÷ 17 = 1.470 //  132 ÷ 17 = 7.764  ..인데 너무커서 3으로 변경 */
+
+    position: relative; /* before */
 }
 
-.ctn_history .his_year_group .year_cont ul {
-    margin: 1.47em 0 3.76em 0; /* 25 ÷ 17 = 1.470 //  132 ÷ 17 = 7.764  ..인데 너무커서 3으로 변경 */
+.ctn_history .his_year_group .year_cont h4::before {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    left: -1.8em; /* 49 ÷ 30 = 1.63... 인데 안맞아서 웹에서 조정*/
+    top: 0.5em; /* 15 ÷ 30 = 0.5*/
+    width: 0.27em; /* 8 ÷ 30 = 0.266.. */
+    height: 0.27em;
+    background-color: #4A4A4A;
+    border-radius: 50%;
 }
+
+.ctn_history .his_year_group .year_cont ul + h4 {
+    margin-top: 2.76em;
+}
+
+.ctn_history .his_year_group .year_cont > *:last-child {
+    position: relative;
+}
+
+.ctn_history .his_year_group .year_cont > *:last-child::before {
+    content: "";
+    position: absolute;
+    left: -3em; /* -51px ÷ 17 = 3 */
+    bottom: -2.53em; /* -9px ÷ 17 = 0.529 */
+    width: 2px;
+    height: calc(100% + 75px);
+    background-color: #fff;
+}
+
+.ctn_history .his_year_group .year_cont ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.29em 0; /* 5 ÷ 17 =0.2941 */
+}
+
+.ctn_history .his_year_group .year_cont ul li strong {
+    display: block;
+    color: var(--tit-color);
+}
+
+.ctn_history .his_year_group .year_cont ul li span {
+    display: block;
+    width: calc(100% - 6.12em); /* 104 ÷ 17 = 6.117..*/
+}
+
+
+
 
 .ctn_history .his_nav {
     display: none; /* 임시로 감춤 ... 다시 보이게할거임 */
+}
+
+
+
+
+@media screen and (min-width:769px) { 
+
+    /* reverse 스타일은 pc버전에만 적용되도록 media에 넣어둔다. */
+
+    .ctn_history .his_year_group.reverse {
+        flex-direction: row-reverse;
+    }
+    
+    .ctn_history .his_year_group.reverse .year_cont {
+        padding-right: 2.88em;
+        padding-left: 0;
+        border-width: 0 2px 0 0;
+    }
+    
+    .ctn_history .his_year_group.reverse .year_cont::before {
+        left: auto;
+        right: -2px; /* left값을 그대로 부여 */
+    }
+
+    .ctn_history .his_year_group.reverse .year_cont {
+        text-align: right;
+    }
+    
+    .ctn_history .his_year_group.reverse .year_cont ul li {
+        flex-direction: row-reverse;
+    }
+    
+    .ctn_history .his_year_group.reverse .year_cont h4::before {
+        left: auto; /* auto로 해제?*/
+        right: -1.8em; /* 기존 left 값을 right 에게 부여 */
+    }
+    
+    .ctn_history .his_year_group.reverse .year_cont > *:last-child::before {
+        left: auto;
+        right: -3em;
+    }
+    
+
+}/* @media reverse */
+
+
+@media screen and (max-width:768px) {
+
+                    
+                .ctn_history {
+                    margin: 0 0 4em 0; 
+                }
+
+                .ctn_history .his_tit {
+                    margin: 0 0 1.81em 0;  /* 29 ÷ 16 = 1.8125.. */
+                }
+
+                .ctn_history .his_tit strong {
+                    font-size: 1.25rem; /* 20 ÷ 16 = 1.25*/
+                }
+
+                .ctn_history .his_tit h2 {
+                    font-size: 1.56rem; /* 25 ÷ 16 = 1.5625 */
+                    margin: 0.56em 0 0 0; /* 14 ÷ 25 = 0.56 */
+                }
+
+                .ctn_history .his_photo .photo {
+                    height: 8.13em; /* 130 ÷ 16 = 8.125 */
+                }
+
+                .ctn_history .his_year_group {
+                    margin: 2.5em 0 5em 0; /* 40 ÷ 16 = 2.5 / 80 ÷ 16 = 5*/
+                    display: block
+                }
+
+                .ctn_history .his_year_group .yesr_tit {
+                    max-width: 100%;
+                    width: auto;
+                    min-width: 0;
+                }
+
+
+                .ctn_history .his_year_group .year_cont {
+                    max-width: 100%;   /* ##테스트 필요!## */
+                    width: auto;
+                    padding: 2em 0 0 1.5em; /* 32 ÷ 16 = 2 / 24 ÷ 16 = 1.5 */
+                }
+
+                .ctn_history .his_year_group .year_cont::before {
+                    content: "";
+                    position: absolute;
+                    left: -2px; /* 선 두께만큼 옆으로 이동해야함 */
+                    top: 0;
+                    width: 2px;
+                    height: 48px;
+                    background-color: #fff; /* ???????????????????????????????????? */
+                }
+
+                .ctn_history .his_year_group .yesr_tit h3 {
+                    font-size: var(--tit-font-size); 
+                    color: var(--tit-color);
+                    font-weight: var(--bold-weight);
+                    line-height: var(--tit-line-height);
+                    margin: 0 0 0.28em 0; /* 7 ÷ 25 = 0.28 */
+                }
+
+                .ctn_history .his_year_group .yesr_tit h3 br {
+                    display: none;
+                }
+
+
+                .ctn_history .his_year_group .yesr_tit .photo {
+                    display: none;
+                }
+
+                .ctn_history .his_year_group .year_cont h4 {
+                    font-size: 1.25rem; /* 20 ÷ 16 = 1.25 */
+                    margin: 0 0 1.13em 0; /* 18 ÷ 16 = 1.125 */
+                }
+
+                .ctn_history .his_year_group .year_cont h4::before {
+                    width: 0.4em; /*  8 ÷ 20 */
+                    height: 0.4em; /* 8 ÷ 20  */
+                    z-index: 10;
+                    left: -1.45em; /* 웹에서 조정 */
+                    top: 0.4em;
+                }
+
+                .ctn_history .his_year_group .year_cont ul + h4 {
+                    margin-top: 2em; /* 40 ÷ 20 */
+                }
+
+                .ctn_history .his_year_group .year_cont > *:last-child::before {
+                    left: -1.7em; 
+                    bottom: -2.53em; 
+                    width: 5px;
+                    height: calc(100% + 75px);
+                    background-color: #fff;
+                }
+
+
+                .ctn_history .his_year_group .year_cont ul li {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0.29em 0; /* 5 ÷ 17 =0.2941 */
+                }
+
+                .ctn_history .his_year_group .year_cont ul li strong {
+                    display: block;
+                    color: var(--tit-color);
+                }
+
+                .ctn_history .his_year_group .year_cont ul li span {
+                    display: block;
+                    width: calc(100% - 6.12em); /* 104 ÷ 17 = 6.117..*/
+                }
+
+
+
+
+
+
 }
