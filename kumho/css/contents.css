@@ -416,7 +416,7 @@
 /* ######   회사소개 >   연혁 ####### */
 
 .ctn_history {
-    margin: 0 0 6.59em 0; /* 112 ÷ 17 = 6.588 */
+    margin: 0 0 18.65em 0; /* 317 ÷ 17 = 18.647 */
 }
 
 .ctn_history .his_tit {
@@ -436,9 +436,17 @@
     line-height: var(--tit-line-height);
     margin: 0.46em 0 0 0; /* 16 ÷ 35 = 0.4571 */
 }
+
 .ctn_history .his_photo .photo {
     overflow: hidden;
     height: 29.41em; /* 500 ÷ 17 = 29.41 */
+    width: 40%;
+    margin: 0 auto;
+    transition: 0.5s;
+}
+
+.ctn_history .his_photo.active .photo {
+    width: 100%;
 }
 
 .ctn_history .his_photo .photo img {
@@ -566,10 +574,53 @@
 
 
 .ctn_history .his_nav {
-    display: none; /* 임시로 감춤 ... 다시 보이게할거임 */
+    z-index: 99; /* header보다 1 낮은 값 */
+    position: fixed; /* 무조건 body기준으로 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -11%;
+    width: calc(100% - 40px);
+    max-width: 1260px;
+    background-color: #F4F4F4;
+    padding: 7px 0; /* f4f4 영역 */
+    border-radius: 50px;
+    transition: 0.5s;
 }
 
+.ctn_history .his_nav.active {
+    bottom: 5%;
+}
 
+.ctn_history .his_nav ul {
+    display: flex;
+    overflow-y: hidden; /* 위아래 스크롤바 삭제 */
+    overflow-x: auto;
+}
+
+.ctn_history .his_nav ul li {
+    width: 25%;
+}
+
+.ctn_history .his_nav ul li button {
+    display: block;
+    width: 80%;
+    margin: 0 10%;
+    text-align: center;
+    font-size: 1.18rem; /* 20 ÷ 17 = 1.1764 */
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+    padding: 12px 2px;
+    border-radius: 50px;
+
+    /* 줄바꿈금지 */
+    white-space: nowrap;
+}
+
+.ctn_history .his_nav ul li.active button {
+    background-color: var(--point-color);
+
+    color: #fff;
+}
 
 
 @media screen and (min-width:769px) { 
@@ -617,7 +668,7 @@
 
                     
                 .ctn_history {
-                    margin: 0 0 4em 0; 
+                    margin: 0 0 10.44em 0; /* 167 ÷ 16 = 10.4375 */  
                 }
 
                 .ctn_history .his_tit {
@@ -714,19 +765,30 @@
                     margin: 0.29em 0; /* 5 ÷ 17 =0.2941 */
                 }
 
-                .ctn_history .his_year_group .year_cont ul li strong {
-                    display: block;
-                    color: var(--tit-color);
+
+
+
+
+                                
+
+                .ctn_history .his_nav ul::-webkit-scrollbar {
+                    display: none; /* 스크롤바 삭제... but 비표준코드 */
                 }
 
-                .ctn_history .his_year_group .year_cont ul li span {
-                    display: block;
-                    width: calc(100% - 6.12em); /* 104 ÷ 17 = 6.117..*/
+
+                .ctn_history .his_nav ul li {
+                    width: auto;
                 }
 
+                .ctn_history .his_nav ul li button {
+                    width: 100%;
+                    font-size: 1.13rem; /* 18 ÷ 16 = 1.125 */
+                    padding: 14px 31px;
+                }
 
-
-
-
+                .ctn_history .his_nav ul li.active button {
+                    background-color: var(--point-color);
+                    color: #fff;
+                }
 
 }
