@@ -8,11 +8,13 @@
 .visual .swiper {
     width: 100%;
     height: 100%;
+    height: 100dvh; /* 후ㅏ면의 높이에 꽉 맞게  */
 }
 
 .visual .swiper .swiper-slide .photo {
     overflow: hidden;
-    height: 100%
+    height: 100%;
+
 }
 
 .visual .swiper .swiper-slide .photo img,
@@ -56,7 +58,7 @@
     z-index: 10;
     position: absolute; /* swiper 기준 정렬*/
     left: 50%;
-    bottom: 60px;
+    bottom: 5%;
     transform: translateX(-50%);
     width: calc(100% - 20px);
     max-width: 1260px;
@@ -64,46 +66,51 @@
     display: flex;
 }
 
-.visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0;
-}
+@media screen and (min-width: 769px){ /* paging pc에서만 */
 
-.visual .paging .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: transparent; /* 글씨크기나 색상이 바뀌면 이곳에 입력 */
-}
-.visual .paging .swiper-pagination-bullet {
-    width: 25%;
-    height: auto;
-    display: block;
-    border-radius: 0;
-    background: transparent;
-    opacity: 1;
-    margin: 0;
-    text-align: center;
-    padding-bottom: 8px;
-    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
-    position: relative; /* before 정렬의 기준 */
-}
+    .visual .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
 
-.visual .paging .swiper-pagination-bullet::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 5px;
-    background-color: #fff;
-}
+    .visual .paging .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: transparent; /* 글씨크기나 색상이 바뀌면 이곳에 입력 */
+    }
+    .visual .paging .swiper-pagination-bullet {
+        width: 25%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+        background: transparent;
+        opacity: 1;
+        margin: 0;
+        text-align: center;
+        padding-bottom: 8px;
+        border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+        position: relative; /* before 정렬의 기준 */
+    }
 
-.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
-    animation-name: visual_paging;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; /* 마지막 100% 유지 */
-    /*animation-timing-function: linear;  가속도 삭제 */
-}
+    .visual .paging .swiper-pagination-bullet::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 5px;
+        background-color: #fff;
+    }
+
+    .visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+        animation-name: visual_paging;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards; /* 마지막 100% 유지 */
+        /*animation-timing-function: linear;  가속도 삭제 */
+    }
+} /* @media paging pc에서만 */
+
+
 
 @keyframes visual_paging {
     0% { width: 0;}
@@ -111,16 +118,215 @@
 }
 
 
+@media screen and (max-width: 768px){ /*  */
 
+            .visual .swiper {
+                height: 700px;
+            }
+            
+            .visual .swiper .swiper-slide .visual_txt strong {
+                font-size: 16px;
+            }
+            
+            .visual .swiper .swiper-slide .visual_txt h3 {
+                margin: 15px 0 30px 0;
+            }
 
+            .visual .swiper .swiper-slide .visual_txt h3 br {
+                display: none;
+            }
+            
+            .visual .swiper .swiper-slide .visual_txt a {
+                font-size: 20px;
+            }
+            
+            .visual .swiper .paging {
+                z-index: 10;
+                position: absolute; /* swiper 기준 정렬*/
+                left: 50%;
+                bottom: 16px;
+                transform: translateX(-50%);
+                width: auto;
+                /*max-width: 1260px;*/
+                color: #fff;
+                display: flex;
+                gap: 8px;
+            }
 
+            .visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+            .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0;
+            }
 
+            .visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #fff;
+                width: 28px;
+            }
+            .visual .swiper .paging .swiper-pagination-bullet {
+                width: 5px;
+                height: 5px;
+                display: inline-block;
+                border-radius: 2px;
+                background: rgba(255, 255, 255, 0.5);
+                opacity: 1;
+                font-size: 0;
+                line-height: 0;
+                margin: 0;
+            }
+            
+            
 
+}/* @media */
 
+.tree .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.tree .tit {
+    width: 40%; /* -- ★ */
+}
 
+.tree .tit h2 {
+    color: var(--point-color);
+    line-height: var(--tit-line-height);
+    font-size: var(--display-size);
+    font-weight: var(--bold-weight);
+    margin: 0 0 15px 0;
+}
 
+.tree .tit h2 strong {
+    position: relative;
+}
 
+.tree .tit h2 strong::after {
+    content: "+";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    font-size: 30px;
+}
+
+.tree .tree_ani {
+    position: relative; /* ★ 구름, 태양 정렬의 기준 */
+    max-width: 657px;
+    width: calc(100% - 390px);
+    width: 58%; /* -- ★ 중간에 여백 2% 정도 줌... 옆 tit도 같이 줄고 싶을 때 사용 */
+    margin: 10% 0 0 0;
+}
+
+.tree .tree_ani .img_tree {
+    width: 82.65%; /* 543 / 657 x 100 = 82.648... */
+    position: relative; /* z-index는 무조건 position이 있어야함 */
+}
+
+.tree .tree_ani .img_left_cloud {
+    position: absolute;
+    width: 44.44%;
+    left: -15%;
+    bottom: 17%;
+    z-index: 3;
+
+    animation: tree_size 5s linear infinite;
+}
+
+.tree .tree_ani .img_sun {
+    position: absolute;
+    width: 20.09%;
+    right: 15%;
+    top: -13%;
+    z-index: 1;
+
+    animation: tree_rotate 8s linear infinite;
+}
+
+.tree .tree_ani .img_right_cloud {
+    position: absolute;
+    width: 31.66%;
+    right: 0;
+    top: -5%;
+    z-index: 2;
+
+    animation: tree_size_r 3s linear infinite;
+}
+
+@keyframes tree_left {
+    /* 왔다갔다 반복되는 애니메이션은 0%, 100%가 같아야한다  */
+    0% { transform: translateX(0);}
+    50% { transform: translateX(50px);}
+    100% { transform: translateX(0);}
+}
+
+@keyframes tree_size {
+    0% { transform: scale(100%) translate(0, 0); opacity: 1;}
+    50% { transform: scale(90%) translate(-10px, -20px); opacity: 0.8;}
+    100% { transform: scale(100%) translate(0, 0); opacity: 1;}
+}
+
+@keyframes tree_rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes tree_size_r {
+    0% { transform: scale(100%);}
+    50% { transform: scale(90%);}
+    100% { transform: scale(100%);}
+}
+
+@media screen and (max-width: 1580px){
+    .wrapper {
+        width: auto;
+        margin: 0 100px 0 170px;
+    }
+
+}
+
+@media screen and (max-width: 1024px){
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+        .tree {
+            margin: 100px 0 70px 0;
+            text-align: center;
+        }
+
+        .tree .wrapper {
+            display: block;
+        }
+        
+        .tree .tit {
+            width: auto;
+        }
+        
+        .tree .tit h2 {
+            margin: 0 0 10px 0;
+        }
+
+        .tree .tit p br {
+            display: none;
+        }
+
+        .tree .tit h2 strong::after {
+            right: -20px;
+            top: -3px;
+            font-size: 25px;
+        }
+        
+        .tree .tree_ani {
+            max-width: 400px;
+            width: 80%;
+            margin: 50px auto 0 auto;
+        }
+
+}/* @media */
 
 
 
@@ -198,6 +404,15 @@
 active(border)가 없는 li? a?에는 boder 값만큼 더하면 되지않을까...?  
 
 https://kimnpartners.co.kr/#LAWYER    참고사이트 */
+
+
+
+@media screen and (max-width: 1024px){
+    #fp-nav {
+        display: none !important;
+    }
+}
+
 
 
 
