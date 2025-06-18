@@ -22,7 +22,7 @@
     <!-- count 라이브러리 -->
     <script src="js/count.js"></script>
 
-    <title>생명의 숲</title>
+    <title>내가 수정!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 생명의 숲</title>
 </head>
 <body class="">
     <!-- 배경이 흰색이라 header나 다른 요소가 검은색 
@@ -123,24 +123,7 @@
             </div>
         </section>
         <section class="section work fp-auto-height-responsive">
-            <div class="wrapper">
-                <div class="tit">
-                    <h2>모두가  누리는 <br><strong>5분 거리</strong>의 숲을 만들기</h2>
-                    <p>시민의 힘으로 나무를 심고 숲을 가꾸고 보전하며, <br>
-                        숲의 공공성을 높여 누구나 숲의 가치를 누리는 건강한 사회를 <br>
-                        만들어 가고자 합니다.</p>
-                </div>
-                <div class="list">
-                    <ul>
-                        <li class="work01"><a href="#"><span>도시숲</span></a></li>
-                        <li class="work02"><a href="#"><span>학교숲</span></a></li>
-                        <li class="work03"><a href="#"><span>사회복지숲</span></a></li>
-                        <li class="work04"><a href="#"><span>숲환경교육</span></a></li>
-                        <li class="work05"><a href="#"><span>숲길</span></a></li>
-                        <li class="work06"><a href="#"><span>공존숲</span></a></li>
-                    </ul>
-                </div>
-            </div>
+            work<br>
         </section>
         <section class="section story fp-auto-height-responsive">
             story
