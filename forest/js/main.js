@@ -8,7 +8,7 @@ $(document).ready(function(){
         showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
         
         lockAnchors: false,
-        anchors: ['main', 'tree', 'work', 'story'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
+        anchors: ['main', 'tree', 'work', 'story', 'footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
         autoScrolling:true, /* 한페이지씩 스크롤 */
         scrollHorizontally: true,
