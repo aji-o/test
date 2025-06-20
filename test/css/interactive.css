@@ -1,0 +1,240 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common_full.css);
+
+.visual {
+    height: 800px;
+    background: url(../images/inter_01.jpg) no-repeat center center / cover;
+}
+
+.slogan {
+    margin: 200px 0;
+}
+
+.slogan .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.slogan p {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #ccc;
+    position: relative;
+    white-space: nowrap;
+}
+
+.slogan p span {
+    position: absolute;
+    color: #FC9B00;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+
+}
+
+@media screen and (max-width: 768px){
+
+                .slogan p {
+                    font-size: 35px;
+                }
+                
+
+}
+
+
+
+
+
+
+
+
+
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner .photo {
+    overflow: hidden;
+    width: 50%;
+    height: 300px;
+    transition: 0.2s;
+}
+
+.banner .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.life {
+    padding: 200px 0;
+    transition: 0.5s;
+}
+
+.life h2 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 0 0 30px 0;
+    transition: 0.5s;
+}
+
+.life.dark {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+.life.dark h2 {
+    color: #fff;
+}
+
+
+
+
+
+.fixed_bg {
+    margin: 100px 0;
+    height: 500px;
+    background-image: url(../images/inter_04.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.fixed_bg h2 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    padding: 200px 0 0 0;
+}
+
+
+
+.medi {
+    margin: 50px 20px 200px 20px;
+}
+
+.medi .bg {
+    height: 643px;
+    background: url(../images/inter_03.jpg) no-repeat center center / cover;
+    clip-path: path('M139.675 93.8083L1 300.902V638H929V389.557L864.215 2L654.102 362.926L615.581 185.617L521.03 389.557L411.771 61.2198L258.038 362.926L139.675 93.8083Z');
+
+    
+}
+
+.medi .photo {
+    overflow: hidden;
+    height: 643px;
+    border-radius: 30px;
+    position: relative; /* h2정렬의 기준 */
+}
+
+.medi .photo h2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    color: #FC9B00;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 10px 40px 10px 20px;
+    border-radius: 0 30px 0 0;
+}
+
+.medi .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.medi .photo h2::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    width: 30px;
+    height: 30px; /* 사이즈만큼 옆(right)으로 이동하고, 넓이와 높이를 줘야한다 */
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+
+.medi .photo h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/inter_corner.png) no-repeat left bottom / contain;
+}
+
+
+@media screen and (max-width: 768px){
+                
+            .medi .photo {
+                height: 400px;
+                border-radius: 15px;    
+            }
+
+            .medi .photo h2 {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: #fff;
+                color: #FC9B00;
+                font-size: 35px;
+                font-weight: 700;
+                line-height: 1.2;
+                padding: 5px 20px 5px 10px;
+                border-radius: 0 15px 0 0;
+            }
+
+            .medi .photo h2::after {
+                content: "";
+                position: absolute;
+                right: -15px;
+                bottom: 0;
+                width: 15px;
+                height: 15px; /* 사이즈만큼 옆(right)으로 이동하고, 넓이와 높이를 줘야한다 */
+            }
+
+            .medi .photo h2::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: -15px;
+                width: 15px;
+                height: 15px;
+            }
+
+
+}
+
+.icon {
+    margin: 50px 0 500px 0;
+}
+
+.icon button {
+    width: 170px;
+    height: 170px;
+    background-color: #1d1d1d;
+    mask-image: url("data:image/svg+xml,%3Csvg width='170' height='170' viewBox='0 0 170 170' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_8_35' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='170' height='170'%3E%3Crect width='170' height='170' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_8_35)'%3E%3Cpath d='M63.75 21.2499V7.08325H106.25V21.2499H63.75ZM77.9167 99.1666H92.0833V56.6666H77.9167V99.1666ZM85 155.833C76.2639 155.833 68.0295 154.151 60.2969 150.786C52.5642 147.422 45.8056 142.847 40.0208 137.062C34.2361 131.278 29.6615 124.519 26.2969 116.786C22.9323 109.054 21.25 100.819 21.25 92.0833C21.25 83.3471 22.9323 75.1128 26.2969 67.3801C29.6615 59.6475 34.2361 52.8888 40.0208 47.1041C45.8056 41.3194 52.5642 36.7447 60.2969 33.3801C68.0295 30.0155 76.2639 28.3333 85 28.3333C92.3194 28.3333 99.3438 29.5138 106.073 31.8749C112.802 34.236 119.118 37.6596 125.021 42.1458L134.938 32.2291L144.854 42.1458L134.938 52.0624C139.424 57.9652 142.847 64.2812 145.208 71.0103C147.569 77.7395 148.75 84.7638 148.75 92.0833C148.75 100.819 147.068 109.054 143.703 116.786C140.339 124.519 135.764 131.278 129.979 137.062C124.194 142.847 117.436 147.422 109.703 150.786C101.97 154.151 93.7361 155.833 85 155.833ZM85 141.667C98.6944 141.667 110.382 136.826 120.063 127.146C129.743 117.465 134.583 105.778 134.583 92.0833C134.583 78.3888 129.743 66.7013 120.063 57.0208C110.382 47.3402 98.6944 42.4999 85 42.4999C71.3056 42.4999 59.6181 47.3402 49.9375 57.0208C40.2569 66.7013 35.4167 78.3888 35.4167 92.0833C35.4167 105.778 40.2569 117.465 49.9375 127.146C59.6181 136.826 71.3056 141.667 85 141.667Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+}
+
+.icon button:hover {
+    background-color: #C14BFF;
+
+}
