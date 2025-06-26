@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- jquery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- swiper 라이브러리 -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>네스트 호텔</title>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 고정될 때 fixed
+             메뉴가 상단으로 사라질때 gnb_up
+             pc버전에서 메뉴에 마우스를 오버하면 menu_over
+             mobile 버전에서 메뉴를 클릭하면 menu_open -->
+
+        <header class="">
+            <h1 class="logo"><a href="index.html"><span class="blind">로고</span></a></h1>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                    <div class="gnb_util">
+                        <div class="lang">
+                            <button class="lang"><span class="">KOR</span></button>
+                        </div> <!-- lang -->
+                        <div class="search">
+                            <button class="search"><span class="blind">검색</span></button>
+                        </div> <!-- search -->
+                    </div> <!-- gnb_util -->
+                    <ul class="depth1">
+                        <!--     pc = over 클래스 추가
+                             mobile = open 클래스 추가 -->
+                        <li class="">
+                            <a href="#"><span>호텔소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>공지사항</span></a></li>
+                                <li><a href="#"><span>이벤트</span></a></li>
+                                <li><a href="#"><span>패키지 & 프로모션</span></a></li>
+                                <li><a href="#"><span>네스트뉴스</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/esg01.html"><span>객실</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>Standard</span></a></li>
+                                <li><a href="#"><span>Superior</span></a></li>
+                                <li><a href="#"><span>Deluxe</span></a></li>
+                                <li><a href="#"><span>Suite</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/biz01.html"><span>다이닝</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>플라츠</span></a></li>
+                                <li><a href="#"><span>쿤스트 라운지 & 바</span></a></li>
+                                <li><a href="#"><span>루프트 스낵</span></a></li>
+                                <li><a href="#"><span>네스트델리</span></a></li>
+                                <li><a href="#"><span>룸서비스 예약</span></a></li>
+                                <li><a href="#"><span>다이닝 예약</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/ir01.html"><span>편의시설</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>Fitness & Sauna</span></a></li>
+                                <li><a href="#"><span>Kids Zone</span></a></li>
+                                <li><a href="#"><span>CU at NEST</span></a></li>
+                                <li><a href="#"><span>Nest Park</span></a></li>
+                                <li><a href="#"><span>Business Center</span></a></li>
+                                <li><a href="#"><span>Surroundings</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/notice.html"><span>고객서비스</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>네스트회원혜택</span></a></li>
+                                <li><a href="#"><span>상품권 소개</span></a></li>
+                                <li><a href="#"><span>고객의 소리</span></a></li>
+                                <li><a href="#"><span>FAQ</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div> <!-- gnb_wrap -->
+                <div class="gnb_bg"></div><!-- 메뉴 아래에서 검은색을 깔아줄 담당 -->
+            </nav>
+            <div class="util">
+                <div class="lang">
+                    <button class="lang_open"><span class="">KOR</span></button>
+                </div> <!-- lang -->
+                <div class="login">
+                    <button class="login_open"><span class="blind">로그인</span></button>
+                </div> <!-- login -->
+                <div class="search">
+                    <button class="search_open"><span class="blind">검색</span></button>
+                </div> <!-- search -->
+                
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_01.jpg" alt="호텔내부1"></div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_02.jpg" alt="호텔내부2"></div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_03.jpg" alt="호텔내부3"></div>
+                        </li>
+                    </ul>
+                </div><!-- //swiper -->
+                    <div class="visual_item">
+                            <div class="tit_wrap">
+                                    <p>본연의 나를 만나기 위해, 낯선 공간으로 떠납니다.</p>
+                                    <h3>Nest on Reed Beds</h3>
+                            </div>
+                            <div class="ctrl_wrap">
+                                <button class="button-stop"><span class="blind">일시정지</span></button>
+                                <button class="button-play"><span class="blind">재생</span></button>
+                            </div>
+                    </div>
+                    <div class="main_reservation">
+                        <div class="wrapper">
+                            <div class="reserv_box">
+                                <div class="date">
+                                    <dl>
+                                        <dt>체크인/체크아웃</dt>
+                                        <dd>
+                                            <input type="text" class="date_range fix_display_off" name="dates" value placeholder="기간을 선택해주세요" readonly>
+                                            <!-- <input type="text" class="date_range fix_display_on" name="dates" value placeholder="체크인&체크아웃 선택" readonly> -->
+                                        </dd>
+                                    </dl>
+                                    <div class="date_layer_popup">
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer></footer>
+    </div><!--//wrap-->
+</body>
+</html>
