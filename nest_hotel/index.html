@@ -23,7 +23,7 @@
              pc버전에서 메뉴에 마우스를 오버하면 menu_over
              mobile 버전에서 메뉴를 클릭하면 menu_open -->
 
-        <header class="">
+        <header class="fixed gnb_up">
             <h1 class="logo"><a href="index.html"><span class="blind">로고</span></a></h1>
             <nav class="gnb">
                 <div class="gnb_wrap">
@@ -122,35 +122,232 @@
                         </li>
                     </ul>
                 </div><!-- //swiper -->
-                    <div class="visual_item">
-                            <div class="tit_wrap">
-                                    <p>본연의 나를 만나기 위해, 낯선 공간으로 떠납니다.</p>
-                                    <h3>Nest on Reed Beds</h3>
-                            </div>
-                            <div class="ctrl_wrap">
-                                <button class="button-stop"><span class="blind">일시정지</span></button>
-                                <button class="button-play"><span class="blind">재생</span></button>
-                            </div>
+                <div class="visual_item">
+                        <div class="tit_wrap">
+                                <p>본연의 나를 만나기 위해, 낯선 공간으로 떠납니다.</p>
+                                <h3>Nest on Reed Beds</h3>
+                        </div>
+                        <div class="ctrl_wrap">
+                            <button class="button-stop"><span class="blind">일시정지</span></button>
+                            <button class="button-play"><span class="blind">재생</span></button>
+                        </div>
+                </div>
+                <div class="main_reservation">
+                    <div class="wrapper">
+                        <div class="reserv_box">
+                            <div class="date">
+                                <!-- Flatpickr CSS -->
+                                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+                              
+                                <!-- Flatpickr JS (본체 + 한국어 로케일) -->
+                                <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
+                              
+                                <style>
+                                  #datePicker {
+                                    padding: 10px;
+                                    width: 250px;
+                                    font-size: 16px;
+                                  }
+                                </style>
+                              
+                                <h2>CHECK IN / OUT</h2>
+                                <input type="text" id="datePicker" placeholder="체크인 ~ 체크아웃 날짜 선택">
+                              
+                                <script>
+                                  flatpickr("#datePicker", {
+                                    mode: "range",
+                                    dateFormat: "Y-m-d",
+                                    minDate: "today",
+                                    showMonths: 2,
+                                    position: "above",
+                                    locale: Object.assign({}, flatpickr.l10ns.ko, {
+                                      rangeSeparator: " ~ "
+                                    }),
+                                    
+                                    onClose: function(selectedDates) {
+                                      if (selectedDates.length === 2) {
+                                        const checkIn = selectedDates[0];
+                                        const checkOut = selectedDates[1];
+                                      }
+                                    }
+                                  });
+                                </script>
+                              </div>
+                        </div><!--reserv_box-->
+                    </div><!--wrapper-->
+                </div>
+            
+            </section>
+            <section class="pakege">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>NEST <span>PACKEGE</span></h2>
+                        <p>당신만의 은신처, 네스트호텔에서 경험할 수 있는 다양한 프로모션 상품을 만나보세요.</p>
                     </div>
-                    <div class="main_reservation">
-                        <div class="wrapper">
-                            <div class="reserv_box">
-                                <div class="date">
-                                    <dl>
-                                        <dt>체크인/체크아웃</dt>
-                                        <dd>
-                                            <input type="text" class="date_range fix_display_off" name="dates" value placeholder="기간을 선택해주세요" readonly>
-                                            <!-- <input type="text" class="date_range fix_display_on" name="dates" value placeholder="체크인&체크아웃 선택" readonly> -->
-                                        </dd>
-                                    </dl>
-                                    <div class="date_layer_popup">
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="list_ctrl">
+                        <button class="btn_prev"><span class="blind">이전팝업보기</span></button>
+                        <button class="btn_next"><span class="blind">다음팝업보기</span></button>
+                        <a href="#" class="more"><span class="blind">자세히보기</span></a>
+                    </div>
+                </div><!--wrapper-->
+                    <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_01.jpg" alt="패키지1"></div>
+                                    <h3>Gold Vacation EarlyBird</h3>
+                                    <p>기간한정 얼리버드 실속 패키지</p>
+                                    <span>객실1박 + PLATZ조식2인권 + 야외수영장2인권 + 비치타월</span>
+                                    <strong>2025-07-01 - 2025-08-31</strong>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_02.jpg" alt="패키지2"></div>
+                                    <h3>오후의 속삭임</h3>
+                                    <p>애프터눈 티 세트 포함 패키지</p>
+                                    <span>객실1박 + 애프터눈티세트 + 야외수영장2인권</span>
+                                    <strong>2025-07-01 ~ 2025-08-31</strong>
+
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_03.jpg" alt="패키지3"></div>
+                                    <h3>Brunch Holiday</h3>
+                                    <p>브런치 플래터 포함 패키지</p>
+                                    <span>객실1박 + 브런치플래터 + 야외수영장2인권 + 비치타월</span>
+                                    <strong>2025-07-01 - 2025-08-31</strong>
+
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_04.jpg" alt="패키지4"></div>
+                                    <h3>Good Life</h3>
+                                    <p>룸 서비스 포함 패키지 with 윌라이프</p>
+                                    <span>객실1박 + 야외수영장2인권 + 룸서비스5만원권 + 윌라이프샤워바</span>
+                                    <strong>2025-05-01 ~ 2025-06-30</strong>
+
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_05.jpg" alt="패키지5"></div>
+                                    <h3>어느 좋은 날</h3>
+                                    <p>브런치 플래터 포함 패키지브런치 플래터 포함 패키지</p>
+                                    <span>객실1박 + 브런치플래터 + 야외수영장2인권 + 플로팅필로우</span>
+                                    <strong>2025-03-01 - 2025-06-30</strong>
+
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <div class="photo"><img src="images/packege_06.jpg" alt="패키지6"></div>
+                                        <h3>Ever After</h3>
+                                        <p>허니문 전용 패키지</p>
+                                        <span>객실1박 + 허니문스페셜셋업 + 플라츠디너2인권 + 무료주차7일</span>
+                                        <strong>2025-03-20 ~ 2025-12-14 </strong>
+
+                                </a>
+                            </li>
+                        </ul>
+                        </div><!--swiper-->
+                    </div><!--list-->
+            </section>
+            <section class="event">
+                <div class="inner">
+                    <div class="tit">
+                        <div class="txt">
+                            <h2>DINING <span>EVENT</span></h2>
+                            <p>네스트호텔의 다양한 이벤트를 경험해 보시기 바랍니다.</p>
+                        </div>
+                        <div class="more"><a href="#">자세히보기</a></div>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li><div class="photo"><img src="images/event_01.jpg" alt="1"></div></li>
+                            <li><div class="photo"><img src="images/event_02.jpg" alt="2"></div></li>
+                            <li><div class="photo"><img src="images/event_03.jpg" alt="3"></div></li>
+                        </ul>
                     </div>
                 </div>
+            </section>
+            <section class="room">
+                <div class="wrapper">
+                    <div class="tit">
+                        <div class="txt">
+                            <h2>NEST <span>ROOM</span></h2>
+                            <p>온전히 자신에게 집중할 수 있는 객실 디자인, 프라이버시를 고려한 최상의 서비스를 제공합니다.</p>
+                        </div><!--//txt-->
+                        <a href="#" class="more"><span class="blind">자세히보기</span></a>
+                    </div><!--//tit-->
+                </div><!--wrapper-->
+                <div class="list">
+                    <ul>
+                        <li class="stand over">
+                            <div class="wrapper">
+                                <a href="#">
+                                    <div class="room_type">
+                                        <strong>Standard</strong>
+                                        <span>스탠다드</span>
+                                    </div>
+                                    <div class="room_sub">
+                                        <span>Twin</span>
+                                        <span>Double</span>
+                                        <span>Super Twin</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="super">
+                            <div class="wrapper">
+                                <a href="#">
+                                    <div class="room_type">
+                                        <strong>Superior</strong>
+                                        <span>슈퍼리얼</span>
+                                    </div>
+                                    <div class="room_sub">
+                                        <span>Double</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="deluxe">
+                            <div class="wrapper">
+                                <a href="#">
+                                    <div class="room_type">
+                                        <strong>Deluxe</strong>
+                                        <span>디럭스</span>
+                                    </div>
+                                    <div class="room_sub">
+                                        <span>Twin</span>
+                                        <span>Double</span>
+                                        <span>Family</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="suite">
+                            <div class="wrapper">
+                                <a href="#">
+                                    <div class="room_type">
+                                        <strong>Suite</strong>
+                                        <span>스위트</span>
+                                    </div>
+                                    <div class="room_sub">
+                                        <span>Studio</span>
+                                        <span>Reed</span>
+                                        <span>Panorama</span>
+                                        <span>Patio</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--list-->
             </section>
         </main>
         <footer></footer>

@@ -24,12 +24,12 @@ $(document).ready(function(){
     */
 
     $('.tour.acc02 .list ul li').on('mouseenter', function(){
-        console.log('오버오버')
+        //console.log('오버오버')
         $(this).addClass('on')
     })
 
     $('.tour.acc02 .list ul li').on('mouseleave', function(){
-        console.log('아웃')
+        //console.log('아웃')
         $(this).removeClass('on')
     })
 

@@ -4,16 +4,6 @@
 
 
 
-header .gnb .gnb_bg,
-header .gnb .gnb_util,
-header .gnb .gnb_open,
-header .gnb .gnb_close {
-    display: none;
-}
-
-
-
-
 
 header {
     z-index: 100;
@@ -37,103 +27,6 @@ header .logo a {
     height: 52px;
     background: url(../images/logo_w.png) no-repeat center center / contain;
 }
-
-header .gnb .gnb_wrap ul.depth1 {
-    display: flex;
-}
-
-header .gnb .gnb_wrap ul.depth1 > li {
-    width: 173px;
-    text-align: center;
-    position: relative;
-}
-
-header .gnb .gnb_wrap ul.depth1 > li > a {
-    display: block;
-    line-height: var(--header-h);
-    height: var(--header-h);
-    font-size: 22px;
-    font-weight: var(--bold-weight);
-}
-
-/* li .over 추가 */
-
-header .gnb .gnb_wrap ul.depth1 > li.over > a {
-    color: var(--point-color);
-}
-
-header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
-    position: relative;
-}
-
-header .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
-    z-index: 5;
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -47px;
-    width: 100%;
-    height: 3px;
-    background-color: var(--point-color);
-}
-
-
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-	font-family: 'Pretendard';
-    position: absolute;
-    left: 0;
-    top: var(--header-h);
-    width: 100%;
-    padding: 30px 0 0 0;
-
-    display: none;
-}
-
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
-    display: block;
-    color: var(--tit-color);
-    line-height: 2;
-}
-
-header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
-    font-weight: var(--bold-weight);
-    color: var(--point-color);
-}
-
-
-/* ############## menu_over 추가 ############### */
-
-header.menu_over::before {
-    z-index: -1;
-    content: "";
-    position: absolute; /* header를 기준으로 정렬 */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 427px;
-    background-color: #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-}
-
-header.menu_over::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: var(--header-h);
-    width: 100%;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-
-header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-    display: block;
-}
-
-
-
-
-
 
 header .util {
     display: flex;
@@ -179,6 +72,17 @@ header .util .login .login_open {
 
 
 
+/**** 아래로 스크롤 내릴 때 header가 사라짐 ****/
+
+header.fixed.gnb_up {
+    top: var(--header-h-m);
+}
+
+header.fixed.gnb_up.menu_over {
+    top: 0;
+}
+
+
 /* ###############  header fixed 추가 #############*/
 
 header.fixed,
@@ -210,6 +114,106 @@ header.menu_over .util .login .login_open {
 }
 
 
+@media screen and (min-width:1025px) { /* pc */
+
+                header .gnb .gnb_bg,
+                header .gnb .gnb_util,
+                header .gnb .gnb_open,
+                header .gnb .gnb_close {
+                    display: none;
+                }
+
+                header .gnb .gnb_wrap ul.depth1 {
+                    display: flex;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li {
+                    width: 173px;
+                    text-align: center;
+                    position: relative;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li > a {
+                    display: block;
+                    line-height: var(--header-h);
+                    height: var(--header-h);
+                    font-size: 22px;
+                    font-weight: var(--bold-weight);
+                }
+
+                
+                header .gnb .gnb_wrap ul.depth1 > li.over > a {
+                    color: var(--point-color);
+                }
+
+                header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+                    position: relative;
+                }
+
+                header .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+                    z-index: 5;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -47px;
+                    width: 100%;
+                    height: 3px;
+                    background-color: var(--point-color);
+                }
+
+                
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    font-family: 'Pretendard';
+                    position: absolute;
+                    left: 0;
+                    top: var(--header-h);
+                    width: 100%;
+                    padding: 30px 0 0 0;
+                
+                    display: none;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                    display: block;
+                    color: var(--tit-color);
+                    line-height: 2;
+                }
+                
+                header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+                    font-weight: var(--bold-weight);
+                    color: var(--point-color);
+                }
+
+                /* ############## menu_over 추가 ############### */
+
+                header.menu_over::before {
+                    z-index: -1;
+                    content: "";
+                    position: absolute; /* header를 기준으로 정렬 */
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 427px;
+                    background-color: #fff;
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+                }
+
+                header.menu_over::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: var(--header-h);
+                    width: 100%;
+                    height: 1px;
+                    background: rgba(0, 0, 0, 0.2);
+                }
+
+
+                header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                    display: block;
+                }
+
+} /* // @media - pc */
 
 
 
@@ -300,6 +304,308 @@ header.menu_over .util .login .login_open {
     padding: 19px 155px 22px 155px;
     background-color: #fff;
 }
+
+
+
+
+
+
+.pakege {
+    margin: 170px 0 200px 0;
+}
+
+.pakege .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pakege .tit {
+    margin: 0 0 100px 0;
+}
+
+.pakege .tit h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--bold-weight);
+}
+
+.pakege .tit h2 span {
+    color: var(--point-color);
+}
+
+.pakege .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px - 24px);
+}
+
+.pakege .list_ctrl {
+    display: flex;
+    gap: 26px;
+    margin: 14px 0 0 0;
+}
+
+.pakege .list_ctrl .btn_prev,
+.pakege .list_ctrl .btn_next,
+.pakege .list_ctrl .more {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_1076' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect x='50' y='50' width='50' height='50' transform='rotate(-180 50 50)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_1076)'%3E%3Cpath d='M14.418 23.9582L39.582 23.9583L39.582 26.0416L14.418 26.0416L26.4852 38.1088L24.9987 39.5833L10.4154 24.9999L24.9987 10.4166L26.4852 11.8911L14.418 23.9582Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.pakege .list_ctrl .btn_next {
+    transform: rotate(180deg);
+}
+
+.pakege .list_ctrl .more {
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_1082' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_1082)'%3E%3Cpath d='M23.957 41.6666V26.0416H8.33203V23.9583H23.957V8.33325H26.0404V23.9583H41.6654V26.0416H26.0404V41.6666H23.957Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+
+
+@media screen and (max-width:1300px){ /* wrapper의 제한이 사라지는 사이즈 */
+
+    .pakege .list {
+        left: 20px;
+        width: calc(100% - 40px); /* 양옆의 20px을 뺀다 */
+    }
+    
+
+} /* @media */
+
+/*
+.pakege .list .swiper {
+    overflow: visible; /* #wrap에 있는 hidden 해제 
+}
+*/
+.pakege .list ul .swiper-slide {
+    width: 404px;
+}
+
+.pakege .list ul .swiper-slide a {
+    display: block;
+}
+
+.pakege .list ul .swiper-slide a .photo {
+    overflow: hidden;
+    height: 308px;
+}
+
+.pakege .list ul .swiper-slide a .photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.pakege .list ul .swiper-slide a h3 {
+    font-size: var(--h4-font-size);
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    margin: 23px 0 0 0;
+}
+
+.pakege .list ul .swiper-slide a span,
+.pakege .list ul .swiper-slide a strong {
+    font-family: 'Pretendard';
+}
+
+.pakege .list ul .swiper-slide a strong {
+    display: block;
+    margin: 25px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+.event {
+    margin: 0 0 340px 0;
+}
+
+.event .inner {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 55%;
+}
+
+.event .tit {
+    padding: 135px 0 0 0;
+    max-width: 609px;
+    text-align: center;
+}
+
+.event .tit .txt h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--bold-weight);
+}
+
+.event .tit .txt h2 span {
+    color: var(--point-color);
+}
+
+.event .tit .more a {
+    display: inline-block;
+    padding: 20px 99px;
+    margin: 93px 0 0 0;
+    border: 1px solid var(--point-color);
+    color: var(--point-color);
+}
+
+.event .tit .more a:hover {
+    border: 1px solid var(--point-color);
+    background-color: var(--point-color);
+    color: #fff;
+}
+
+.event .list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    max-width: 981px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.event .list ul {
+    display: flex;
+    gap: 9px;
+}
+
+.event .list ul li .photo {
+    overflow: hidden;
+    height: 563px;
+}
+
+.event .list ul li .photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+.room {
+    margin: 0 0 170px 0;
+}
+
+.room .tit {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 66px 0;
+}
+
+.room .tit .txt h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--bold-weight);
+}
+
+.room .tit .txt h2 span {
+    color: var(--point-color);
+}
+
+
+.room .tit .more {
+    margin: 14px 0 0 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_1114' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_1114)'%3E%3Cpath d='M23.957 41.6666V26.0416H8.33203V23.9583H23.957V8.33325H26.0404V23.9583H41.6654V26.0416H26.0404V41.6666H23.957Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.room .list ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 198px;
+    border-top: 1px solid #D9D9D9;
+
+}
+
+.room .list ul li.over {
+    border-color: transparent;
+    color: #fff;
+}
+
+.room .list ul li.over {
+    background-image: url(../images/room_01.jpg);
+}
+
+.room .list ul li.super.over {
+    background-image: url(../images/room_02.jpg);
+}
+
+.room .list ul li.deluxe.over {
+    background-image: url(../images/room_03.jpg);
+}
+
+.room .list ul li.suite.over {
+    background-image: url(../images/room_04.jpg);
+}
+
+
+.room .list ul li a {
+    display: block;
+}
+.room .list .room_type {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 25px 0;
+}
+.room .list .room_type strong {
+    font-size: var(--h3-font-size);
+    font-family: var(--bold-weight);
+}
+
+.room .list .room_type span {
+    padding: 25px 0 0 0;
+}
+
+.room .list .room_sub {
+    display: flex;
+    font-weight: 700;
+    gap: 47px;
+}
+
+.room .list .room_sub span {
+    position: relative;
+}
+
+.room .list .room_sub span::after {
+    content: "";
+    position: absolute;
+    right: -19px;
+    top: 7px;
+    width: 1px;
+    height: 12px;
+    background-color: #D9D9D9;
+
+}
+
+.room .list .room_sub span:last-child::after {
+    display: none;
+}
+
+
+
+
 
 
 

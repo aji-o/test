@@ -58,7 +58,7 @@ body {
     --visual-font-size: 80px;
     --h2-font-size: 65px;
     --h3-font-size: 40px;
-    --h4-font-size: 20px;
+    --h4-font-size: 25px;
 }
 
 @media screen and (max-width:1024px) {
@@ -69,7 +69,7 @@ body {
         --visual-font-size: 60px;
         --h2-font-size: 50px;
         --h3-font-size: 35px;
-        --h4-font-size: 18px;
+        --h4-font-size: 20px;
     }
 }
 
@@ -81,11 +81,3 @@ body {
         --h4-font-size: 17px;
     }
 }
-
-
-/* 글자를 드래그했을 때 나타나는 스타일
-::selection {
-    color: #fff;
-    background-color: #7E6956;
-}
-*/
