@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: #fff;
-
+    transition: 0.5s;
 }
 
 header .logo a {
@@ -112,6 +112,7 @@ header.fixed .util .login .login_open,
 header.menu_over .util .login .login_open {
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_929' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_929)'%3E%3Cpath d='M20 19.4871C18.3958 19.4871 17.0226 18.916 15.8804 17.7737C14.7379 16.6312 14.1667 15.2579 14.1667 13.6537C14.1667 12.0496 14.7379 10.6764 15.8804 9.53417C17.0226 8.39167 18.3958 7.82042 20 7.82042C21.6042 7.82042 22.9774 8.39167 24.1196 9.53417C25.2621 10.6764 25.8333 12.0496 25.8333 13.6537C25.8333 15.2579 25.2621 16.6312 24.1196 17.7737C22.9774 18.916 21.6042 19.4871 20 19.4871ZM7.5 32.1796V28.4742C7.5 27.6581 7.72167 26.9022 8.165 26.2067C8.60833 25.5111 9.20083 24.9764 9.9425 24.6025C11.5897 23.795 13.2515 23.1893 14.9279 22.7854C16.6043 22.3815 18.295 22.1796 20 22.1796C21.705 22.1796 23.3957 22.3815 25.0721 22.7854C26.7485 23.1893 28.4103 23.795 30.0575 24.6025C30.7992 24.9764 31.3917 25.5111 31.835 26.2067C32.2783 26.9022 32.5 27.6581 32.5 28.4742V32.1796H7.5ZM10 29.6796H30V28.4742C30 28.1367 29.9022 27.8242 29.7067 27.5367C29.5111 27.2494 29.2457 27.015 28.9104 26.8333C27.4743 26.1261 26.0101 25.5903 24.5179 25.2258C23.0254 24.8617 21.5194 24.6796 20 24.6796C18.4806 24.6796 16.9746 24.8617 15.4821 25.2258C13.9899 25.5903 12.5257 26.1261 11.0896 26.8333C10.7543 27.015 10.4889 27.2494 10.2933 27.5367C10.0978 27.8242 10 28.1367 10 28.4742V29.6796ZM20 16.9871C20.9167 16.9871 21.7014 16.6607 22.3542 16.0079C23.0069 15.3551 23.3333 14.5704 23.3333 13.6537C23.3333 12.7371 23.0069 11.9524 22.3542 11.2996C21.7014 10.6468 20.9167 10.3204 20 10.3204C19.0833 10.3204 18.2986 10.6468 17.6458 11.2996C16.9931 11.9524 16.6667 12.7371 16.6667 13.6537C16.6667 14.5704 16.9931 15.3551 17.6458 16.0079C18.2986 16.6607 19.0833 16.9871 20 16.9871Z' fill='%231D1D1D'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
+
 
 
 @media screen and (min-width:1025px) { /* pc */
@@ -305,8 +306,16 @@ header.menu_over .util .login .login_open {
     background-color: #fff;
 }
 
+input {
+    border-width: inherit;
+    border-style: none;
+    border-color: inherit;
+}
 
-
+.visual .reserv_box .date h2 {
+    font-weight: var(--bold-weight);
+    color: var(--point-color);
+}
 
 
 
@@ -372,15 +381,10 @@ header.menu_over .util .login .login_open {
         left: 20px;
         width: calc(100% - 40px); /* 양옆의 20px을 뺀다 */
     }
-    
 
 } /* @media */
 
-/*
-.pakege .list .swiper {
-    overflow: visible; /* #wrap에 있는 hidden 해제 
-}
-*/
+
 .pakege .list ul .swiper-slide {
     width: 404px;
 }
@@ -602,6 +606,27 @@ header.menu_over .util .login .login_open {
 .room .list .room_sub span:last-child::after {
     display: none;
 }
+
+
+
+
+
+
+.other .tit {
+    margin: 0 0 76px 0;
+}
+
+.other .tit h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--bold-weight);
+}
+
+.other   .tit h2 span {
+    color: var(--point-color);
+}
+
+
+
 
 
 

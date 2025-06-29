@@ -1,12 +1,21 @@
 $(document).ready(function(){
 
-    let device_status // pc인지 모바일인지 구분하는 값
-    let scrolling // 브라우저가 스크롤된 값
-    let scroll_prev //이전에 스크롤된 값
-    let window_w // 브라우저의 넓이 값
-    let mobile_size = 1024 // 모바일로 변경되는 사이트
-    let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     
+let device_status // pc인지 모바일인지 구분하는 값
+let scrolling // 브라우저가 스크롤된 값
+let scroll_prev //이전에 스크롤된 값
+let window_w // 브라우저의 넓이 값
+let mobile_size = 1024 // 모바일로 변경되는 사이트
+let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
+
+    $(window).scroll(function(){ //브라우저가 스크롤될떄마다 1번 실행
+    scroll_chk()
+    })
+
+    $(window).resize(function(){ //리사이즈 될때마다 1번 실행
+    resize_chk()
+    })
+
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
             console.log('마우스오버')
             $('header').addClass('menu_over')
@@ -19,9 +28,31 @@ $(document).ready(function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
 
-    
+    //함수의 선언
+    function resize_chk(){
+        window_w = $(window).width()
+        if(window_w > mobile_size ){
+            device_status = 'pc'
+        }else{ // 같거나 작으면
+            device_status = 'mobile'
+        }
+    }
 
+    function scroll_chk(){
+        scroll_prev = scrolling  // 스크롤값을 다시계산하기 전에 이전값을 prev 에 저장 
+        scrolling = $(window).scrollTop()
+        if(scrolling > 0){ //조금이라도 스크롤됐으면
+            $('header').addClass('fixed')
+            if(scrolling > scroll_prev){
+                $('header').addClass('gnb_up')
+            }else{
+                $('header').removeClass('gnb_up')
 
+            }
+        }else{ //맨위
+            $('header').removeClass('fixed')
+        }
+    }
 
 
     /* ############  visual swiper ---- start ############# */
@@ -39,9 +70,6 @@ $(document).ready(function(){
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
     });
-    // visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-    // visual_swiper.autoplay.start();  /* 재생 기능 */
-
 
     $('.visual .visual_item .ctrl_wrap button.button-stop').on('click', function(){
         console.log('정지버튼 클릭')
@@ -50,7 +78,6 @@ $(document).ready(function(){
         $('.visual .visual_item .ctrl_wrap button.button-play').show()
     })
     $('.visual .visual_item .ctrl_wrap button.button-play').on('click', function(){
-        // console.log('재생버튼 클릭')
         visual_swiper.autoplay.start();
         $(this).hide()
         $('.visual .visual_item .ctrl_wrap button.button-stop').show()
