@@ -23,24 +23,24 @@
              pc버전에서 메뉴에 마우스를 오버하면 menu_over
              mobile 버전에서 메뉴를 클릭하면 menu_open -->
 
-        <header class="fixed">
+        <header class="">
             <h1 class="logo"><a href="index.html"><span class="blind">로고</span></a></h1>
             <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                 <div class="gnb_wrap">
-                    <button class="gnb_open"><span class="blind">메뉴열기</span></button>
                     <div class="gnb_util">
                         <div class="lang">
-                            <button class="lang"><span class="">KOR</span></button>
+                            <button class="lang_open"><span class="">KOR</span></button>
                         </div> <!-- lang -->
                         <div class="search">
-                            <button class="search"><span class="blind">검색</span></button>
+                            <button class="search_open"><span class="">검색</span></button>
                         </div> <!-- search -->
                     </div> <!-- gnb_util -->
                     <ul class="depth1">
                         <!--     pc = over 클래스 추가
                              mobile = open 클래스 추가 -->
                         <li class="">
-                            <a href="#"><span>호텔소개</span></a>
+                            <a href="https://www.naver.com/"><span>호텔소개</span></a>
                             <ul class="depth2">
                                 <li><a href="#"><span>공지사항</span></a></li>
                                 <li><a href="#"><span>이벤트</span></a></li>
@@ -143,15 +143,8 @@
                                 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13"></script>
                                 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ko.js"></script>
                               
-                                <style>
-                                  #datePicker {
-                                    width: 250px;
-                                    font-size: 16px;
-                                  }
-                                </style>
-                              
                                 <h2>CHECK IN / OUT</h2>
-                                <input type="text" id="datePicker" placeholder="체크인 ~ 체크아웃 날짜 선택">
+                                <input type="text" id="datePicker" placeholder="날짜를 선택해주세요">
                               
                                 <script>
                                   flatpickr("#datePicker", {
@@ -172,7 +165,32 @@
                                     }
                                   });
                                 </script>
-                              </div>
+                            </div><!--//date-->
+                            <div class="rooms">
+                                <label for="person_count">객실수</label>
+                                <input type="number" id="person_count" name="person_count" min="1" max="10" value="1">
+                            </div><!--rooms-->
+                            <div class="person">
+                                <div class="adult">
+                                    <label for="person_count">성인</label>
+                                    <input type="number" id="person_count" name="person_count" min="0" max="10" value="1">
+                                </div>
+                                <div class="junior">
+                                    <label for="person_count">청소년</label>
+                                    <input type="number" id="person_count" name="person_count" min="0" max="10" value="0">
+                                </div>
+                                <div class="kid">
+                                    <label for="person_count">어린이</label>
+                                    <input type="number" id="person_count" name="person_count" min="0" max="10" value="0">
+                                </div>
+                            </div><!--//person-->
+                            <div class="code">
+                                <label for="enter-code">기업 코드</label>
+                                <input type="text" id="enter-code" placeholder="기업 코드를 입력해주세요">
+                            </div>
+                            <div class="btn_eservation">
+                                <a href="#">예약하기</a>
+                            </div>
                         </div><!--reserv_box-->
                     </div><!--wrapper-->
                 </div>

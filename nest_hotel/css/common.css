@@ -13,14 +13,15 @@ body {
     margin: 0 auto; /* 가운데 */
 }
 #wrap {
-    min-width: 1320px;
     /*
-        1260 + 왼쪽여백(30) + 오른쪽여백(30) = 1320
+        1260 + 왼쪽여백(60) + 오른쪽여백(60) = 1380
     */
     position: relative; /* header 정렬의 기준 */
+    overflow-x: hidden; /* 25-05-26 - 가로스크롤바 삭제*/
+    width: 100%;
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:768px) {
                     body {
                         font-size: 16px;
                     }                
@@ -29,13 +30,21 @@ body {
                         margin: 0 20px;
                     }
                     #wrap {
-                        min-width: 0; /* 25.05.07 최소넓이 없음 */
+                        min-width: 0; 
                     }
+}    /* 브라우저 넓이가 768px 이하에서만 작동 */
+
+
+@media screen and (max-width:1380px) { /* 60+60 + 1260 = 1380 */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+
 }
-    /* 25.05.07 - 브라우저 넓이가 640px 이하에서만 작동 */
 
 
-/* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
+
 .blind {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -52,6 +61,7 @@ body {
     --tit-color: #1b1b1b;
     --point-color: #7E6956;
     --base-color: #7B6464;
+    --gray-color: #979797;
     --bold-weight: 700;
     --tit-line-height: 1.2;
 
@@ -59,6 +69,20 @@ body {
     --h2-font-size: 65px;
     --h3-font-size: 40px;
     --h4-font-size: 25px;
+    --default-font-size: 17px;
+}
+
+@media screen and (max-width:1320px) {
+    :root {
+        --visual-font-size: 70px;
+    }
+}
+
+@media screen and (max-width:1341px) {
+    :root {
+        --visual-font-size: 55px;
+
+    }
 }
 
 @media screen and (max-width:1024px) {
@@ -66,7 +90,7 @@ body {
         --header-h: 56px; /* 모바일 header의 높이 */
         --header-h-m: -56px; /* 모바일 header 높이의 마이너스값*/
 
-        --visual-font-size: 60px;
+        --visual-font-size: 50px;
         --h2-font-size: 50px;
         --h3-font-size: 35px;
         --h4-font-size: 20px;
@@ -79,5 +103,6 @@ body {
         --h2-font-size: 40px;
         --h3-font-size: 25px;
         --h4-font-size: 17px;
+        --default-font-size: 16px;
     }
 }

@@ -16,6 +16,27 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     resize_chk()
     })
 
+    resize_chk() //함수의 실행
+    scroll_chk()
+
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+        if(device_status == 'pc'){
+            $('header').addClass('menu_over')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        }
+    }) //메뉴오버
+
+
+
+
+    $('header').on('mouseleave', function(){
+        $('header').removeClass('menu_over')
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+
+
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
             console.log('마우스오버')
             $('header').addClass('menu_over')
@@ -55,19 +76,49 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     }
 
 
+    // 모바일 메뉴
+
+    $('header .gnb .gnb_open').on('click', function(){ //메뉴 열고닫기
+        $('header').addClass('menu_open')
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+    })
+
+    
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault() // a 태그가 눌리는걸 막아줌
+            menu_open = $(this).parents('li').hasClass('open')
+            if(menu_open == true){ // 메뉴가 열려있을 경우
+                $(this).parents('li').removeClass('open')
+                $(this).next().slideUp()
+            }else{ // 닫혀있을 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+                $(this).parents('li').addClass('open')
+                $(this).next().slideDown()
+                
+            }
+        }
+    })
+
+
+
+
     /* ############  visual swiper ---- start ############# */
 
 
-    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    const visual_swiper = new Swiper('.visual .swiper', { 
 
         autoplay: {  /* 팝업 자동 실행 */
             delay: 5000,
             disableOnInteraction: true,
         },
 
-        effect: "fade", /* fade 효과 */
+        effect: "fade",
 
-        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        loop: true,
 
     });
 
@@ -89,21 +140,15 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
     const pakege_swiper = new Swiper('.pakege .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {    /* 768px 이상일때 적용 */
                 spaceBetween: 24,
             },
-            768: {    /* 768px 이상일때 적용 */
+            1024: {    /* 1024px 이상일때 적용 */
                 spaceBetween: 24,
             },
         },
-        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-        // loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 2500,
-        //     disableOnInteraction: true,
-        // },
         navigation: {
             nextEl: '.pakege .list_ctrl .btn_next',
             prevEl: '.pakege .list_ctrl .btn_prev',

@@ -22,9 +22,9 @@ html, body {
 }
 
 @media screen and (max-width:768px) {     /* 25.05.07 - 브라우저 넓이가 768px 이하에서만 작동 */
-                    html, body {
-                        font-size: 16px;
-                    }
+    html, body {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width:1300px) { /* 20+20 = 40 + 1260 = 1300 */
@@ -33,7 +33,7 @@ html, body {
         margin: 0 20px;
     }
 
-    }
+}
 
 
 /* 글자를 숨겨야하는 경우 blind 클래스를 적용 */
