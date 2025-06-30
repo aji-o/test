@@ -115,11 +115,8 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
             delay: 5000,
             disableOnInteraction: true,
         },
-
         effect: "fade",
-
         loop: true,
-
     });
 
     $('.visual .visual_item .ctrl_wrap button.button-stop').on('click', function(){
@@ -167,7 +164,43 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     $('.room .list ul li').on('mouseenter', function(){
         $('.room .list ul li').removeClass('over')
         $(this).addClass('over')
-})
+    })
 
+
+    /*################# room - 모바일 버전 swiper ################*/
+
+    var room_swiper = undefined;
+    function initSwiper(){ 
+        if(window_w <= mobile_size && room_swiper == undefined){
+            room_swiper = new Swiper('.room .swiper',{
+                slidesPerView: 1,
+                spaceBetween: 16,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 24,
+                    },
+                },
+                centeredSlides: true,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    type: 'fraction',
+                },
+            });
+        }else if(window_w > mobile_size && room_swiper != undefined){
+           if(room_swiper) room_swiper.destroy();
+           room_swiper = undefined;
+            $('.room .swiper-wrapper').removeAttr('style');
+            $('.room .swiper-slide').removeAttr('style');
+        }
+    }
+ 
+    initSwiper();
+ 
+    $(window).on('resize', function(){
+        initSwiper();
+    });
 
 })
