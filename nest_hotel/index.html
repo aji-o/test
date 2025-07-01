@@ -11,6 +11,10 @@
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
+    <!-- aos 애니메이션 라이브러리 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
@@ -299,7 +303,7 @@
                             <h2>NEST <span>ROOM</span></h2>
                             <p>온전히 자신에게 집중할 수 있는 객실 디자인, 프라이버시를 고려한 최상의 서비스를 제공합니다.</p>
                         </div><!--//txt-->
-                        <a href="#" class="more"><span class="blind">자세히보기</span></a>
+                        <div><a href="#" class="more"><span class="blind">자세히보기</span></a></div>
                     </div><!--//tit-->
                 </div><!--wrapper-->
                 <div class="list">
@@ -375,16 +379,68 @@
                         <p>고요한 자연 속에 머무르고 싶은 휴식 공간은 느긋한 하루 속 즐거움을 더해줄 것입니다.</p>
                     </div><!--//tit-->
                 </div><!--wrapper-->
-                <dl>
-                    <dt>
-                        <div class="txt">
-                            <h3>Fitness & Sauna</h3>
-                            <p>유산소 운동과, 웨이트 트레이닝을 위한 다양한 설비가 갖춰진<br>피트니스 센터와 사우나에서 심신의 피로를 풀 수 있습니다.</p>
-                            <a href="#" class="more">자세히보기</a>
-                        </div>
-                        <dd></dd>
-                    </dt>
-                </dl>
+                <div class="list" data-bg="">
+                    <div class="blind">
+                        <img src="images/facilities_01.jpg" alt="피트니스 센터">
+                        <img src="images/facilities_02.jpg" alt="키즈존">
+                        <img src="images/facilities_03.jpg" alt="편의점">
+                        <img src="images/facilities_04.jpg" alt="비누꽃샵">
+                        <img src="images/facilities_05.jpg" alt="네스트파크">
+                        <img src="images/facilities_06.jpg" alt="비즈니스 센터">
+                        <img src="images/facilities_07.jpg" alt="인피니트 풀">
+                    </div>
+                    <ul>
+                        <li class="fit on" data-name="bg1">
+                            <div class="txt">
+                                <h3>Fitness & Sauna</h3>
+                                <p>유산소 운동과, 웨이트 트레이닝을 위한 다양한 설비가 갖춰진 <br>피트니스 센터와 사우나에서 심신의 피로를 풀 수 있습니다.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="kids" data-name="bg2">
+                            <div class="txt">
+                                <h3>KIDS ZONE</h3>
+                                <p>아이들을 위한 자연 속 놀이터 <br>창의적이고 건강한 놀이를 즐길 수 있도록 준비했습니다. </p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="cu" data-name="bg3">
+                            <div class="txt">
+                                <h3>CU at NEST</h3>
+                                <p>네스트호텔에서 CU의 다양한 생활편의 서비스를 만나보세요.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="floral" data-name="bg4">
+                            <div class="txt">
+                                <h3>FLORAL HAUS</h3>
+                                <p>마음을 전하는 프리미엄 비누꽃 숍 입니다. <br>행복한 추억을 오래 기억하도록, 시들지 않는 아름다움을 간직합니다.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="park" data-name="bg5">
+                            <div class="txt">
+                                <h3>NEST PARK</h3>
+                                <p>느긋한 하루 속 즐거움을 더하는 네스트 Hidden Place <br> 마치, 유럽에 온듯한 이국적인 경관을 자랑합니다.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="biz" data-name="bg6">
+                            <div class="txt">
+                                <h3>BUSINESS CENTER</h3>
+                                <p>업무에 불편이 없도록 디지털 업무 지원 시설을 갖춘 공간입니다. <br>비즈니스에 필요한 모든 사항에 대해 올인원 서비스를 제공합니다.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                        <li class="pool" data-name="bg7">
+                            <div class="txt">
+                                <h3>INFINITY POOL</h3>
+                                <p>사계절 인피니티 스파 풀로 365일 날씨에 맞게 <br>적절한 온도의 온수풀과 야외 핀란드식 사우나가 함께 운영됩니다.</p>
+                                <div class="btn"><a href="#">자세히보기</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
         <footer></footer>

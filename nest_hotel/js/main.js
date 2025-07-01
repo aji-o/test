@@ -38,7 +38,6 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
 
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
-            console.log('마우스오버')
             $('header').addClass('menu_over')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
             $(this).addClass('over')
@@ -176,7 +175,7 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
                 slidesPerView: 1,
                 spaceBetween: 16,
                 breakpoints: {
-                    768: {
+                    600: {
                         slidesPerView: 2,
                         spaceBetween: 24,
                     },
@@ -202,5 +201,28 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     $(window).on('resize', function(){
         initSwiper();
     });
+
+
+    /*################# other  ################ */
+
+    $('.other ul li').on('click', function(){
+        $('.other ul li').removeClass('on')
+        $(this).addClass('on')
+    })
+
+
+
+
+    
+    let service_name // 가져온 data-name 값을 저장
+    $('.other .list ul li').on('click', function(){
+        if($(window).width() > 1024){
+            service_name = $(this).attr('data-name')
+            console.log(service_name)
+            $('.other .list').attr('data-bg', service_name)
+        }
+
+    })
+
 
 })

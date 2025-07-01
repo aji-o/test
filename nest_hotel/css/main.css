@@ -879,6 +879,14 @@ input {
     margin: 23px 0 0 0;
 }
 
+.pakege .list ul .swiper-slide a span {
+    display: block;
+    /* 한줄제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .pakege .list ul .swiper-slide a span,
 .pakege .list ul .swiper-slide a strong {
     font-family: 'Pretendard';
@@ -1060,6 +1068,10 @@ input {
                 .event .list ul {
                     display: block;
                 }
+                                
+                .event .list ul li {
+                    margin-bottom: 3px;
+                }
                 
                 .event .list ul li .photo {
                     height: 87px;
@@ -1103,7 +1115,7 @@ input {
     background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_1114' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_1114)'%3E%3Cpath d='M23.957 41.6666V26.0416H8.33203V23.9583H23.957V8.33325H26.0404V23.9583H41.6654V26.0416H26.0404V41.6666H23.957Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
-.swiper-wrapper {
+.room .list .swiper-wrapper {
     flex-direction: column;
 }
 
@@ -1186,7 +1198,7 @@ input {
 
 @media screen and (max-width:1024px){
 
-    .swiper-wrapper {
+    .room .list .swiper-wrapper {
         flex-direction: row;
     }
 
@@ -1274,24 +1286,22 @@ input {
     }
 
     .room .tit .more {
-        margin: 0 0 20px 0;
-        display: block;
-        width: 50px;
-        height: 50px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_76_1114' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_76_1114)'%3E%3Cpath d='M23.957 41.6666V26.0416H8.33203V23.9583H23.957V8.33325H26.0404V23.9583H41.6654V26.0416H26.0404V41.6666H23.957Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
+        margin: 0 0 20px 20px;
     }
     
 
+}
+
+@media screen and (max-width:768px){
+
+    
 }
 
 
 
 
 .other .tit {
-    margin: 0 0 9% 0;
+    margin: 0 0 76px 0;
 }
 
 .other .tit h2 {
@@ -1299,9 +1309,217 @@ input {
     font-weight: var(--bold-weight);
 }
 
-.other   .tit h2 span {
+.other .tit h2 span {
     color: var(--point-color);
 }
+
+
+@media screen and (min-width:1025px) {
+
+    .other .list {
+        background: url(../images/facilities_01.jpg) no-repeat center center / cover;
+        height: 520px;
+        transform: 0.5s;
+    }
+
+    .other .list[data-bg="bg1"] {
+        background-image: url(../images/facilities_01.jpg);
+    }
+
+    .other .list[data-bg="bg2"] {
+        background-image: url(../images/facilities_02.jpg);
+    }
+
+    .other .list[data-bg="bg3"] {
+        background-image: url(../images/facilities_03.jpg);
+    }
+
+    .other .list[data-bg="bg4"] {
+        background-image: url(../images/facilities_04.jpg);
+    }
+
+    .other .list[data-bg="bg5"] {
+        background-image: url(../images/facilities_05.jpg);
+    }
+
+    .other .list[data-bg="bg6"] {
+        background-image: url(../images/facilities_06.jpg);
+    }
+
+    .other .list[data-bg="bg7"] {
+        background-image: url(../images/facilities_07.jpg);
+    }
+
+    .other .list ul {
+        height: 520px;
+    }
+    
+    .other .list ul li {
+        position: relative;
+        float: left;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        z-index: 10;
+    
+        transition: all, 0.5s linear;
+    }
+    
+    .other .list ul li:not(.on)::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 64px;
+        width: 38px;
+        height: 7px;
+        background-color: #fff;
+    }
+    
+    .other .list ul li:not(.on) .txt h3 {
+        transform: rotate(90deg);
+        position: absolute;
+        left: -85px;
+        top: 161px;
+        width: 300px;
+        height: auto;
+        font-size: var(--h4-font-size);
+        font-weight: var(--bold-weight);
+        text-align: start;
+    }
+    
+    /* dt. on 추가 */
+    
+    .other .list ul li.on .txt {
+        margin: 109px 0 0 0;
+    }
+    
+    .other .list ul li.on .txt h3 {
+        font-size: var(--h3-font-size);
+        font-weight: var(--bold-weight);
+        position: relative;
+        margin: 0 0 111px 0;
+    }
+    
+    .other .list ul li.on .txt h3::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -70px;
+        width: 1px;
+        height: 51px;
+        background: #fff;
+    }
+    
+    .other .list ul li.on .btn a {
+        display: inline-block;
+        margin: 33px 0 0 0;
+        padding: 14px 70px;
+        background: var(--point-color);
+    }
+    
+    .other .list ul li.on {
+        width: calc(100% - (134px * 6));
+    }
+    
+    .other .list ul li:not(.on) {
+        width: 134px;
+        border-left: 3px solid #fff;
+        background: rgba(126,105,86, 0.8);
+        cursor: pointer;
+    }
+    
+    .other .list ul li:not(.on) .txt p,
+    .other .list ul li:not(.on) .txt .btn {
+        display: none;
+    }
+    
+    /* .other ul li.on .photo {
+        opacity: 1;
+        overflow: hidden;
+        width: 100%;
+        height: 520px;
+    }
+    
+    .other ul li.on .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    } */
+
+}
+
+
+/*
+@media screen and (max-width: 1341px) and (min-width: 1025px) {
+
+    .other dl dt:not(.on) .txt h3 {
+        left: -112px;
+    }
+
+    .other dl dt:not(.on) {
+        width: 80px;
+    }
+
+    .other dl dt.on {
+        width: calc(100% - (80px * 6));
+    }
+
+}
+*/
+
+/* 모바일 css
+@media screen and (max-width:1024px){ 
+
+    .other .tit {
+        margin: 0 0 30px 0;
+    }
+
+    .other dl dt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .other dl dt .txt {
+        margin: 4px 0 0 0;
+        padding: 14px 0;
+        background-color: #EFECEC;
+        position: relative;
+    }
+
+    .other dl dt .txt::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        width: 30px;
+        height: 30px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_68_2974' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='30' height='30'%3E%3Crect width='30' height='30' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_68_2974)'%3E%3Cpath d='M21.3484 15.625H6.25V14.375H21.3484L14.1081 7.13469L15 6.25L23.75 15L15 23.75L14.1081 22.8653L21.3484 15.625Z' fill='%237E6956'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+
+    .other dl dt .txt h3 {
+        margin: 0 0 0 20px;
+        font-size: var(--h4-font-size);
+        font-weight: var(--bold-weight);
+        color: var(--tit-color);
+    }
+
+    .other dl dt .txt p,
+    .other dl dt .txt .btn,
+    .other dl dd {
+        display: none;
+    }
+
+}
+*/
+
+
+
+
+
+
+
 
 
 
