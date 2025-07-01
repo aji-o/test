@@ -188,12 +188,18 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
                     type: 'fraction',
                 },
             });
+
+            console.log($(window).width(), 'swiper 작동중')
+            
         }else if(window_w > mobile_size && room_swiper != undefined){
            if(room_swiper) room_swiper.destroy();
            room_swiper = undefined;
             $('.room .swiper-wrapper').removeAttr('style');
             $('.room .swiper-slide').removeAttr('style');
+
+            console.log($(window).width(), 'swiper 해제')
         }
+        console.log($(window).width())
     }
  
     initSwiper();
@@ -210,9 +216,6 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
         $(this).addClass('on')
     })
 
-
-
-
     
     let service_name // 가져온 data-name 값을 저장
     $('.other .list ul li').on('click', function(){
@@ -221,7 +224,6 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
             console.log(service_name)
             $('.other .list').attr('data-bg', service_name)
         }
-
     })
 
 
