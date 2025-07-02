@@ -213,7 +213,6 @@ header.menu_over .util .login .login_open {
 
 } /* // @media - pc */
 
-
 @media screen and (max-width: 1341px) and (min-width: 1025px) { /* 중간 */
 
     header .gnb .gnb_bg,
@@ -745,6 +744,12 @@ input::-webkit-outer-spin-button {
     }
 }
 
+@media screen and (max-width:1380px) {
+    .visual .main_reservation .wrapper {
+        margin: 0;
+    }
+}
+
 @media screen and (max-width:1341px) {
 
     .visual .visual_item .tit_wrap h3 {
@@ -753,12 +758,6 @@ input::-webkit-outer-spin-button {
 
     .visual .reserv_box .btn_eservation a {
         padding: 10px 50px;
-    }
-}
-
-@media screen and (max-width:1380px) {
-    .visual .main_reservation .wrapper {
-        margin: 0;
     }
 }
 
@@ -988,6 +987,12 @@ input::-webkit-outer-spin-button {
         width: calc(100% - 120px); /* 양옆의 60px을 뺀다 */
     }
 
+    .pakege .list_ctrl {
+        right: 60px;
+    }
+
+    
+
 } /* @media */
 
 
@@ -995,6 +1000,10 @@ input::-webkit-outer-spin-button {
 
     .pakege .list ul .swiper-slide {
         width: 300px;
+    }
+
+    .pakege .list_ctrl {
+        top: 14px;
     }
 }
 
@@ -1194,7 +1203,7 @@ input::-webkit-outer-spin-button {
     position: absolute;
     right: calc(50% - 630px);
     top: 24px;
-    margin: 0 60px 0 0;
+    /* margin: 0 60px 0 0; */
 }
 
 .room .more a {
@@ -1209,6 +1218,12 @@ input::-webkit-outer-spin-button {
 
 .room .list .swiper-wrapper {
     flex-direction: column;
+}
+
+@media screen and (max-width:1380px){
+    .room .more {
+        right: 60px;
+    }
 }
 
 @media screen and (min-width:1025px){
@@ -1285,9 +1300,9 @@ input::-webkit-outer-spin-button {
         display: none;
     }
 
-    .room .more {
-        /* margin: 0 20px 0 0; */
-    }
+    /* .room .more {
+        margin: 0 20px 0 0;
+    } */
 
     
 }
