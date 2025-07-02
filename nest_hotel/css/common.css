@@ -17,31 +17,31 @@ body {
         1260 + 왼쪽여백(60) + 오른쪽여백(60) = 1380
     */
     position: relative; /* header 정렬의 기준 */
-    overflow-x: hidden; /* 25-05-26 - 가로스크롤바 삭제*/
+    overflow-x: hidden; /* 가로스크롤바 삭제*/
     width: 100%;
 }
-
-@media screen and (max-width:768px) {
-                    body {
-                        font-size: 16px;
-                    }                
-                    .wrapper {
-                        width: auto; /* 25.05.07 넓이는 알아서 좌우여백 20px*/
-                        margin: 0 20px;
-                    }
-                    #wrap {
-                        min-width: 0; 
-                    }
-}    /* 브라우저 넓이가 768px 이하에서만 작동 */
-
 
 @media screen and (max-width:1380px) { /* 60+60 + 1260 = 1380 */
     .wrapper {
         width: auto;
-        margin: 0 20px;
+        margin: 0 60px;
     }
 
 }
+
+@media screen and (max-width:768px) {
+    body {
+        font-size: 16px;
+    }                
+    .wrapper {
+        width: auto; /* 모바일 좌우여백 20px*/
+        margin: 0 20px;
+    }
+    #wrap {
+        min-width: 0; 
+    }
+}    /* 브라우저 넓이가 768px 이하에서만 작동 */
+
 
 
 
