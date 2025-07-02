@@ -652,6 +652,7 @@ header.menu_over .util .login .login_open {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-width: 1000px;
     height: 96px;
     background-color: #fff;
 }
@@ -758,6 +759,12 @@ input::-webkit-outer-spin-button {
     }
 }
 
+@media screen and (max-width:1380px) {
+    .visual .main_reservation .wrapper {
+        margin: 0;
+    }
+}
+
 @media screen and (max-width:1024px) { /* 모바일 */
 
     .visual .visual_item {
@@ -801,6 +808,7 @@ input::-webkit-outer-spin-button {
     }
     
     .visual .main_reservation .reserv_box {
+        min-width: auto;
         flex-direction: column;
         text-align: center;
         height: 320px;
