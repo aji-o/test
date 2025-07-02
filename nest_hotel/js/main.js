@@ -194,7 +194,7 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
                 },
             });
 
-            console.log($(window).width(), 'swiper 작동중')
+            //console.log($(window).width(), 'swiper 작동중')
             
         }else if(window_w > mobile_size && room_swiper != undefined){
            if(room_swiper) room_swiper.destroy();
@@ -202,7 +202,7 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
             $('.room .swiper-wrapper').removeAttr('style');
             $('.room .swiper-slide').removeAttr('style');
 
-            console.log($(window).width(), 'swiper 해제')
+            //console.log($(window).width(), 'swiper 해제')
         }
         //console.log($(window).width())
     }
@@ -226,7 +226,7 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
     $('.other .list ul li').on('click', function(){
         if($(window).width() > 1024){
             service_name = $(this).attr('data-name')
-            console.log(service_name)
+            //console.log(service_name)
             $('.other .list').attr('data-bg', service_name)
         }
     })
