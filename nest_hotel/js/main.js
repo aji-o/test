@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    AOS.init({
+        offset: 200, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 500, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
+        });
     
 let device_status // pc인지 모바일인지 구분하는 값
 let scrolling // 브라우저가 스크롤된 값
@@ -199,7 +204,7 @@ let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
             console.log($(window).width(), 'swiper 해제')
         }
-        console.log($(window).width())
+        //console.log($(window).width())
     }
  
     initSwiper();
