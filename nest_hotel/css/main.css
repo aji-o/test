@@ -1481,16 +1481,33 @@ input::-webkit-outer-spin-button {
     
     .other .list ul li.on .txt {
         margin: 109px 0 0 0;
+        position: relative;
+    }
+
+    .other .list ul li.on .txt::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        width: 1px;
+        height: 51px;
+        background: #fff;
+    }
+
+    .other .list ul li.on .txt .tit_txt {
+        height: 60px;
+        overflow: hidden;
     }
     
     .other .list ul li.on .txt h3 {
         font-size: var(--h3-font-size);
         font-weight: var(--bold-weight);
         position: relative;
-        margin: 0 0 111px 0;
+        bottom: -100%;
+        animation: scroll-up 0.8s ease-in-out forwards;
     }
     
-    .other .list ul li.on .txt h3::before {
+    /* .other .list ul li.on .txt h3::before {
         content: "";
         position: absolute;
         left: 50%;
@@ -1498,11 +1515,12 @@ input::-webkit-outer-spin-button {
         width: 1px;
         height: 51px;
         background: #fff;
-    }
+    } */
 
     .other .list ul li.on .txt .sub_txt {
-        height: 138px;
+        height: 150px;
         overflow: hidden;
+        margin: 110px 0 0 0;
     }
 
     .other .list ul li.on .txt .sub_txt p,
