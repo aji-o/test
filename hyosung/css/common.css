@@ -61,21 +61,28 @@ body {
     --tit-color: #1b1b1b;
     --point-color: #3777BC;
     --sub-color: #37BCA6;
+    --visual-color: #FFE100;
     --gray-color: #F0F4FA;
+    --white-color: #fff;
     --bold-weight: 700;
     --tit-line-height: 1.2;
 
     --visual-font-size: 60px;
+    --visual-subfont-size: 35px;
     --h2-font-size: 40px;
+    --h3-font-size: 25px;
+    --sub-font-size:19px;
+
+
     --default-font-size: 17px;
 }
-/* 
-@media screen and (max-width:1320px) {
-    :root {
-        --visual-font-size: 70px;
-    }
-} */
 
+@media screen and (max-width:1440px) {
+    :root {
+        --visual-font-size: 55px;
+        --visual-subfont-size: 25px;
+    }
+}
 
 @media screen and (max-width:1024px) {
     :root {
@@ -84,6 +91,8 @@ body {
 
         --visual-font-size: 50px;
         --h2-font-size: 50px;
+        --h3-font-size: 20px;
+        --sub-font-size:17px;
 
     }
 }
@@ -92,6 +101,10 @@ body {
     :root {
         --visual-font-size: 30px;
         --h2-font-size: 26px;
+        --h3-font-size: 18px;
+
+        --sub-font-size:16px;
         --default-font-size: 16px;
+        
     }
 }
