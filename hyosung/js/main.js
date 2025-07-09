@@ -1,5 +1,25 @@
 $(document).ready(function(){
 
+    $('header .gnb .gnb_wrap ul.depth1 > li > a:not([target="_blank"])').on('mouseenter', function() {
+        $('header').addClass('menu_over');
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+        $(this).parent('li').addClass('over');
+    });
+    
+    // target="_blank"가 있는 a 태그에 마우스 진입 시 클래스 제거
+    $('header .gnb .gnb_wrap ul.depth1 > li > a[target="_blank"]').on('mouseenter', function() {
+        $('header').removeClass('menu_over');
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+    });
+    
+    // 마우스가 전체 header 밖으로 나가면 초기화
+    $('header').on('mouseleave', function() {
+        $('header').removeClass('menu_over');
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+    });
+
+
+
 
     /* ################### visual ####################### */
 
