@@ -24,7 +24,7 @@
     <div id="wrap">
         <!-- pc버전에서 메뉴에 마우스를 오버하면 menu_over
              mobile 버전에서 메뉴를 클릭하면 menu_open -->
-        <header class="menu_over">
+        <header class="">
             <h1 class="logo"><a href="index.html"><span class="blind">효성병원 로고</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
@@ -33,7 +33,7 @@
                         <div class="search_open"><button><span class="">검색</span></button></div>
                     </div>
                     <ul class="depth1">
-                        <li class="over"> <!--     pc = over 클래스 추가
+                        <li class=""> <!--     pc = over 클래스 추가
                                       mobile = open 클래스 추가 -->
                             <a href="#"><span>예약/안내</span></a>
                             <div class="depth2_wrap"> <!-- ####### -->
@@ -270,7 +270,7 @@
                             <div class="reserv">
                                 <div class="txt">
                                     <h2>진료 예약</h2>
-                                    <p>전화예약  (043) 211 - 5000</p>
+                                    <p>전화예약<br>(043) 211 - 5000</p>
                                     <a href="#">예약하기</a>
                                 </div>
                             </div>
@@ -328,7 +328,7 @@
                                             </g>
                                             </svg>                                        
                                     </i>
-                                    <span>진료기록사본<br>발급</span>
+                                    <span>진료기록사본 <br>발급</span>
                                 </a>
                             </li>
                             <li>
@@ -496,9 +496,171 @@
                     </div><!--swiper-->
                 </div>
             </section>
-            <section class="news"></section>
-            <section class="coop"></section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>효성 <span>소식</span></h2>
+                        <p>효성병원의 소식 및 정보를 알려드립니다.</p>
+                    </div>
+                    <div class="list">
+                        <div class="tap_list">
+                            <ul role="tablist">
+                                <!-- 선택된 li에는 active 클래스 추가, butten에 선택됨이라고 써줌
+                                     aria-selected가 true가 선택된 것 false 선택이 안된 것 
+                                     data-content li를 눌렀을때 나타날 탭콘텐츠 id값
+                                     li를 클릭했을 떄 data-content값을 호출해서 id가 같은 요소만 보이게함
+                                     data-content는 내맘대로 속성을 추가... (값을 저장할 공간이 필요해서 - 표준위배)
+                                     data-link 라든가... data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성 -->
+                                <li role="tab" aria-selected="true" class="item1 active" data-content="tap_item1"><button>공지사항<span class="blind">선택됨</span></button></li>
+                                <li role="tab" aria-selected="false" class="item2" data-content="tap_item2"><button>병원소식<span class="blind"></span></button></li>
+                                <li role="tab" aria-selected="false" class="item3" data-content="tap_item3"><button>채용공고<span class="blind"></span></button></li>
+                                <li class="more"><a href="#"><span class="blind">더보기</span></a></li>
+                            </ul><!--//tablist-->
+                        </div>
+                        <div class="con_wrap">
+                                <div class="tap_item item1 active" id="tap_item1">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내 안내안내안내안내안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate1">공지사항</strong>
+                                                <span class="date">2025-01-01</span>
+                                                <h3>미진료 예약·검사비 환불 안내</h3>
+                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="popup_list">
+                                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="photo"><img src="images/news_01.jpg" alt="입원실 동행서비스 안내"></div>
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="photo"><img src="images/news_02.jpg" alt="보건복지부 4주기 인증의료기관 획득"></div>
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="photo"><img src="images/news_03.jpg" alt="효성병원 검진 예약 서비스 OPEN"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                                        <button class="btn_prev"><span class="blind">다음팝업보기</span></button>
+                                        <button class="btn_next"><span class="blind">이전팝업보기</span></button>
+                                    </div>
+                            </div><!--//tap_content-->
+                        </div><!--//con_wrap-->
+                    </div><!--//list-->
+                </div><!--//wrapper-->
+            </section>
+            <section class="coop">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>효성 <span>협력병원</span></h2>
+                        <p>Hotline 효성병원 RC</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li><a href="#"><div class="photo"><img src="images/coop_01.png" alt="삼성서울병원"></div></a></li>
+                            <li><a href="#"><div class="photo"><img src="images/coop_02.png" alt="서울대학교병원"></div></a></li>
+                            <li><a href="#"><div class="photo"><img src="images/coop_03.png" alt="세브란스병원"></div></a></li>
+                            <li><a href="#"><div class="photo"><img src="images/coop_04.png" alt="서울아산병원"></div></a></li>
+                            <li><a href="#"><div class="photo"><img src="images/coop_05.png" alt="충북대학교병원"></div></a></li>
+                            <li><a href="#"><div class="photo"><img src="images/coop_06.png" alt="경희의료원"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </main>
+        <footer>
+            <div class="wrapper">
+                <div class="f_nav">
+                    <ul>                              
+                        <li><a href="#">개인정보 처리방침</a></li>
+                        <li><a href="#">글로벌효성메디컬센터</a></li>
+                        <li><a href="#">효성병원장례식장</a></li>
+                        <li><a href="#">인트라넷 (직원전용)</a></li>
+                    </ul>
+                </div>
+                <div class="f_wrap">
+                    <div class="time">
+                        <strong>진료시간</strong>
+                        <div class="time_box">
+                            <div class="item">
+                                <span>평 일</span>
+                                <p>오전 8:30 ~ 오후 6:00</p>
+                            </div>
+                            <div class="item">
+                                <span>토요일</span>
+                                <p>오전 8:30 ~ 오후 1:00</p>
+                            </div>
+                            <div class="item">
+                                <span>응급실</span>
+                                <p>24시간 운영</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="number">
+                        <strong>전화예약</strong>
+                        <p>(043) 221 - 5000</p>
+                    </div>
+                    <div class="online">
+                        <a href="#" class="kakao">카카오톡 채팅상담</a>
+                        <a href="#" class="reserv">진료 예약하기</a>
+                    </div>
+                </div>
+                <div class="f_info">
+                    <address>[28736] 충청북도 청주시 상당구 쇠내로 16 (금천동 162-90) 대표자 : 오창진</address>
+                    <span>사업자번호 317-82-01897</span>
+                </div>
+                <div class="copyright">ⓒ Copyright 2025. HYOSUNG HOSPITAL. All Rights Reserved.</div>
+            </div>
+        </footer>
     </div><!--//wrap-->
 </body>
 </html>
