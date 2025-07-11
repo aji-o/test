@@ -24,7 +24,7 @@
     <div id="wrap">
         <!-- pc버전에서 메뉴에 마우스를 오버하면 menu_over
              mobile 버전에서 메뉴를 클릭하면 menu_open -->
-        <header class="">
+        <header class="menu_open">
             <h1 class="logo"><a href="index.html"><span class="blind">효성병원 로고</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open"><span class="blind">메뉴열기</span></button>
@@ -33,7 +33,7 @@
                         <div class="search_open"><button><span class="">검색</span></button></div>
                     </div>
                     <ul class="depth1">
-                        <li class=""> <!--     pc = over 클래스 추가
+                        <li class="open"> <!--     pc = over 클래스 추가
                                       mobile = open 클래스 추가 -->
                             <a href="#"><span>예약/안내</span></a>
                             <div class="depth2_wrap"> <!-- ####### -->
@@ -201,8 +201,9 @@
                             <a href="#" target="_blank" title="새창열림" class="link"><span>지역응급의료센터</span></a>
                         </li>
                     </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
                 </div><!--//gnb_wrap-->
-                <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                <div class="gnb_bg"></div><!-- 메뉴 아래에서 검은색을 깔아줄 담당 -->
             </nav>
             <div class="util">
                 <div class="menu">
@@ -413,14 +414,16 @@
                 </div><!--//wrapper-->
             </section>
             <section class="center">
-                <div class="tit">
-                    <h2>효성 <span>센터 소개</span></h2>
-                    <p>효성병원의 수준 높은 의료진과 최고의 의료장비로 양질의 서비스를 제공합니다.</p>
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>효성 <span>센터 소개</span></h2>
+                        <p>효성병원의 수준 높은 의료진과 최고의 의료장비로 양질의 서비스를 제공합니다.</p>
+                    </div>
                 </div>
                 <div class="list">
                     <div class="swiper">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item1">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>01.</strong>
@@ -432,7 +435,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item2">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>02.</strong>
@@ -444,7 +447,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item3">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>03.</strong>
@@ -456,7 +459,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item4">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>04.</strong>
@@ -468,7 +471,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item5">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>05.</strong>
@@ -480,7 +483,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="swiper-slide">
+                            <li class="swiper-slide item6">
                                 <a href="#">
                                     <div class="txt">
                                         <strong>06.</strong>
@@ -505,12 +508,6 @@
                     <div class="list">
                         <div class="tap_list">
                             <ul role="tablist">
-                                <!-- 선택된 li에는 active 클래스 추가, butten에 선택됨이라고 써줌
-                                     aria-selected가 true가 선택된 것 false 선택이 안된 것 
-                                     data-content li를 눌렀을때 나타날 탭콘텐츠 id값
-                                     li를 클릭했을 떄 data-content값을 호출해서 id가 같은 요소만 보이게함
-                                     data-content는 내맘대로 속성을 추가... (값을 저장할 공간이 필요해서 - 표준위배)
-                                     data-link 라든가... data-value 이렇게 data가 들어간 속성은 퍼블이 만든 속성 -->
                                 <li role="tab" aria-selected="true" class="item1 active" data-content="tap_item1"><button>공지사항<span class="blind">선택됨</span></button></li>
                                 <li role="tab" aria-selected="false" class="item2" data-content="tap_item2"><button>병원소식<span class="blind"></span></button></li>
                                 <li role="tab" aria-selected="false" class="item3" data-content="tap_item3"><button>채용공고<span class="blind"></span></button></li>
@@ -523,15 +520,15 @@
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
-                                                <h3>미진료 예약·검사비 환불 안내 안내안내안내안내안내</h3>
-                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                                <span class="date">2025-07-10</span>
+                                                <h3>2025년 미션과 핵심가치</h3>
+                                                <p>친절한 병원, 따듯한 병원, 활기찬 병원, 쾌적한 병원이 되기 위한 효성병원의 핵심가치를 소개합니다.</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
+                                                <span class="date">2025-06-19</span>
                                                 <h3>미진료 예약·검사비 환불 안내</h3>
                                                 <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
                                             </a>
@@ -539,37 +536,144 @@
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
-                                                <h3>미진료 예약·검사비 환불 안내</h3>
-                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                                <span class="date">2025-06-04</span>
+                                                <h3>무단방치 자전거 폐기 안내</h3>
+                                                <p>효성병원 인근에 장기간 무단으로 방치된 자전거에 대한 공지사항 입니다. 2025년 05월 31일까지 방치된 자전거는 폐기 예정임을 알립니다.</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
-                                                <h3>미진료 예약·검사비 환불 안내</h3>
-                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                                <span class="date">2025-05-26</span>
+                                                <h3>2025년 하계방학 대학생 자원봉사자 모집 안내</h3>
+                                                <p>효성병원에서는 지역 내 거주하는 대학생들이 하계방학을 맞이하여 자원봉사활동을 통해 진로의 탐색 및 봉사의 보람을 느낄 수 있도록 ‘하계방학 대학생 자원봉사활동 프로그램’을 운영합니다.                                                </p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
-                                                <h3>미진료 예약·검사비 환불 안내</h3>
-                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                                <span class="date">2024-09-10</span>
+                                                <h3>2024년 하반기 신규 약품 사용 신청 접수 안내</h3>
+                                                <p>기간: 2024년 09월 24일(화)~27일(금) 14시~17시, 접수처: sylee@uuh.ulsan.kr</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <strong class="cate cate1">공지사항</strong>
-                                                <span class="date">2025-01-01</span>
-                                                <h3>미진료 예약·검사비 환불 안내</h3>
-                                                <p>예약날짜가 지난 진료비 및 검사비 환불을 다음과 같이 안내합니다.</p>
+                                                <span class="date"> 2024-05-10</span>
+                                                <h3>5/20부터 병원 방문 시 신분증 지참 필수입니다!</h3>
+                                                <p>2024년 5월 20일부터 건강보험으로 진료 시 본인 여부를 확인합니다. 병·의원을 갈땐 신분증을 제시해주세요.</p>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
+
+                                <div class="tap_item item2" id="tap_item2">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date">2025-07-10</span>
+                                                <h3>충북소방본부 업무협약 체결</h3>
+                                                <p>이번 협약은 2025년 효성병원이 충청북도 지역뇌혈관질환센터로 지정됨에 따라, 뇌졸중 등 중증 뇌혈관질환에 대한 신속하고 체계적인 대응 체계를 구축하고, 도민의 생존율 향상과 삶의 질 개선에 기여하고자 마련되었습니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date">2025-06-12</span>
+                                                <h3>의료기관종사자 대상 연명의료결정제도 기본(대면) 교육 실시</h3>
+                                                <p>바쁜 업무중에도 시간내서 열정있게 경청해주신 직원여러분 그리고 청주원광효도요양병원 관계자분들께 감사드립니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date">2025-06-12</span>
+                                                <h3>2025년 신규간호사 입사 100일 기념 간담회 개최</h3>
+                                                <p>지난 6월 9일 2025년 신규간호사들의 입사 100일 기념 간담회가 있었습니다. 저녁식사와 음료를 즐기며 서로 100일간의 노고를 치하하고 앞으로의 다짐을 새롭게 하는 자리를 마련하였습니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date">2025-05-22</span>
+                                                <h3>사회사업실, 생명사랑위기대응센터 ‘생명을 잇는 동행, 119 감사합니다’ 캠페인 실시</h3>
+                                                <p>효성병원 사회사업실, 생명사랑위기대응센터에서는 5월 감사의 달을 맞이하여 119 대원들을 대상으로 ‘생명을 잇는 동행, 119 감사합니다’ 캠페인을 실시하였습니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date">2025-05-21</span>
+                                                <h3>‘2030 젊은 고혈압을 찾아라!’ — 세계 고혈압의 날 기념 합동 캠페인 개최</h3>
+                                                <p>기이번 행사는 2025년 5월 14일 충청대학교에서 열렸으며, 충청대학교 학생들과 청주시민 등 500여 명이 참여했습니다.</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate2">병원소식</strong>
+                                                <span class="date"> 2025-05-19</span>
+                                                <h3>효성병원, 충북 유일의 지역뇌혈관질환센터로 지정</h3>
+                                                <p>올해는 전국 10개소가 지역심뇌혈관질환센터로 지정되었으며, 효성병원은 충청북도에서 유일하게 지역뇌혈관질환센터로 지정되는 영예를 안았습니다.</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tap_item item3" id="tap_item3">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-07-08</span>
+                                                <h3>병동 간호사(경력 1년 이상) 상시 채용</h3>
+                                                <p>제출서류 : 입사지원서 & 자기소개서 첨부파일 참조, 간호사 자격증 등</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-06-02</span>
+                                                <h3>효성병원 사회복지사 채용 공고</h3>
+                                                <p>바모집기간 : 2025. 6. 2(월) ~ 채용시까지</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-02-13</span>
+                                                <h3>심사기록부 심사팀 간호사 모집</h3>
+                                                <p>모집부문 : 심사팀 심사간호사(임상경력 1년 이상), (보험심사경력자우대) 1명 <br>모집기간 : 채용시 까지</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-01-10</span>
+                                                <h3>검진센터 초음파 방사선사(경력직) 구인</h3>
+                                                <p>접수기간:채용 시 마감 <br>접수방법:이메일 지원 - hyosung5388@daum.net</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-01-10</span>
+                                                <h3>외래 간호조무사 구인 (마감)</h3>
+                                                <p>접수기간:채용 시 마감 <br>접수방법:이메일 지원 - hyosung5388@daum.net</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <strong class="cate cate3">채용공고</strong>
+                                                <span class="date">2025-01-10</span>
+                                                <h3>검진센터 치과위생사 구인(계약직) (마감)</h3>
+                                                <p>접수기간:채용 시 마감 <br>접수방법:이메일 지원 - hyosung5388@daum.net</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                                 <div class="popup_list">
                                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                         <ul class="swiper-wrapper">
@@ -650,8 +754,8 @@
                         <p>(043) 221 - 5000</p>
                     </div>
                     <div class="online">
-                        <a href="#" class="kakao">카카오톡 채팅상담</a>
-                        <a href="#" class="reserv">진료 예약하기</a>
+                        <a href="#" class="kakao"><span>카카오톡 채팅상담</span></a>
+                        <a href="#" class="reserv"><span>진료 예약하기</span></a>
                     </div>
                 </div>
                 <div class="f_info">
