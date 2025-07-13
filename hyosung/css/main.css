@@ -398,6 +398,10 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
 
 @media screen and (max-width:1024px){
 
+    header::before {
+        display: none;
+}
+
     header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap .d2_tit,
     header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap .d2_list {
         display: none;

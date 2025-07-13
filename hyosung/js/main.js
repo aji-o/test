@@ -57,22 +57,40 @@ $(document).ready(function(){
     })
 
     
-    // $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
-    //     if(device_status == 'mobile'){
-    //         e.preventDefault() // a 태그가 눌리는걸 막아줌
-    //         menu_open = $(this).parents('li').hasClass('open')
-    //         if(menu_open == true){ // 메뉴가 열려있을 경우
-    //             $(this).parents('li').removeClass('open')
-    //             $(this).next().slideUp()
-    //         }else{ // 닫혀있을 경우
-    //             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-    //             $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
-    //             $(this).parents('li').addClass('open')
-    //             $(this).next().slideDown()
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            // e.preventDefault() // a 태그가 눌리는걸 막아줌
+            menu_open = $(this).parents('li').hasClass('open')
+            if(menu_open == true){ // 메뉴가 열려있을 경우
+                $(this).parents('li').removeClass('open')
+                $(this).next().slideUp()
+            }else{ // 닫혀있을 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+                $(this).parents('li').addClass('open')
+                $(this).next().slideDown()
                 
-    //         }
-    //     }
-    // })
+            }
+        }
+    })
+
+
+    $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault() // a 태그가 눌리는걸 막아줌
+            menu_open = $(this).parents('li').hasClass('open')
+            if(menu_open == true){ // 메뉴가 열려있을 경우
+                $(this).parents('li').removeClass('open')
+                $(this).next().slideUp()
+            }else{ // 닫혀있을 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li > ul.depth3').slideUp()
+                $(this).parents('li').addClass('open')
+                $(this).next().slideDown()
+                
+            }   
+        }
+    })
 
     
 
