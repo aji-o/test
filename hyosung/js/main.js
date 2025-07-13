@@ -7,11 +7,11 @@ $(document).ready(function(){
     let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
     
-        $(window).resize(function(){ //리사이즈 될때마다 1번 실행
-        resize_chk()
-        })
-    
-        resize_chk() //함수의 실행
+    $(window).resize(function(){ //리사이즈 될때마다 1번 실행
+    resize_chk()
+    })
+
+    resize_chk() //함수의 실행
 
     function resize_chk(){
         window_w = $(window).width()
@@ -27,10 +27,13 @@ $(document).ready(function(){
     /* header 1차메뉴 오버 */
 
     $('header .gnb .gnb_wrap ul.depth1 > li > a:not([target="_blank"])').on('mouseenter', function() {
-        $('header').addClass('menu_over');
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
-        $(this).parent('li').addClass('over');
+        if (device_status === 'pc') {
+            $('header').addClass('menu_over');
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
+            $(this).parent('li').addClass('over');
+        }
     });
+    
     
     // target="_blank"가 있는 a 태그에 마우스 진입 시 클래스 제거
     $('header .gnb .gnb_wrap ul.depth1 > li > a[target="_blank"]').on('mouseenter', function() {
@@ -56,26 +59,8 @@ $(document).ready(function(){
         $('header').removeClass('menu_open')
     })
 
-    
+    //1차
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
-        if(device_status == 'mobile'){
-            // e.preventDefault() // a 태그가 눌리는걸 막아줌
-            menu_open = $(this).parents('li').hasClass('open')
-            if(menu_open == true){ // 메뉴가 열려있을 경우
-                $(this).parents('li').removeClass('open')
-                $(this).next().slideUp()
-            }else{ // 닫혀있을 경우
-                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
-                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
-                $(this).parents('li').addClass('open')
-                $(this).next().slideDown()
-                
-            }
-        }
-    })
-
-
-    $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li > a').on('click', function(e){
         if(device_status == 'mobile'){
             e.preventDefault() // a 태그가 눌리는걸 막아줌
             menu_open = $(this).parents('li').hasClass('open')
@@ -83,12 +68,12 @@ $(document).ready(function(){
                 $(this).parents('li').removeClass('open')
                 $(this).next().slideUp()
             }else{ // 닫혀있을 경우
-                $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li').removeClass('open')
-                $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 > li > ul.depth3').slideUp()
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap').slideUp()
                 $(this).parents('li').addClass('open')
                 $(this).next().slideDown()
                 
-            }   
+            }
         }
     })
 

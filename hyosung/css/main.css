@@ -398,7 +398,7 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
 
 @media screen and (max-width:1024px){
 
-    header::before {
+    header.menu_over::before {
         display: none;
 }
 
@@ -454,6 +454,8 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_73_3' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_73_3)'%3E%3Cpath d='M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
 
+    
+
     header .gnb .gnb_wrap ul.depth1 {
         margin: var(--header-h) 0 0 0;
         padding: 0 20px;
@@ -498,6 +500,11 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_66_929' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='16' height='16'%3E%3Crect x='16' y='16' width='16' height='16' transform='rotate(-180 16 16)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_66_929)'%3E%3Cpath d='M8.00065 3.09667C8.16132 3.09667 8.31087 3.12233 8.44932 3.17367C8.58776 3.225 8.71943 3.313 8.84432 3.43767L14.8366 9.43C15.0211 9.61467 15.1155 9.84678 15.12 10.1263C15.1242 10.4057 15.0298 10.642 14.8366 10.8353C14.6433 11.0284 14.4091 11.125 14.134 11.125C13.8589 11.125 13.6246 11.0284 13.4313 10.8353L8.00065 5.40433L2.56998 10.8353C2.38531 11.0198 2.1532 11.1142 1.87365 11.1187C1.59431 11.1229 1.35798 11.0284 1.16465 10.8353C0.971536 10.642 0.874981 10.4078 0.874981 10.1327C0.874981 9.85755 0.971536 9.62333 1.16465 9.43L7.15698 3.43767C7.28187 3.313 7.41354 3.225 7.55198 3.17367C7.69043 3.12233 7.83998 3.09667 8.00065 3.09667Z' fill='%233777BC'/%3E%3C/g%3E%3C/svg%3E%0A");
         transform: rotate(180deg);
     }
+/*임시 ############################################################## */
+    header .gnb .gnb_wrap ul.depth1 > li .depth2_wrap {
+    display: none;
+    }
+/*임시 ############################################################## */
 
     header .gnb .gnb_wrap ul.depth1 > li > .depth2_wrap > ul.depth2 {
         margin: 10px 0 10px 15px;
