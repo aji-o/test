@@ -108,6 +108,8 @@ body {
 @media screen and (max-width:768px) {
     :root {
         --visual-font-size: 40px;
+        --visual-subfont-size: 18px;
+
         --h2-font-size: 26px;
         --h3-font-size: 18px;
 
