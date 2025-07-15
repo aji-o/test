@@ -14,14 +14,14 @@
 
 .skip_nav a {
     display: block;
-    background-color: var(--sub-color);
-    text-align: center;
-    padding: 7px 0;
-    color: #1d1d1d;
     position: absolute;
     left: 0;
     top: -1000px;
     width: 100%;
+    background-color: var(--sub-color);
+    text-align: center;
+    padding: 7px 0;
+    color: var(--tit-color)
 }
 
 .skip_nav a:focus {
