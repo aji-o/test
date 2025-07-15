@@ -705,6 +705,9 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
 .visual .swiper-slide .photo {
     overflow: hidden;
     height: 600px;
+}
+
+.swiper-pointer-events {
     border-radius: 70px 0 0 0;
 }
 
@@ -843,12 +846,9 @@ header .gnb .gnb_wrap ul.depth1 > li.over > .depth2_wrap {
 }
 
 @media screen and (max-width:768px){
-
-    
     
     .visual .swiper-slide .photo {
         height: 397px;
-        border-radius: 40px 0 0 0;
     }
 
     .visual .swiper-slide .tit {
