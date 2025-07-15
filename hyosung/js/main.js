@@ -44,7 +44,7 @@ $(document).ready(function(){
 
     /* header 1차메뉴 오버 */
 
-    $('header .gnb .gnb_wrap ul.depth1 > li > a:not([target="_blank"])').on('mouseenter', function() {
+    $('header .gnb .gnb_wrap ul.depth1 > li > a:not([target="_blank"])').on('mouseenter focusin', function() {
         if (device_status === 'pc') {
             $('header').addClass('menu_over');
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
@@ -54,13 +54,13 @@ $(document).ready(function(){
     
     
     // target="_blank"가 있는 a 태그에 마우스 진입 시 클래스 제거
-    $('header .gnb .gnb_wrap ul.depth1 > li > a[target="_blank"]').on('mouseenter', function() {
+    $('header .gnb .gnb_wrap ul.depth1 > li > a[target="_blank"]').on('mouseenter focusout', function() {
         $('header').removeClass('menu_over');
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
     });
     
     // 마우스가 전체 header 밖으로 나가면 초기화
-    $('header').on('mouseleave', function() {
+    $('header').on('mouseleave focusout', function() {
         $('header').removeClass('menu_over');
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over');
     });
