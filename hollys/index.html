@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- jquery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- swiper 라이브러리 -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!-- aos 애니메이션 라이브러리
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>할리스 커피</title>
+</head>
+<body>
+    <div id="wrap">
+
+        <header>
+            <h1 class="logo"><a href="index.html"><span class="blind">로고</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <div class="gnb_util"> <!--모바일 메뉴창 안쪽-->
+                        <div class="login">
+                            <button class="login_open"><span class="">로그인</span></button>
+                        </div>
+                        <div class="lang">
+                            <button class="lang_open"><span class="">English</span></button>
+                        </div>
+                    </div> <!-- gnb_util -->
+                    <ul class="depth1">
+                        <!--     pc = over 클래스 추가
+                             mobile = open 클래스 추가 -->
+                        <li class="">
+                            <!-- 1차메뉴는 첫번째 하위메뉴로 이동 -->
+                            <a href="#"><span>메뉴</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>COFFEE</span></a></li>
+                                <li><a href="#"><span>음료</span></a></li>
+                                <li><a href="#"><span>디저트</span></a></li>
+                                <li><a href="#"><span>MD</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>할리스 몰</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>할리스콘</span></a></li>
+                                <li><a href="#"><span>할리스카드</span></a></li>
+                                <li><a href="#"><span>E-Store</span></a></li>
+                                <li><a href="#"><span>구매내역</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>멤버십</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>스마트오더</span></a></li>
+                                <li><a href="#"><span>멤버십 혜택</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>공지 및 이벤트</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>공지사항</span></a></li>
+                                <li><a href="#"><span>이벤트</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>할리스 소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#"><span>Hollys</span></a></li>
+                                <li><a href="#"><span>위치 및 연락처</span></a></li>
+                                <li><a href="#"><span>채용안내</span></a></li>
+                                <li><a href="#"><span>가맹문의 및 절차</span></a></li>
+                                <li><a href="#"><span>B2B사업</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div> <!-- gnb_wrap -->
+                <div class="gnb_bg"></div><!-- 메뉴 아래에서 검은색을 깔아줄 담당 -->
+            </nav>
+        </header>
+
+        <main class="container">
+            <section></section> <!-- 여러개 -->
+        </main>
+
+        <footer></footer>
+
+    </div>
+</body>
+</html>
