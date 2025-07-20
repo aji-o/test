@@ -77,9 +77,11 @@ body {
     --header-h-m: -90px;
     --tit-color: #3C2121;
     --point-color: #D91226;
+    --white-color: #fff;
     --bold-weight: 700;
     --tit-font-size: 65px; /* 45(pc용 타이틀 기존폰트 크기) ÷ 17(pc용 기존폰트 크기) = 2.647.. 반올림가능 */
     --tit-line-height: 1.2;
+    --h2-font-size: 34px;
 }
 
 @media screen and (max-width:1024px) {

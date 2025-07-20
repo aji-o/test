@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- jquery 라이브러리 -->
+    <!-- jquery 라이브러리 -->
     <script src="js/jquery-3.7.1.min.js"></script>
 
     <!-- swiper 라이브러리 -->
@@ -90,7 +90,82 @@
         </header>
 
         <main class="container">
-            <section></section> <!-- 여러개 -->
+
+            <section class="visual">
+                <h2 class="blind">팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_01.jpg" alt=""></div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_02.jpg" alt=""></div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_03.jpg" alt=""></div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_04.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div> <!--swiper-->
+                <div class="ctrl_wrap">
+                    <div class="count"></div>
+                    <button class="button-stop"><span class="blind">일시정지</span></button>
+                    <button class="button-play"><span class="blind">재생</span></button>
+                </div>
+
+            </section>
+
+            <section class="product">
+                <h2><span>PRODUCT</span></h2>
+                <div class="list">
+                    <div class="tap_list">
+                        <ul role="tablist">
+                            <li role="tab" aria-selected="true" class="item1 active" data-content="tap_item1"><button>시즌<span class="blind">선택됨</span></button></li>
+                            <li role="tab" aria-selected="false" class="item2" data-content="tap_item2"><button>커피<span class="blind"></span></button></li>
+                            <li role="tab" aria-selected="false" class="item3" data-content="tap_item3"><button>음료<span class="blind"></span></button></li>
+                            <li role="tab" aria-selected="false" class="item3" data-content="tap_item3"><button>디저트<span class="blind"></span></button></li>
+                            <li role="tab" aria-selected="false" class="item3" data-content="tap_item3"><button>MD<span class="blind"></span></button></li>
+                        </ul><!--//tablist-->
+                    </div>
+                    <div class="con_wrap">
+                            <div class="tap_item item1 active" id="tap_item1">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <h3>팥 듬뿍 컵 빙수</h3>
+                                            <p>부드러운 우유얼음에 국내산 팥, <br>쫀득한 찹쌀떡이 어우러진 전통 빙수</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h3>애플망고 듬뿍 컵 빙수</h3>
+                                            <p>상큼한 망고가 한가득! <br>시원함 그 자체 망고빙수</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h3>딸기베리 듬뿍 컵 빙수</h3>
+                                            <p>빨간맛 궁금해 허니♥ 딸기와 블루베리 가득 올라간 딸기베리 빙수</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h3>리얼 수박 생과일 주스</h3>
+                                            <p>신선한 수박 그대로 갈아만든 <br>생과일 주스</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                </div>
+            </section>
+
+
+
+
+
+
         </main>
 
         <footer></footer>
