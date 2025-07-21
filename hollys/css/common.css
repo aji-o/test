@@ -3,7 +3,7 @@ body {
     font-family: "Montserrat" ,"S-CoreDream", sans-serif;
     font-size: 17px;
     font-weight: 400;
-    line-height: 1.2; /* 단위는 배수로 한다. */
+    line-height: 1.5; /* 단위는 배수로 한다. */
     color: #555;
     word-break: keep-all; /* 단어별 줄바꿈(스페이스 기준)*/
     word-wrap: break-word; /* 단어가 너무 긴 경우 강제로 줄바꿈 */
@@ -78,22 +78,22 @@ body {
     --tit-color: #3C2121;
     --point-color: #D91226;
     --white-color: #fff;
-    --bold-weight: 700;
-    --tit-font-size: 65px; /* 45(pc용 타이틀 기존폰트 크기) ÷ 17(pc용 기존폰트 크기) = 2.647.. 반올림가능 */
+    --bold-weight: 800;
+    --sub-bold-weight: 600;
+    --tit-font-size: 34px;
     --tit-line-height: 1.2;
-    --h2-font-size: 34px;
 }
 
 @media screen and (max-width:1024px) {
     :root {
         --header-h: 56px; /* 모바일 header의 높이 */
         --header-h-m: -56px; 
-        --tit-font-size: 35px 
+        --tit-font-size: 30px 
     }
 }
 
 @media screen and (max-width:768px) {
     :root {
-        --tit-font-size: 25px;
+        --tit-font-size: 20px;
     }
 }
