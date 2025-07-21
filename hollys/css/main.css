@@ -268,7 +268,7 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
     
     .visual .swiper-slide .photo {
         overflow: hidden;
-        height: 600px;
+        height: 800px;
     }
 
     .visual .ctrl_wrap {
@@ -485,7 +485,7 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
     transform: rotate(180deg);
 }
 
-@media screen and (max-width:768px) { /* pc버전 */
+@media screen and (max-width:768px) { /* 모바일 */
 
         .product {
             margin: 60px 0 60px 0;
@@ -826,6 +826,13 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
 }
 
 
+@media screen and (max-width:768px) { /* 모바일 */
+
+.news .members .photo {
+    height: 289px;
+}
+
+}
 
 
 
@@ -837,4 +844,56 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
 .store {
     display: flex;
     justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+footer {
+    padding: 37px 0 58px 0;
+    background-color: #600000;
+    color: var(--white-color);
+}
+
+footer .f_logo img {
+    width: 209px;
+}
+
+footer .f_nav ul {
+    display: flex;
+    gap: 0 50px;
+}
+
+footer .f_nav ul li {
+    position: relative;
+}
+
+footer .f_nav ul li::before {
+    content: "";
+    position: absolute;
+    right: -27px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer .f_nav ul li:last-child::before {
+    display: none;
+}
+
+footer .f_nav ul li a {
+    display: block;
+}
+
+footer .f_wrap {
+    display: flex;
+}
+
+footer .f_wrap .call_wrap .item {
+    display: flex;
 }
