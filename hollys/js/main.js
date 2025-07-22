@@ -192,6 +192,37 @@ $(document).ready(function(){
         })
 
 
+
+        /*################# news-event - 모바일 버전 swiper ################*/
+
+    var news_swiper = undefined;
+    function initSwiper(){ 
+        if(window_w <= mobile_size && news_swiper == undefined){
+            news_swiper = new Swiper('.news .swiper',{
+                slidesPerView: 'auto',
+                spaceBetween: 16,
+            });
+
+            //console.log($(window).width(), 'swiper 작동중')
+            
+        }else if(window_w > mobile_size && news_swiper != undefined){
+           if(news_swiper) news_swiper.destroy();
+           news_swiper = undefined;
+            $('.news .swiper-wrapper').removeAttr('style');
+            $('.news .swiper-slide').removeAttr('style');
+
+            //console.log($(window).width(), 'swiper 해제')
+        }
+        //console.log($(window).width())
+    }
+ 
+    initSwiper();
+ 
+    $(window).on('resize', function(){
+        initSwiper();
+    });
+
+
     
 
 
