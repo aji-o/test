@@ -127,20 +127,24 @@ header .heading .logo a {
         color: var(--point-color);
     }
     
-    header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+    header .gnb .gnb_wrap ul.depth1 > li > a > span {
         position: relative; /* after 정렬의 기준 */
     }
     
-    header .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+    header .gnb .gnb_wrap ul.depth1 > li > a > span::after {
         z-index: 1;
         content: "";
         position: absolute;
         left: 0;
         bottom: -18px; /* 미정 */
-        width: 100%;
+        width: 0;
         height: 2px;
         background-color: var(--point-color);
         transition: 0.5s;
+    }
+    
+    header .gnb .gnb_wrap ul.depth1 > li.over > a:hover > span::after {
+        width: 100%;
     }
     
     
