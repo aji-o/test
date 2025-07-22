@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     let device_status //모바일 pc 구분
     let window_w //브라우저 넓이
-    let mobile_size = 1024 //모바일로 전환되는 사이즈
+    let mobile_size = 768 //모바일로 전환되는 사이즈
     let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
     
@@ -51,39 +51,106 @@ $(document).ready(function(){
 
 
 
+    // 모바일 메뉴
+
+    $('header .gnb .gnb_open').on('click', function(){ //메뉴 열고닫기
+        $('header').addClass('menu_open')
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+    })
+
+    
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault() // a 태그가 눌리는걸 막아줌
+            menu_open = $(this).parents('li').hasClass('open')
+            if(menu_open == true){ // 메뉴가 열려있을 경우
+                $(this).parents('li').removeClass('open')
+                $(this).next().slideUp()
+            }else{ // 닫혀있을 경우
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
+                $(this).parents('li').addClass('open')
+                $(this).next().slideDown()
+                
+            }
+        }
+    })
 
 
 
+    /* #####################   visual   ############################  */
 
 
-        /* ################### visual ####################### */
+    let visual_swiper
 
-    const visual_swiper = new Swiper('.visual .swiper', { 
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: true,
-        },
+    function initVisualSwiper() {
+    resize_chk(); // window_w와 device_status 갱신
 
-        //effect: "fade", /* fade 효과 */
-        loop: true,
+    if (visual_swiper) {
+        visual_swiper.destroy(true, true); // 기존 swiper 제거
+    }
 
-        pagination: {
-            el: '.visual .ctrl_wrap .count',
-            clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-        },
+    if (device_status === 'mobile') {
+        visual_swiper = new Swiper('.mo-visual', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: true,
+            },
+            loop: true,
+            pagination: {
+                el: '.mo-visual .ctrl_wrap .count',
+                clickable: true,
+            },
+        });
 
+        $('.mo-visual .button-stop').on('click', function () {
+            visual_swiper.autoplay.stop();
+            $(this).hide();
+            $('.mo-visual .button-play').show();
+        });
+
+        $('.mo-visual .button-play').on('click', function () {
+            visual_swiper.autoplay.start();
+            $(this).hide();
+            $('.mo-visual .button-stop').show();
+        });
+
+        } else {
+            visual_swiper = new Swiper('.pc-visual', {
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: true,
+                },
+                loop: true,
+                pagination: {
+                    el: '.pc-visual .ctrl_wrap .count',
+                    clickable: true,
+                },
+            });
+
+            $('.pc-visual .button-stop').on('click', function () {
+                visual_swiper.autoplay.stop();
+                $(this).hide();
+                $('.pc-visual .button-play').show();
+            });
+
+            $('.pc-visual .button-play').on('click', function () {
+                visual_swiper.autoplay.start();
+                $(this).hide();
+                $('.pc-visual .button-stop').show();
+            });
+        }
+    }
+
+    // 최초 실행
+    initVisualSwiper();
+
+    // 브라우저 크기 변경 시 swiper 재초기화
+    $(window).on('resize', function () {
+        initVisualSwiper();
     });
-
-    $('.visual .ctrl_wrap button.button-stop').on('click', function(){
-        visual_swiper.autoplay.stop(); /* 일시정지 */
-        $(this).hide()
-        $('.visual .ctrl_wrap button.button-play').show()
-    })
-    $('.visual .ctrl_wrap button.button-play').on('click', function(){
-        visual_swiper.autoplay.start();
-        $(this).hide()
-        $('.visual .ctrl_wrap button.button-stop').show()
-    })
 
 
         /* ################### product ####################### */
