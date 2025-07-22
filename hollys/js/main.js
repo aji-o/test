@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     let device_status //모바일 pc 구분
     let window_w //브라우저 넓이
-    let mobile_size = 768 //모바일로 전환되는 사이즈
+    let mobile_size = 1024 //모바일로 전환되는 사이즈
     let menu_open // 모바일에서 사용할 메뉴가 열렸는지의 여부
 
     
