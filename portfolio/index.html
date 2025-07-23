@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jquery 라이브러리 -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- swiper 라이브러리 -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>PORTFOLIO</title>
+</head>
+<body>
+
+    <header>
+        <div class="wrapper">
+            <nav id="custom-nav">
+                <ul>
+                    <li><a href="#home" class="active">HOME</a></li>
+                    <li><a href="#profile">PROFILE</a></li>
+                    <li><a href="#nest">NEST</a></li>
+                    <li><a href="#hyoseng">HYOSENG</a></li>
+                    <li><a href="#hollys">HOLLYS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="swiper"> <!-- ------------- fullpage 전체를 감싸는 요소 -->
+        <div class="swiper-wrapper">
+        <section class="swiper-slide home"> <!-- ------------------------ 한페이지 -->
+            <div class="wrapper">
+                <div class="tit">
+                    <h1>PORT<br>FOLIO</h1>
+                    <p>디자인 그 이상, 사용자를 위한 고민을 담아 퍼블리싱합니다</p>
+                </div>
+                <div class="sub_wrap">
+                    <div class="sub_txt">
+                        <span>김 희경</span>
+                        <span>KIM HEE KYUNG</span>
+                        <span>WEB DESIGNER & WEB PUBLISHER</span>
+                    </div>
+                    <div class="date">
+                        <span>2025<br>PORTFOLIO</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="swiper-slide profile">
+            <div class="wrapper">
+                <h2>PROFILE</h2>
+                <div class="box_wrap">
+                    <div class="box1">
+                        <div class="photo"><img src="images/pro_01.png" alt="프로필사진"></div>
+                        <div class="txt">
+                            <strong>KIM HEEKYUNG / 김희경</strong>
+                            <span>1234.12.12</span>
+                        </div>
+
+                        <div class="contact">
+                            <span class="tall">010-1234-5678</span>
+                            <span class="email">name@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <h3>Education</h3>
+                        <div class="edu">
+                            <div class="list">
+                                <ul>
+                                    <li>
+                                        <strong>1234. 56</strong>
+                                        <span>OO대학교 OO과 졸업</span>
+                                    </li>
+                                    <li>
+                                        <strong>2025. 07</strong>
+                                        <span>이지디자인컴퓨터학원 웹디자인 & 웹퍼블리셔 <br>Ul/UX 과정 수료</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <h3>SKILLS</h3>
+                            <div class="list">
+                                <ul>
+                                    <li><span>Adobe <br>Photoshop</span></li>
+                                    <li><span>Adobe <br>Illustrator</span></li>
+                                    <li><span>Figma</span></li>
+                                    <li><span>Visual <br>Studio Code</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--//box_wrap-->
+            </div>
+            
+        </section>
+
+
+
+
+
+
+        <section class="swiper-slide nest">3</section>
+        <section class="swiper-slide hyoseng">4</section>
+        <section class="swiper-slide hollys">5</section>
+        <section class="swiper-slide contact">6</section>
+        </div><!--//swiper-wrapper-->
+    </main><!--//swiper-->
+
+
+
+    
+</body>
+</html>
