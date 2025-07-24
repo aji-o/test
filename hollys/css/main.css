@@ -999,7 +999,7 @@ header .heading .logo a {
 .news .event .list ul {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    /* gap: 24px; */
 }
 
 .news .event .list ul li {
