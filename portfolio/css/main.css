@@ -403,6 +403,25 @@ header .gnb ul li.active a {
     margin: 82px 0 0 0;
 }
 
+.hollys .wrapper,
+.hyoseng .wrapper,
+.nest .wrapper {
+    position: relative;
+}
+
+.hollys a.bg_btn,
+.hyoseng a.bg_btn,
+.nest a.bg_btn {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 100px;
+    width: 50%;
+    height: 1000px;
+}
+
+
+
 .hollys .list ul li,
 .hyoseng .list ul li,
 .nest .list ul li {
@@ -454,11 +473,30 @@ header .gnb ul li.active a {
     background-image: url(../images/contact_h_1.png);
 }
 
-.contact .txt {
-    position: absolute;
-    right: 40px;
-    bottom: 150px;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
+
+
+/* cursor */
+
+
+.cursor { 
+	position: absolute; 
+	z-index: 1000;
+	transform: translate(-50%, -50%); /* 커서 위치 조정 */
+    text-align: center;
+	pointer-events: none;
+	display:none; 
+}
+.cursor.on {
+	display: block; 
+	/* 기본적인 스타일 */
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+    font-size: 20px;
+    background-color: var(--point-color);
+    border-radius: 50%;
+}
+.popup {
+	cursor: none !important;
 }
